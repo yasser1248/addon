@@ -1,0 +1,56 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-01-29 12:29:14.240608",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "change_on",
+  "description",
+  "justification",
+  "impact",
+  "desposition"
+ ],
+ "fields": [
+  {
+   "fieldname": "change_on",
+   "fieldtype": "Select",
+   "label": "change on",
+   "options": "Scope\nCost\nQuality\nSchudule"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Data",
+   "label": "Description"
+  },
+  {
+   "fieldname": "justification",
+   "fieldtype": "Data",
+   "label": "Justification"
+  },
+  {
+   "fieldname": "impact",
+   "fieldtype": "Select",
+   "label": "Impact",
+   "options": "Increase\nDecrease\nModify"
+  },
+  {
+   "fieldname": "desposition",
+   "fieldtype": "Data",
+   "label": "Desposition"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-02-01 13:54:40.854878",
+ "modified_by": "Administrator",
+ "module": "Pp Addon",
+ "name": "Project change child",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

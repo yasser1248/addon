@@ -1,0 +1,153 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:MT.{project}.{YYYY}{MM}.{##}",
+ "creation": "2023-01-22 08:25:15.105680",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "project",
+  "meeting_date",
+  "meeting_title",
+  "start_meeting",
+  "column_break_4",
+  "project_name",
+  "meeting_manager",
+  "location",
+  "kick_of_meeting",
+  "kick_of_meeting_document_section",
+  "kick_of_meeting_document",
+  "meeting_elements",
+  "elements",
+  "participate",
+  "desction"
+ ],
+ "fields": [
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Project id",
+   "options": "Project",
+   "reqd": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "meeting_date",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Meeting  Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "meeting_title",
+   "fieldtype": "Data",
+   "label": "Meeting Title"
+  },
+  {
+   "fieldname": "start_meeting",
+   "fieldtype": "Button",
+   "label": "Start Meeting"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "project",
+   "fetch_from": "project.project_name",
+   "fieldname": "project_name",
+   "fieldtype": "Read Only",
+   "label": "Project name"
+  },
+  {
+   "fieldname": "meeting_manager",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Meeting manager",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Data",
+   "label": "Location"
+  },
+  {
+   "bold": 1,
+   "collapsible": 1,
+   "fieldname": "meeting_elements",
+   "fieldtype": "Section Break",
+   "label": "Meeting elements"
+  },
+  {
+   "bold": 1,
+   "fieldname": "elements",
+   "fieldtype": "Table",
+   "label": "Elements",
+   "options": "Projects Meeting Melement"
+  },
+  {
+   "bold": 1,
+   "fieldname": "participate",
+   "fieldtype": "Table",
+   "label": "Participate",
+   "options": "Projects Meeting Mparticipate"
+  },
+  {
+   "bold": 1,
+   "fieldname": "desction",
+   "fieldtype": "Table",
+   "label": "Desction",
+   "options": "Projects Meeting Desction"
+  },
+  {
+   "depends_on": "eval:doc.kick_of_meeting==1",
+   "fieldname": "kick_of_meeting_document",
+   "fieldtype": "Table",
+   "label": "Kick of Meeting Document",
+   "mandatory_depends_on": "eval:doc.kick_of_meeting==1",
+   "options": "Kick of Meeting Documents"
+  },
+  {
+   "default": "0",
+   "fieldname": "kick_of_meeting",
+   "fieldtype": "Check",
+   "label": "Kick of Meeting"
+  },
+  {
+   "depends_on": "eval:doc.kick_of_meeting==1",
+   "fieldname": "kick_of_meeting_document_section",
+   "fieldtype": "Section Break",
+   "label": "Kick of Meeting Document",
+   "mandatory_depends_on": "eval:doc.kick_of_meeting==1"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-10-01 10:49:09.713742",
+ "modified_by": "Administrator",
+ "module": "Pp Addon",
+ "name": "Projects Meeting",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

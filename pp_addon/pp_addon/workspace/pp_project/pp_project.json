@@ -1,0 +1,355 @@
+{
+ "cards_label": "Setting",
+ "category": "Modules",
+ "charts": [],
+ "creation": "2023-01-19 10:51:39.365481",
+ "developer_mode_only": 0,
+ "disable_user_customization": 0,
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "extends_another_page": 0,
+ "hide_custom": 0,
+ "idx": 0,
+ "is_default": 0,
+ "is_standard": 1,
+ "label": "PP Project",
+ "links": [
+  {
+   "hidden": 0,
+   "icon": "setting-gear",
+   "is_query_report": 0,
+   "label": "Basic Setting",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Project Catogery",
+   "link_to": "PP_Catogery",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Department",
+   "link_to": "PP_Department",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Employee",
+   "link_to": "PP_Employee",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Position",
+   "link_to": "PP_Position",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Project Status",
+   "link_to": "PP_Project status",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Item Type",
+   "link_to": "PP_Item type",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Performance type",
+   "link_to": "PP_Performance type",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "icon": "setting-gear",
+   "is_query_report": 0,
+   "label": "More Setting",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Stakholder Role",
+   "link_to": "PP_Role",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Stakholder",
+   "link_to": "PP_Stakholder",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Doc Type",
+   "link_to": "PP_Doctype",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Actions",
+   "link_to": "PP_Action",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Task Type",
+   "link_to": "PP_Task type",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Risk type",
+   "link_to": "PP_Risk type",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Project Phases",
+   "link_to": "PP_Phase",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "icon": "project",
+   "is_query_report": 0,
+   "label": "Project",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Project Bedding",
+   "link_to": "PP_Bidding",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Project deliverable",
+   "link_to": "PP_Deliverable",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Project Study",
+   "link_to": "PP_Project study",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Project Charter",
+   "link_to": "PP_Project charter",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Project Milestone",
+   "link_to": "PP_Milestone",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Project Risk",
+   "link_to": "PP_Risks",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Project Quality",
+   "link_to": "PP_Project quality",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "icon": "table",
+   "is_query_report": 0,
+   "label": "Transaction",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Project Meeting",
+   "link_to": "PP_Meeting",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Project Achievement Report",
+   "link_to": "PP_Achievement scene",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Project Change request",
+   "link_to": "PP_Project change",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Project Team Assesment",
+   "link_to": "PP_Project team asses",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Project learning lesson",
+   "link_to": "PP_Project learning lesson",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2023-02-01 15:02:42.620645",
+ "modified_by": "Administrator",
+ "module": "Pp Addon",
+ "name": "PP Project",
+ "owner": "Administrator",
+ "pin_to_bottom": 0,
+ "pin_to_top": 1,
+ "shortcuts": [
+  {
+   "color": "#0a4217",
+   "doc_view": "List",
+   "icon": "project",
+   "label": "Project ",
+   "link_to": "PP_Project",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "List",
+   "icon": "gantt",
+   "label": "Project Transaction",
+   "link_to": "PP_Transaction",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "List",
+   "icon": "money-coins-1",
+   "label": "Project Payment Plan",
+   "link_to": "PP_Project payment",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "List",
+   "icon": "income",
+   "label": "Project Payment",
+   "link_to": "PP_Project items",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "List",
+   "icon": "list",
+   "label": "Project Task",
+   "link_to": "PP_Task",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "List",
+   "icon": "small-file",
+   "label": "Project Document",
+   "link_to": "PP_Doc",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "Report Builder",
+   "icon": "printer",
+   "label": "Project Report",
+   "link_to": "PROJECT LIST",
+   "type": "Report"
+  },
+  {
+   "doc_view": "Dashboard",
+   "icon": "dashboard",
+   "label": "Sample DashBoard",
+   "link_to": "Project",
+   "type": "Dashboard"
+  }
+ ],
+ "shortcuts_label": "Main"
+}

@@ -1,0 +1,132 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{PAY}{project}.{###}",
+ "creation": "2023-01-22 11:10:49.278724",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "project",
+  "start_date",
+  "end_date",
+  "column_break_4",
+  "project_name",
+  "fyscal_year",
+  "budget_link",
+  "column_break_6",
+  "period",
+  "project_budget",
+  "acumulated_payment",
+  "section_break_11",
+  "items"
+ ],
+ "fields": [
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Project Id",
+   "options": "Project"
+  },
+  {
+   "depends_on": "project",
+   "fetch_from": "project.project_name",
+   "fieldname": "start_date",
+   "fieldtype": "Data",
+   "label": "Start Date"
+  },
+  {
+   "depends_on": "project",
+   "fetch_from": "project.end_date",
+   "fieldname": "end_date",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "End date"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "project",
+   "fetch_from": "project.project_name",
+   "fieldname": "project_name",
+   "fieldtype": "Data",
+   "label": "Project Name"
+  },
+  {
+   "default": "2023",
+   "fieldname": "fyscal_year",
+   "fieldtype": "Int",
+   "label": "Fyscal year",
+   "non_negative": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "budget_link",
+   "fieldtype": "Float",
+   "label": "Budget link"
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "projct",
+   "fieldname": "period",
+   "fieldtype": "Data",
+   "label": "Period"
+  },
+  {
+   "depends_on": "project",
+   "fetch_from": "project.project_budget",
+   "fieldname": "project_budget",
+   "fieldtype": "Read Only",
+   "in_list_view": 1,
+   "label": "Project Budjet"
+  },
+  {
+   "default": "0",
+   "fieldname": "acumulated_payment",
+   "fieldtype": "Read Only",
+   "label": "acumulated payment"
+  },
+  {
+   "fieldname": "section_break_11",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Payment Detail",
+   "options": "Project payment child"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-09-21 11:50:30.998905",
+ "modified_by": "Administrator",
+ "module": "Pp Addon",
+ "name": "Project payment",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

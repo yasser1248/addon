@@ -1,0 +1,49 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:transaction",
+ "creation": "2023-01-22 11:42:22.568996",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "transaction",
+  "data_2"
+ ],
+ "fields": [
+  {
+   "fieldname": "transaction",
+   "fieldtype": "Data",
+   "label": "Transaction",
+   "unique": 1
+  },
+  {
+   "fieldname": "data_2",
+   "fieldtype": "Data"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-02-01 13:54:54.524247",
+ "modified_by": "Administrator",
+ "module": "Pp Addon",
+ "name": "Transaction type",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

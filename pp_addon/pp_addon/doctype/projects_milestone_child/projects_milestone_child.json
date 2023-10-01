@@ -1,0 +1,56 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:milestone_name",
+ "creation": "2023-01-19 11:18:34.551339",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "milestone_name",
+  "milestone_description",
+  "status",
+  "quality"
+ ],
+ "fields": [
+  {
+   "fieldname": "milestone_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Milestone Name",
+   "unique": 1
+  },
+  {
+   "fieldname": "milestone_description",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "Milestone description"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Rating",
+   "in_list_view": 1,
+   "label": "Done Status"
+  },
+  {
+   "fieldname": "quality",
+   "fieldtype": "Rating",
+   "in_list_view": 1,
+   "label": "Quality"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-09-21 14:28:13.580536",
+ "modified_by": "Administrator",
+ "module": "Pp Addon",
+ "name": "Projects Milestone child",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

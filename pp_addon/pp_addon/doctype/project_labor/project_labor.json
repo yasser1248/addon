@@ -1,0 +1,76 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-01-29 07:53:26.667551",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "position",
+  "description",
+  "minmum_required",
+  "attachment",
+  "year_one",
+  "year_two",
+  "year_three"
+ ],
+ "fields": [
+  {
+   "fieldname": "position",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Position",
+   "options": "Position"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Description"
+  },
+  {
+   "fieldname": "minmum_required",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Minmum Required"
+  },
+  {
+   "fieldname": "attachment",
+   "fieldtype": "Attach",
+   "in_list_view": 1,
+   "label": "Attachment"
+  },
+  {
+   "default": "1",
+   "fieldname": "year_one",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Year one"
+  },
+  {
+   "default": "0",
+   "fieldname": "year_two",
+   "fieldtype": "Int",
+   "label": "Year Two"
+  },
+  {
+   "default": "0",
+   "fieldname": "year_three",
+   "fieldtype": "Int",
+   "label": "Year Three"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-09-21 14:16:19.874866",
+ "modified_by": "Administrator",
+ "module": "Pp Addon",
+ "name": "Project labor",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

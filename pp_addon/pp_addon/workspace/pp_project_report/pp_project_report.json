@@ -1,0 +1,32 @@
+{
+ "category": "Modules",
+ "charts": [],
+ "creation": "2023-01-29 08:10:32.383630",
+ "developer_mode_only": 0,
+ "disable_user_customization": 0,
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "extends_another_page": 0,
+ "hide_custom": 0,
+ "icon": "file-large",
+ "idx": 0,
+ "is_default": 0,
+ "is_standard": 1,
+ "label": "PP_Project report",
+ "links": [],
+ "modified": "2023-02-01 15:04:06.142443",
+ "modified_by": "Administrator",
+ "module": "Pp Addon",
+ "name": "PP_Project report",
+ "owner": "Administrator",
+ "pin_to_bottom": 0,
+ "pin_to_top": 1,
+ "shortcuts": [
+  {
+   "doc_view": "Report Builder",
+   "label": "repor1",
+   "link_to": "DATEV",
+   "type": "Report"
+  }
+ ]
+}

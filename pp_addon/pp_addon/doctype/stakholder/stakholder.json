@@ -1,0 +1,119 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:stakholder",
+ "creation": "2023-01-16 20:53:59.335972",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "stakholder",
+  "mobile_no",
+  "email",
+  "department",
+  "position",
+  "role",
+  "influence",
+  "classification",
+  "column_break_6",
+  "requirement",
+  "expectations"
+ ],
+ "fields": [
+  {
+   "fieldname": "stakholder",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Stakholder",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "mobile_no",
+   "fieldtype": "Data",
+   "label": "mobile no"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "email",
+   "reqd": 1
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Department",
+   "options": "Department",
+   "reqd": 1
+  },
+  {
+   "fieldname": "position",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Position",
+   "options": "Position",
+   "reqd": 1
+  },
+  {
+   "fieldname": "role",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Role",
+   "options": "Stakholder Role",
+   "reqd": 1
+  },
+  {
+   "fieldname": "influence",
+   "fieldtype": "Select",
+   "label": "influence",
+   "options": "Low\nMediom\nHigh"
+  },
+  {
+   "fieldname": "classification",
+   "fieldtype": "Select",
+   "label": "Classification",
+   "options": "Low\nMedium\nHigh"
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "requirement",
+   "fieldtype": "Small Text",
+   "label": "Requirement"
+  },
+  {
+   "fieldname": "expectations",
+   "fieldtype": "Small Text",
+   "label": "Expectations"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-10-01 10:49:54.928764",
+ "modified_by": "Administrator",
+ "module": "Pp Addon",
+ "name": "Stakholder",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

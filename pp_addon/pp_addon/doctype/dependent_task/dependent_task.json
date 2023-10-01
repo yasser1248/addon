@@ -1,0 +1,31 @@
+{
+ "actions": [],
+ "creation": "2023-01-24 02:11:26.968072",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "task"
+ ],
+ "fields": [
+  {
+   "fieldname": "task",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Task",
+   "options": "Task",
+   "remember_last_selected_value": 1
+  }
+ ],
+ "istable": 1,
+ "links": [],
+ "modified": "2023-09-21 13:48:56.494048",
+ "modified_by": "Administrator",
+ "module": "Pp Addon",
+ "name": "Dependent task",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

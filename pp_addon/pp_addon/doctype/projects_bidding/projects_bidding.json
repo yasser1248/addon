@@ -1,0 +1,83 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{project}-{YYYY}{MM}-{##}",
+ "creation": "2023-01-18 18:54:51.058713",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "project",
+  "tender",
+  "pname",
+  "data_3",
+  "companies",
+  "data_6"
+ ],
+ "fields": [
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Project",
+   "options": "Project",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "bold": 1,
+   "depends_on": "project",
+   "fetch_from": "project.eitmad_id",
+   "fieldname": "tender",
+   "fieldtype": "Read Only",
+   "label": "Tender"
+  },
+  {
+   "depends_on": "project",
+   "fetch_from": "project.project_name",
+   "fieldname": "pname",
+   "fieldtype": "Read Only",
+   "label": "PROJECT NAME"
+  },
+  {
+   "fieldname": "data_3",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "companies",
+   "fieldtype": "Table",
+   "label": "Companies",
+   "options": "Tender company"
+  },
+  {
+   "fieldname": "data_6",
+   "fieldtype": "Data"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-09-21 14:30:49.445556",
+ "modified_by": "Administrator",
+ "module": "Pp Addon",
+ "name": "Projects Bidding",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

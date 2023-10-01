@@ -1,0 +1,204 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-01-16 20:32:32.325026",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "project",
+  "purpose",
+  "project_manager",
+  "column_break_4",
+  "project_sponsor",
+  "est_cost",
+  "expected_life_of_the_project",
+  "description",
+  "scope_section",
+  "scope",
+  "required_business_section",
+  "required_business",
+  "the_project_beneficiar",
+  "desired_benefits",
+  "section_break_11",
+  "feasibility_study",
+  "qst",
+  "quality_standards",
+  "section_break_17",
+  "support_required",
+  "section_break_19",
+  "main_project_stages",
+  "section_break_21",
+  "project_approval"
+ ],
+ "fields": [
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "project",
+   "options": "Project",
+   "reqd": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "purpose",
+   "fieldtype": "Small Text",
+   "label": "Purpose"
+  },
+  {
+   "fieldname": "project_manager",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": " Project manager",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "project_sponsor",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Project sponsor",
+   "options": "Stakholder",
+   "reqd": 1
+  },
+  {
+   "fieldname": "est_cost",
+   "fieldtype": "Currency",
+   "label": "Es Cost"
+  },
+  {
+   "fieldname": "expected_life_of_the_project",
+   "fieldtype": "Data",
+   "label": "Expected life of the project"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  },
+  {
+   "bold": 1,
+   "collapsible": 1,
+   "fieldname": "scope_section",
+   "fieldtype": "Section Break",
+   "label": "Scope"
+  },
+  {
+   "fieldname": "scope",
+   "fieldtype": "Text Editor",
+   "label": "Scope"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "required_business_section",
+   "fieldtype": "Section Break",
+   "label": "Required business"
+  },
+  {
+   "fieldname": "required_business",
+   "fieldtype": "Text Editor",
+   "label": "Required business"
+  },
+  {
+   "bold": 1,
+   "collapsible": 1,
+   "fieldname": "the_project_beneficiar",
+   "fieldtype": "Section Break",
+   "label": "Desired Benefits"
+  },
+  {
+   "fieldname": "desired_benefits",
+   "fieldtype": "Text Editor",
+   "label": "Desired Benefits"
+  },
+  {
+   "bold": 1,
+   "collapsible": 1,
+   "fieldname": "section_break_11",
+   "fieldtype": "Section Break",
+   "label": "feasibility study"
+  },
+  {
+   "fieldname": "feasibility_study",
+   "fieldtype": "Text Editor",
+   "label": "feasibility study"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "qst",
+   "fieldtype": "Section Break",
+   "label": "Quality standards"
+  },
+  {
+   "fieldname": "quality_standards",
+   "fieldtype": "Text Editor",
+   "label": "Quality standards"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_17",
+   "fieldtype": "Section Break",
+   "label": "Support required "
+  },
+  {
+   "fieldname": "support_required",
+   "fieldtype": "Text Editor",
+   "label": "Support required "
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_19",
+   "fieldtype": "Section Break",
+   "label": "Main project stages"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "main_project_stages",
+   "fieldtype": "Text Editor",
+   "label": "Main project stages"
+  },
+  {
+   "bold": 1,
+   "collapsible": 1,
+   "fieldname": "section_break_21",
+   "fieldtype": "Section Break",
+   "label": "Project approval"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "project_approval",
+   "fieldtype": "Text Editor",
+   "label": "Project approval"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-09-21 14:29:46.027631",
+ "modified_by": "Administrator",
+ "module": "Pp Addon",
+ "name": "Projects charter",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

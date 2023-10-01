@@ -1,0 +1,135 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:FES{project}",
+ "creation": "2023-01-19 11:58:43.931573",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "project",
+  "project_name",
+  "feasibility",
+  "future_vision_of_the_project",
+  "strategic_link",
+  "benefits",
+  "scope",
+  "assumptions_and_determinants",
+  "column_break_9",
+  "components_of_the_projec",
+  "challenges_and_risks",
+  "time_frame",
+  "required_resources",
+  "relevant_people_and_their_determinants",
+  "project_governance"
+ ],
+ "fields": [
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Project id",
+   "options": "Project",
+   "reqd": 1
+  },
+  {
+   "depends_on": "project",
+   "fetch_from": "project.project_name",
+   "fieldname": "project_name",
+   "fieldtype": "Read Only",
+   "label": "Project name"
+  },
+  {
+   "fieldname": "feasibility",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Feasibility",
+   "reqd": 1
+  },
+  {
+   "fieldname": "future_vision_of_the_project",
+   "fieldtype": "Data",
+   "label": "Future vision of the project"
+  },
+  {
+   "fieldname": "strategic_link",
+   "fieldtype": "Data",
+   "label": "Strategic Link "
+  },
+  {
+   "fieldname": "benefits",
+   "fieldtype": "Data",
+   "label": "Benefits"
+  },
+  {
+   "fieldname": "scope",
+   "fieldtype": "Data",
+   "label": "Scope"
+  },
+  {
+   "fieldname": "assumptions_and_determinants",
+   "fieldtype": "Data",
+   "label": "Assumptions and Determinants"
+  },
+  {
+   "fieldname": "column_break_9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "components_of_the_projec",
+   "fieldtype": "Data",
+   "label": "Components of the projec"
+  },
+  {
+   "fieldname": "challenges_and_risks",
+   "fieldtype": "Data",
+   "label": "Challenges and risks"
+  },
+  {
+   "fieldname": "required_resources",
+   "fieldtype": "Data",
+   "label": "Required Resources "
+  },
+  {
+   "fieldname": "relevant_people_and_their_determinants",
+   "fieldtype": "Data",
+   "label": "Relevant people and their determinants "
+  },
+  {
+   "fieldname": "project_governance",
+   "fieldtype": "Data",
+   "label": "Project Governance"
+  },
+  {
+   "fieldname": "time_frame",
+   "fieldtype": "Data",
+   "label": "Time frame"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-09-21 14:30:20.267979",
+ "modified_by": "Administrator",
+ "module": "Pp Addon",
+ "name": "Projects study",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

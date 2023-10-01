@@ -1,0 +1,287 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{project_id}-{project_name}",
+ "creation": "2023-01-16 15:40:24.076271",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "project_id",
+  "project_name",
+  "project_manager",
+  "project_status",
+  "project_budget",
+  "phase",
+  "resrved_value",
+  "project_category",
+  "eitmad_id",
+  "vendor",
+  "period",
+  "column_break_6",
+  "start_date",
+  "end_date",
+  "time_untill_project_end",
+  "h_start_date",
+  "h_end__date",
+  "kik_off_date",
+  "date_of_contract",
+  "po_date",
+  "award_date",
+  "po_number",
+  "vend_project_manager",
+  "section_break_21",
+  "items",
+  "remarks_section",
+  "qty_section",
+  "qty",
+  "labor_section",
+  "labor",
+  "service_section",
+  "service",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "project_id",
+   "fieldtype": "Data",
+   "label": "Project Id ",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "project_name",
+   "fieldtype": "Data",
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Project Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "h_start_date",
+   "fieldtype": "Data",
+   "label": "H Start Date"
+  },
+  {
+   "fieldname": "h_end__date",
+   "fieldtype": "Data",
+   "label": "H End  Date"
+  },
+  {
+   "fieldname": "kik_off_date",
+   "fieldtype": "Data",
+   "label": "Kick off Date"
+  },
+  {
+   "fieldname": "phase",
+   "fieldtype": "Link",
+   "label": "Phase",
+   "options": "Project Phase"
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "in_preview": 1,
+   "label": "Start Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "in_preview": 1,
+   "label": "End Date"
+  },
+  {
+   "fieldname": "period",
+   "fieldtype": "Data",
+   "in_preview": 1,
+   "label": "Period"
+  },
+  {
+   "fieldname": "project_budget",
+   "fieldtype": "Currency",
+   "label": "Project Budget",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "resrved_value",
+   "fieldtype": "Float",
+   "label": "Resrved Value",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "project_category",
+   "fieldtype": "Link",
+   "label": "Project Category",
+   "options": "Project Catogery"
+  },
+  {
+   "default": "Today",
+   "fieldname": "date_of_contract",
+   "fieldtype": "Date",
+   "in_preview": 1,
+   "label": "Date of contract"
+  },
+  {
+   "fieldname": "project_status",
+   "fieldtype": "Link",
+   "label": "Project Status",
+   "options": "Project status"
+  },
+  {
+   "fieldname": "eitmad_id",
+   "fieldtype": "Data",
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Eitmad Id",
+   "reqd": 1
+  },
+  {
+   "fieldname": "vendor",
+   "fieldtype": "Link",
+   "in_preview": 1,
+   "label": "Vendor",
+   "options": "Vendor",
+   "reqd": 1
+  },
+  {
+   "fieldname": "vend_project_manager",
+   "fieldtype": "Link",
+   "label": "Vend Project manager",
+   "options": "Vend employee"
+  },
+  {
+   "fieldname": "po_number",
+   "fieldtype": "Data",
+   "label": "PO number"
+  },
+  {
+   "default": "Today",
+   "fieldname": "po_date",
+   "fieldtype": "Date",
+   "label": "PO Date"
+  },
+  {
+   "default": "Today",
+   "fieldname": "award_date",
+   "fieldtype": "Date",
+   "label": "Award date"
+  },
+  {
+   "bold": 1,
+   "collapsible": 1,
+   "fieldname": "section_break_21",
+   "fieldtype": "Section Break",
+   "label": "Distribute Budget"
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Distribute Budget",
+   "options": "Project child"
+  },
+  {
+   "bold": 1,
+   "collapsible": 1,
+   "fieldname": "remarks_section",
+   "fieldtype": "Section Break",
+   "label": "Remarks"
+  },
+  {
+   "bold": 1,
+   "collapsible": 1,
+   "fieldname": "qty_section",
+   "fieldtype": "Section Break",
+   "label": "Qty"
+  },
+  {
+   "fieldname": "qty",
+   "fieldtype": "Table",
+   "in_standard_filter": 1,
+   "label": "Qty",
+   "options": "Project qty"
+  },
+  {
+   "bold": 1,
+   "collapsible": 1,
+   "fieldname": "labor_section",
+   "fieldtype": "Section Break",
+   "label": "Labor"
+  },
+  {
+   "fieldname": "labor",
+   "fieldtype": "Table",
+   "in_standard_filter": 1,
+   "label": "Labor",
+   "options": "Project labor"
+  },
+  {
+   "bold": 1,
+   "collapsible": 1,
+   "fieldname": "service_section",
+   "fieldtype": "Section Break",
+   "label": "service"
+  },
+  {
+   "bold": 1,
+   "fieldname": "remarks",
+   "fieldtype": "Text Editor",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "service",
+   "fieldtype": "Table",
+   "label": "Service",
+   "options": "Service"
+  },
+  {
+   "fieldname": "project_manager",
+   "fieldtype": "Link",
+   "label": "Project Manager",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fieldname": "time_untill_project_end",
+   "fieldtype": "Data",
+   "in_preview": 1,
+   "label": "Time Untill Project End",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-09-27 16:25:13.256112",
+ "modified_by": "Administrator",
+ "module": "Pp Addon",
+ "name": "Project",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "show_preview_popup": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

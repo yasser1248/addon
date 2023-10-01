@@ -1,0 +1,147 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{DOC}.{project}",
+ "creation": "2023-01-29 11:32:35.846325",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "project",
+  "column_break_2",
+  "project_name",
+  "section_break_3",
+  "quality_planning_approach",
+  "section_break_6",
+  "quality_assurance_approach",
+  "section_break_8",
+  "quality_control_approach",
+  "section_break_10",
+  "quality_improvement_approach",
+  "section_break_12",
+  "quality_rules",
+  "section_break_14",
+  "quality_metrics"
+ ],
+ "fields": [
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Project id",
+   "options": "Project",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "project",
+   "fetch_from": "project.project_name",
+   "fieldname": "project_name",
+   "fieldtype": "Data",
+   "label": "Project_name"
+  },
+  {
+   "bold": 1,
+   "collapsible": 1,
+   "fieldname": "section_break_3",
+   "fieldtype": "Section Break",
+   "label": "Quality Planning Approach"
+  },
+  {
+   "fieldname": "quality_planning_approach",
+   "fieldtype": "Text Editor",
+   "label": "Quality Planning Approach"
+  },
+  {
+   "bold": 1,
+   "collapsible": 1,
+   "fieldname": "section_break_6",
+   "fieldtype": "Section Break",
+   "label": "Quality Assurance Approach"
+  },
+  {
+   "fieldname": "quality_assurance_approach",
+   "fieldtype": "Text Editor",
+   "label": "Quality Assurance Approach"
+  },
+  {
+   "bold": 1,
+   "collapsible": 1,
+   "fieldname": "section_break_8",
+   "fieldtype": "Section Break",
+   "label": "Quality Control Approach"
+  },
+  {
+   "fieldname": "quality_control_approach",
+   "fieldtype": "Text Editor",
+   "label": "Quality Control Approach"
+  },
+  {
+   "bold": 1,
+   "collapsible": 1,
+   "fieldname": "section_break_10",
+   "fieldtype": "Section Break",
+   "label": "Quality Improvement Approach"
+  },
+  {
+   "fieldname": "quality_improvement_approach",
+   "fieldtype": "Text Editor",
+   "label": "Quality Improvement Approach"
+  },
+  {
+   "bold": 1,
+   "collapsible": 1,
+   "fieldname": "section_break_12",
+   "fieldtype": "Section Break",
+   "label": "Quality rules"
+  },
+  {
+   "fieldname": "quality_rules",
+   "fieldtype": "Table",
+   "label": "Quality rules",
+   "options": "Project quality rules"
+  },
+  {
+   "bold": 1,
+   "collapsible": 1,
+   "fieldname": "section_break_14",
+   "fieldtype": "Section Break",
+   "label": "QUALITY METRICS"
+  },
+  {
+   "fieldname": "quality_metrics",
+   "fieldtype": "Table",
+   "label": "QUALITY METRICS",
+   "options": "Project quality metrices"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-09-21 14:32:40.174974",
+ "modified_by": "Administrator",
+ "module": "Pp Addon",
+ "name": "Project quality",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

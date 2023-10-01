@@ -1,0 +1,52 @@
+{
+ "actions": [],
+ "autoname": "Prompt",
+ "creation": "2023-01-24 02:12:15.687122",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "weight",
+  "description"
+ ],
+ "fields": [
+  {
+   "fieldname": "weight",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Weight",
+   "reqd": 1
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "Description"
+  }
+ ],
+ "links": [],
+ "modified": "2023-09-21 15:10:48.119414",
+ "modified_by": "Administrator",
+ "module": "Pp Addon",
+ "name": "Task type",
+ "naming_rule": "Set by user",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "ASC",
+ "states": [],
+ "track_changes": 1
+}

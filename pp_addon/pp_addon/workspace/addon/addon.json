@@ -1,0 +1,371 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"2MiF_NlfU7\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Addon</span>\",\"col\":12}},{\"id\":\"uVkuhT7KIS\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Project\",\"col\":3}},{\"id\":\"NIraCum1f1\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Project Transaction\",\"col\":3}},{\"id\":\"wlrfxBsOd1\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Project Payment Plan\",\"col\":3}},{\"id\":\"2BPvICGekc\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Project Payment\",\"col\":3}},{\"id\":\"bQg4_FXW8O\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Project Task\",\"col\":3}},{\"id\":\"KRZ7A2qRTo\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Project Document\",\"col\":3}},{\"id\":\"TuyFbp8EIy\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Project Report\",\"col\":3}},{\"id\":\"krrJdXJ7aT\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"50KAjak0LW\",\"type\":\"card\",\"data\":{\"card_name\":\"Project\",\"col\":4}},{\"id\":\"oP4wjdIfYM\",\"type\":\"card\",\"data\":{\"card_name\":\"Transaction\",\"col\":5}},{\"id\":\"XTAoAee80c\",\"type\":\"card\",\"data\":{\"card_name\":\"Basic Setting\",\"col\":4}},{\"id\":\"atfDhhe0c5\",\"type\":\"card\",\"data\":{\"card_name\":\"More Setting\",\"col\":4}}]",
+ "creation": "2023-09-21 08:32:34.368794",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "projects",
+ "idx": 0,
+ "is_hidden": 0,
+ "label": "Addon",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Basic Setting",
+   "link_count": 7,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Project Catogery",
+   "link_count": 0,
+   "link_to": "PP_Catogery",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Department",
+   "link_count": 0,
+   "link_to": "PP_Department",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Employee",
+   "link_count": 0,
+   "link_to": "PP_Employee",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Position",
+   "link_count": 0,
+   "link_to": "PP_Position",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Project Status",
+   "link_count": 0,
+   "link_to": "PP_Project status",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Item Type",
+   "link_count": 0,
+   "link_to": "PP_Item type",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Performance Type",
+   "link_count": 0,
+   "link_to": "PP_Performance type",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "More Setting",
+   "link_count": 7,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Stakholder Role",
+   "link_count": 0,
+   "link_to": "PP_Role",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Stakholder",
+   "link_count": 0,
+   "link_to": "PP_Stakholder",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Doc Type",
+   "link_count": 0,
+   "link_to": "PP_Doctype",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Actions",
+   "link_count": 0,
+   "link_to": "PP_Action",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Task Type",
+   "link_count": 0,
+   "link_to": "PP_Task type",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Risk Type",
+   "link_count": 0,
+   "link_to": "PP_Risk type",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Project Phases",
+   "link_count": 0,
+   "link_to": "PP_Phase",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Project",
+   "link_count": 7,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Project Bedding",
+   "link_count": 0,
+   "link_to": "PP_Bidding",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Project Deliverable",
+   "link_count": 0,
+   "link_to": "PP_Deliverable",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Project Study",
+   "link_count": 0,
+   "link_to": "PP_Project study",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Project Charter",
+   "link_count": 0,
+   "link_to": "PP_Project charter",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Project Milestone",
+   "link_count": 0,
+   "link_to": "PP_Milestone",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Project Risk",
+   "link_count": 0,
+   "link_to": "PP_Risks",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Project Quality",
+   "link_count": 0,
+   "link_to": "PP_Project quality",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Transaction",
+   "link_count": 5,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Project Meeting",
+   "link_count": 0,
+   "link_to": "PP_Meeting",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Project Achievement Report",
+   "link_count": 0,
+   "link_to": "PP_Achievement scene",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Project Change Request",
+   "link_count": 0,
+   "link_to": "PP_Project change",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Project Team Assesment",
+   "link_count": 0,
+   "link_to": "PP_Project team asses",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Project Learning Lesson",
+   "link_count": 0,
+   "link_to": "PP_Project learning lesson",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2023-09-21 10:49:46.652773",
+ "modified_by": "Administrator",
+ "module": "Pp Addon",
+ "name": "Addon",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 1.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Project",
+   "link_to": "Project",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Project Transaction",
+   "link_to": "PP_Transaction",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Project Payment Plan",
+   "link_to": "PP_Project payment",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Project Payment",
+   "link_to": "PP_Project items",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Project Task",
+   "link_to": "PP_Task",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Project Document",
+   "link_to": "PP_Doc",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Project Report",
+   "link_to": "PROJECT LIST",
+   "type": "Report"
+  }
+ ],
+ "title": "Addon"
+}

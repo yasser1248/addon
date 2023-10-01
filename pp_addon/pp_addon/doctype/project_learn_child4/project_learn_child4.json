@@ -1,0 +1,54 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-01-29 17:35:00.357587",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "risk",
+  "issue",
+  "resolution",
+  "comments"
+ ],
+ "fields": [
+  {
+   "fieldname": "risk",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Vendor Management",
+   "options": "Vendor"
+  },
+  {
+   "fieldname": "issue",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Issue"
+  },
+  {
+   "fieldname": "resolution",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Resolution"
+  },
+  {
+   "fieldname": "comments",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Comments"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-09-21 15:04:52.414017",
+ "modified_by": "Administrator",
+ "module": "Pp Addon",
+ "name": "Project learn child4",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

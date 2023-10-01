@@ -1,0 +1,61 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-01-25 12:49:58.845640",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "deliver",
+  "deliver_date",
+  "deliver_state",
+  "quality",
+  "attach"
+ ],
+ "fields": [
+  {
+   "fieldname": "deliver",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Deliver"
+  },
+  {
+   "default": "Today",
+   "fieldname": "deliver_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Deliver Date"
+  },
+  {
+   "fieldname": "deliver_state",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Deliver State",
+   "options": "Completed\nPartial\nunder process\nNot Completed"
+  },
+  {
+   "fieldname": "quality",
+   "fieldtype": "Percent",
+   "in_list_view": 1,
+   "label": "Quality "
+  },
+  {
+   "fieldname": "attach",
+   "fieldtype": "Attach",
+   "in_list_view": 1,
+   "label": "Attach"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-02-01 13:54:47.283448",
+ "modified_by": "Administrator",
+ "module": "Pp Addon",
+ "name": "Deliverable child",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}
