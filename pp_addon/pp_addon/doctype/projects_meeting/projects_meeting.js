@@ -3,7 +3,10 @@
 
 frappe.ui.form.on('Projects Meeting', {
 	start_meeting: function(frm) {
-		window.location.href = 'http://192.168.1.10:8059/meeting'
+		window.location.href = 'https://addon.newera-soft.com/meeting'
+	},
+	refresh:function(frm){
+		
 	}
 });
 
