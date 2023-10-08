@@ -12,6 +12,7 @@ def send_to_participate(**args):
                 To: {doc.name}
                 Invite for meeting
                 <a href='https://addon.newera-soft.com/meeting'>Press Here for Meeting</a>
+                https://addon.newera-soft.com/meeting
             """
             send_mail( doc,doc.email,msg=msg,title="Project Meeting")
     return "Meeting Link sent to participate members"

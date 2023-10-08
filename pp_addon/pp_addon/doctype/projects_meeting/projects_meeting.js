@@ -14,6 +14,7 @@ frappe.ui.form.on('Projects Meeting', {
 			args:parti,
 			callback:function(r){
 				console.log(r)
+				window.location.href = 'https://addon.newera-soft.com/meeting'
 			}
 		})
 		// window.location.href = 'https://addon.newera-soft.com/meeting'
