@@ -3,10 +3,23 @@
 
 frappe.ui.form.on('Projects Meeting', {
 	start_meeting: function(frm) {
-		window.location.href = 'https://addon.newera-soft.com/meeting'
+		let parti=[]
+		frm.doc.participate.forEach(part => {
+			parti.push(part.participate)
+			
+			console.log(parti)
+		})
+		frappe.call({
+			method:"pp_addon.api.send_to_participate",
+			args:parti,
+			callback:function(r){
+				console.log(r)
+			}
+		})
+		// window.location.href = 'https://addon.newera-soft.com/meeting'
 	},
-	refresh:function(frm){
+	// refresh:function(frm){
 		
-	}
+	// }
 });
 

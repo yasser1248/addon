@@ -1,0 +1,1 @@
+Meeting for project {{project_name}} has start join using this url https://addon.newera-soft.com/meeting

@@ -1,0 +1,30 @@
+{
+ "attach_print": 0,
+ "channel": "System Notification",
+ "creation": "2023-10-08 09:21:31.989363",
+ "days_in_advance": 0,
+ "docstatus": 0,
+ "doctype": "Notification",
+ "document_type": "Projects Meeting",
+ "enabled": 1,
+ "event": "Method",
+ "idx": 0,
+ "is_standard": 1,
+ "message": "Meeting for project {{project_name}} has start join using this url https://addon.newera-soft.com/meeting",
+ "method": "start_meeting",
+ "modified": "2023-10-08 09:27:12.272971",
+ "modified_by": "Administrator",
+ "module": "Pp Addon",
+ "name": "Send Meeting Link",
+ "owner": "Administrator",
+ "recipients": [
+  {
+   "condition": "doc.__islocal  != 1",
+   "receiver_by_document_field": "",
+   "receiver_by_role": "Project Manager"
+  }
+ ],
+ "send_system_notification": 0,
+ "send_to_all_assignees": 0,
+ "subject": "Meeting Start : {{ doc.name }} "
+}
