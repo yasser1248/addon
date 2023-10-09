@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_import": 1,
- "autoname": "format:{TASK}-{project}-.####",
+ "autoname": "TASK-.project.-.####.",
  "creation": "2023-01-24 02:08:17.925105",
  "doctype": "DocType",
  "document_type": "Setup",
@@ -10,6 +10,7 @@
   "subject",
   "project",
   "type",
+  "assign_to",
   "color",
   "is_group",
   "is_template",
@@ -372,6 +373,12 @@
    "ignore_user_permissions": 1,
    "label": "Old Parent",
    "read_only": 1
+  },
+  {
+   "fieldname": "assign_to",
+   "fieldtype": "Data",
+   "label": "Assign To",
+   "options": "owner"
   }
  ],
  "icon": "fa fa-check",
@@ -379,7 +386,7 @@
  "is_tree": 1,
  "links": [],
  "max_attachments": 5,
- "modified": "2023-09-24 17:59:34.676437",
+ "modified": "2023-10-09 15:11:49.038866",
  "modified_by": "Administrator",
  "module": "Pp Addon",
  "name": "Task",

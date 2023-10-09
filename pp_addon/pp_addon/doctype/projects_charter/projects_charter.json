@@ -9,11 +9,13 @@
   "project",
   "purpose",
   "project_manager",
+  "project_vendor",
   "column_break_4",
   "project_sponsor",
   "est_cost",
   "expected_life_of_the_project",
   "description",
+  "project_end_date",
   "scope_section",
   "scope",
   "required_business_section",
@@ -174,11 +176,28 @@
    "fieldname": "project_approval",
    "fieldtype": "Text Editor",
    "label": "Project approval"
+  },
+  {
+   "fetch_from": "project.vendor",
+   "fetch_if_empty": 1,
+   "fieldname": "project_vendor",
+   "fieldtype": "Link",
+   "label": "Project Vendor",
+   "options": "Vendor",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "project.end_date",
+   "fieldname": "project_end_date",
+   "fieldtype": "Date",
+   "hidden": 1,
+   "label": "Project End Date",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-09-21 14:29:46.027631",
+ "modified": "2023-10-09 09:42:38.093135",
  "modified_by": "Administrator",
  "module": "Pp Addon",
  "name": "Projects charter",
