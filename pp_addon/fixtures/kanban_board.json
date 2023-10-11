@@ -4,7 +4,7 @@
    {
     "column_name": "Open",
     "indicator": "Gray",
-    "order": "[\n \"TASK-1996-Desoky House-0001\",\n \"TASK-1996-Desoky House-.####.\",\n \"TASK--.####\"\n]",
+    "order": "[\"TASK-1996-Desoky House-0001\", \"TASK-1996-Desoky House-.####.\", \"TASK--.####\"]",
     "parent": "Task",
     "parentfield": "columns",
     "parenttype": "Kanban Board",
@@ -13,7 +13,7 @@
    {
     "column_name": "Working",
     "indicator": "Gray",
-    "order": "[\n \"TASK-1996-Desoky House-0003\",\n \"TASK-1996-Desoky House-.####\",\n \"TASK-1996-Desoky House-0002\"\n]",
+    "order": "[\"TASK-1996-Desoky House-0003\", \"TASK-1996-Desoky House-.####\", \"TASK-1996-Desoky House-0002\"]",
     "parent": "Task",
     "parentfield": "columns",
     "parenttype": "Kanban Board",
@@ -71,7 +71,7 @@
   "fields": "[\"name\",\"owner\",\"creation\",\"modified\",\"modified_by\",\"project\",\"status\",\"priority\",\"is_milestone\",\"completed_on\",\"duration\",\"exp_end_date\",\"exp_start_date\",\"progress\",\"act_start_date\",\"act_end_date\",\"total_expense_claim\",\"total_costing_amount\"]",
   "filters": "[[\"Task\",\"project\",\"=\",\"1996-Desoky House\"]]",
   "kanban_board_name": "Task",
-  "modified": "2023-10-11 09:01:25.696720",
+  "modified": "2023-10-11 09:05:56.973957",
   "name": "Task",
   "private": 0,
   "reference_doctype": "Task",
