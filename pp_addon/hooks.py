@@ -184,4 +184,29 @@ user_data_fields = [
 # auth_hooks = [
 # 	"pp_addon.auth.validate"
 # ]
+fixtures = [
+    {
+        "dt": ("Property Setter"),
+        "filters": [["doc_type", "in", ("Kanban Board")],
+                    ["field_name","in",(
+                        "kanban_board_name",
+                        
+                        )]
+                    
+                    ]
+    },
+    {
+        "dt": ("Kanban Board"),
+        "filters": [["kanban_board_name", "in", ("Task")]]
+    },
+    # {
+    #     "dt": ("Custom Field"),
+    #     "filters": [["dt", "in", ("", "", "")]]
+    # }, "Lead Source",
+    # {
+    #     "dt": ("Print Format"),
+    #     "filters": [
+    #         ["name" , "in" , ("")]],
+    # },
+]
 

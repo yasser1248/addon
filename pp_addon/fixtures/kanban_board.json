@@ -1,0 +1,80 @@
+[
+ {
+  "columns": [
+   {
+    "column_name": "Open",
+    "indicator": "Gray",
+    "order": "[\n \"TASK-1996-Desoky House-0001\",\n \"TASK-1996-Desoky House-.####.\",\n \"TASK--.####\"\n]",
+    "parent": "Task",
+    "parentfield": "columns",
+    "parenttype": "Kanban Board",
+    "status": "Active"
+   },
+   {
+    "column_name": "Working",
+    "indicator": "Gray",
+    "order": "[\n \"TASK-1996-Desoky House-0003\",\n \"TASK-1996-Desoky House-.####\",\n \"TASK-1996-Desoky House-0002\"\n]",
+    "parent": "Task",
+    "parentfield": "columns",
+    "parenttype": "Kanban Board",
+    "status": "Active"
+   },
+   {
+    "column_name": "Pending Review",
+    "indicator": "Gray",
+    "order": "[]",
+    "parent": "Task",
+    "parentfield": "columns",
+    "parenttype": "Kanban Board",
+    "status": "Active"
+   },
+   {
+    "column_name": "Overdue",
+    "indicator": "Gray",
+    "order": "[]",
+    "parent": "Task",
+    "parentfield": "columns",
+    "parenttype": "Kanban Board",
+    "status": "Active"
+   },
+   {
+    "column_name": "Template",
+    "indicator": "Gray",
+    "order": "[]",
+    "parent": "Task",
+    "parentfield": "columns",
+    "parenttype": "Kanban Board",
+    "status": "Active"
+   },
+   {
+    "column_name": "Completed",
+    "indicator": "Gray",
+    "order": "[]",
+    "parent": "Task",
+    "parentfield": "columns",
+    "parenttype": "Kanban Board",
+    "status": "Active"
+   },
+   {
+    "column_name": "Cancelled",
+    "indicator": "Gray",
+    "order": "[]",
+    "parent": "Task",
+    "parentfield": "columns",
+    "parenttype": "Kanban Board",
+    "status": "Active"
+   }
+  ],
+  "docstatus": 0,
+  "doctype": "Kanban Board",
+  "field_name": "status",
+  "fields": "[\"name\",\"owner\",\"creation\",\"modified\",\"modified_by\",\"project\",\"status\",\"priority\",\"is_milestone\",\"completed_on\",\"duration\",\"exp_end_date\",\"exp_start_date\",\"progress\",\"act_start_date\",\"act_end_date\",\"total_expense_claim\",\"total_costing_amount\"]",
+  "filters": "[[\"Task\",\"project\",\"=\",\"1996-Desoky House\"]]",
+  "kanban_board_name": "Task",
+  "modified": "2023-10-11 09:01:25.696720",
+  "name": "Task",
+  "private": 0,
+  "reference_doctype": "Task",
+  "show_labels": 1
+ }
+]
