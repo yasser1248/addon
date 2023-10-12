@@ -12,7 +12,7 @@
    "fieldtype": "Link",
    "label": "From Project",
    "mandatory": 1,
-   "options": "PP_Project",
+   "options": "Project",
    "wildcard_filter": 0
   },
   {
@@ -20,20 +20,20 @@
    "fieldtype": "Link",
    "label": "To Project",
    "mandatory": 1,
-   "options": "PP_Project",
+   "options": "Project",
    "wildcard_filter": 0
   }
  ],
  "idx": 0,
  "is_standard": "Yes",
- "modified": "2023-02-01 13:58:38.612017",
+ "modified": "2023-10-11 13:53:22.621323",
  "modified_by": "Administrator",
  "module": "Pp Addon",
  "name": "PP_Report (project detail)",
  "owner": "Administrator",
  "prepared_report": 0,
- "query": "SELECT purpose FROM `tabPP_Project charter` \n##//Select name,project from `tabPP_Project_charter` where name between %(project_id1)s and %(project_id1)s",
- "ref_doctype": "PP_Project",
+ "query": "SELECT purpose FROM `tabProjects charter` \n##//Select name,project from `tabPP_Project_charter` where name between %(project_id1)s and %(project_id1)s",
+ "ref_doctype": "Project",
  "report_name": "PP_Report (project detail)",
  "report_type": "Query Report",
  "roles": []
