@@ -20,19 +20,12 @@
    "label": "To Date",
    "mandatory": 1,
    "wildcard_filter": 0
-  },
-  {
-   "fieldname": "project_set_name",
-   "fieldtype": "Data",
-   "label": "Project Name",
-   "mandatory": 0,
-   "wildcard_filter": 0
   }
  ],
  "idx": 0,
  "is_standard": "Yes",
  "letter_head": "Test",
- "modified": "2023-10-11 16:58:49.338364",
+ "modified": "2023-10-12 08:42:25.354503",
  "modified_by": "Administrator",
  "module": "Pp Addon",
  "name": "Projects",
