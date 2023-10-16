@@ -1,0 +1,51 @@
+{
+ "add_total_row": 0,
+ "columns": [],
+ "creation": "2023-10-12 10:13:06.490410",
+ "disable_prepared_report": 0,
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [
+  {
+   "fieldname": "from_date",
+   "fieldtype": "Date",
+   "label": "Trans Date From",
+   "mandatory": 1,
+   "wildcard_filter": 0
+  },
+  {
+   "fieldname": "to_date",
+   "fieldtype": "Date",
+   "label": "To Date",
+   "mandatory": 1,
+   "wildcard_filter": 0
+  },
+  {
+   "fieldname": "project_set_name",
+   "fieldtype": "Link",
+   "label": "Project Name",
+   "mandatory": 1,
+   "options": "Project",
+   "wildcard_filter": 0
+  }
+ ],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letter_head": "Test",
+ "modified": "2023-10-12 10:37:55.883000",
+ "modified_by": "Administrator",
+ "module": "Pp Addon",
+ "name": "Transaction",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "select  trans.name as \"Transaction ID:Link/Transaction\",\r\ntrans.project as \"Project ID\",\r\ntrans.project_name as \"Project Name\",\r\ntranschiled.transaction as \"Transaction\",\r\ntranschiled.trans_date as \"Transaction Date\",\r\ntranschiled.from as \"From\",\r\ntranschiled.to as \"To\",\r\ntranschiled.action as \"Action\"\r\n\r\nfrom \r\n`tabTransaction`as trans left join `tabTransaction child` as transchiled on trans.name=transchiled.parent\r\nwhere \r\ntranschiled.creation between %(from_date)s and %(to_date)s \r\nand\r\ntrans.project = %(project_set_name)s\r\norder by transchiled.creation ;",
+ "ref_doctype": "Transaction",
+ "report_name": "Transaction",
+ "report_type": "Query Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  }
+ ]
+}

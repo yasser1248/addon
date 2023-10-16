@@ -39,6 +39,10 @@
   {
    "chart": "Projects Achievement scene",
    "width": "Half"
+  },
+  {
+   "chart": "Project Labor",
+   "width": "Half"
   }
  ],
  "creation": "2023-10-11 09:56:21.058082",
@@ -48,7 +52,7 @@
  "idx": 0,
  "is_default": 0,
  "is_standard": 1,
- "modified": "2023-10-11 10:47:53.741416",
+ "modified": "2023-10-12 09:43:35.276643",
  "modified_by": "Administrator",
  "module": "Pp Addon",
  "name": "Project",

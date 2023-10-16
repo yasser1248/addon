@@ -31,16 +31,16 @@
   },
   {
    "depends_on": "project",
-   "fetch_from": "project.project_name",
+   "fetch_from": "project.start_date",
    "fieldname": "start_date",
-   "fieldtype": "Data",
+   "fieldtype": "Date",
    "label": "Start Date"
   },
   {
    "depends_on": "project",
    "fetch_from": "project.end_date",
    "fieldname": "end_date",
-   "fieldtype": "Data",
+   "fieldtype": "Date",
    "in_list_view": 1,
    "label": "End date"
   },
@@ -84,12 +84,12 @@
    "fieldname": "project_budget",
    "fieldtype": "Read Only",
    "in_list_view": 1,
-   "label": "Project Budjet"
+   "label": "Project Budget"
   },
   {
    "default": "0",
    "fieldname": "acumulated_payment",
-   "fieldtype": "Read Only",
+   "fieldtype": "Currency",
    "label": "acumulated payment"
   },
   {
@@ -105,7 +105,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-09-21 11:50:30.998905",
+ "modified": "2023-10-12 11:17:08.104570",
  "modified_by": "Administrator",
  "module": "Pp Addon",
  "name": "Project payment",

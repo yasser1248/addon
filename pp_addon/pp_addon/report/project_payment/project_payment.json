@@ -1,0 +1,51 @@
+{
+ "add_total_row": 0,
+ "columns": [],
+ "creation": "2023-10-12 11:16:26.410459",
+ "disable_prepared_report": 0,
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [
+  {
+   "fieldname": "from_date",
+   "fieldtype": "Date",
+   "label": "Payment From  Date",
+   "mandatory": 1,
+   "wildcard_filter": 0
+  },
+  {
+   "fieldname": "to_date",
+   "fieldtype": "Date",
+   "label": "To Date",
+   "mandatory": 1,
+   "wildcard_filter": 0
+  },
+  {
+   "fieldname": "project_set_name",
+   "fieldtype": "Link",
+   "label": "Project ID",
+   "mandatory": 1,
+   "options": "Project",
+   "wildcard_filter": 0
+  }
+ ],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letter_head": "Test",
+ "modified": "2023-10-12 16:06:15.358657",
+ "modified_by": "Administrator",
+ "module": "Pp Addon",
+ "name": "Project payment",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "select  pay.name as \"Project Payment ID:Link/Project payment\",\r\npay.project as \"Project ID\",\r\npay.project_name as \"Project Name\",\r\npay.start_date as \"Start Date\",\r\npay.end_date as \"End date\",\r\npay.fyscal_year as \"Fyscal year\",\r\npay.budget_link as \"Budget link\",\r\npay.period as \"Period\",\r\npay.project_budget as \"Project Budget\",\r\npay.acumulated_payment as \"acumulated payment\",\r\npaychild.period_no as \"Period No\",\r\npaychild.due_date as \"Due Date\",\r\npaychild.payment_value as \"Planed Value\",\r\npaychild.actual_value as \"Actual Value\",\r\npaychild.payment_referances as \"Payment Referances\"\r\n\r\nfrom \r\n`tabProject payment`as pay left join `tabProject payment child` as paychild on pay.name=paychild.parent\r\nwhere \r\n  pay.project = %(project_set_name)s \r\n and\r\npaychild.creation between %(from_date)s and %(to_date)s \r\norder by paychild.creation ;",
+ "ref_doctype": "Project payment",
+ "report_name": "Project payment",
+ "report_type": "Query Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  }
+ ]
+}
