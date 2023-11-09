@@ -1,6 +1,6 @@
 {
  "aggregate_function_based_on": "",
- "color": "#ECAD4B",
+ "color": "#CB2929",
  "creation": "2023-10-11 10:29:38.436356",
  "docstatus": 0,
  "doctype": "Number Card",
@@ -12,7 +12,7 @@
  "is_public": 1,
  "is_standard": 1,
  "label": "Projects Risks",
- "modified": "2023-10-11 10:44:36.477143",
+ "modified": "2023-11-09 12:23:38.790383",
  "modified_by": "Administrator",
  "module": "Pp Addon",
  "name": "Projects Risks",

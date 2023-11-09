@@ -21,19 +21,19 @@
  ],
  "charts": [
   {
-   "chart": "Projects Meeting",
-   "width": "Half"
-  },
-  {
    "chart": "Project",
    "width": "Half"
   },
   {
-   "chart": "Transaction",
+   "chart": "Employee",
    "width": "Half"
   },
   {
-   "chart": "Employee",
+   "chart": "Projects Meeting",
+   "width": "Half"
+  },
+  {
+   "chart": "Transaction",
    "width": "Half"
   },
   {
@@ -52,7 +52,7 @@
  "idx": 0,
  "is_default": 0,
  "is_standard": 1,
- "modified": "2023-10-12 09:43:35.276643",
+ "modified": "2023-11-09 12:46:29.233952",
  "modified_by": "Administrator",
  "module": "Pp Addon",
  "name": "Project",
