@@ -364,7 +364,7 @@
   },
   {
    "hidden": 0,
-   "is_query_report": 0,
+   "is_query_report": 1,
    "label": "Project Task",
    "link_count": 0,
    "link_to": "Project Task",
@@ -374,7 +374,7 @@
   },
   {
    "hidden": 0,
-   "is_query_report": 0,
+   "is_query_report": 1,
    "label": "Project Document",
    "link_count": 0,
    "link_to": "Project Document",
@@ -384,7 +384,7 @@
   },
   {
    "hidden": 0,
-   "is_query_report": 0,
+   "is_query_report": 1,
    "label": "Project Bidding",
    "link_count": 0,
    "link_to": "Projects Bidding",
@@ -393,7 +393,7 @@
    "type": "Link"
   }
  ],
- "modified": "2023-10-16 08:35:17.634487",
+ "modified": "2023-11-09 15:45:00.521730",
  "modified_by": "Administrator",
  "module": "Pp Addon",
  "name": "Addon",

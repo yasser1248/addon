@@ -26,6 +26,7 @@
    "fieldtype": "Link",
    "label": "Project ID",
    "mandatory": 0,
+   "options": "Project",
    "wildcard_filter": 0
   }
  ],
@@ -33,7 +34,7 @@
  "is_standard": "Yes",
  "json": "{}",
  "letter_head": "Test",
- "modified": "2023-10-12 16:22:45.042728",
+ "modified": "2023-11-09 15:44:33.097091",
  "modified_by": "Administrator",
  "module": "Pp Addon",
  "name": "Project Document",
