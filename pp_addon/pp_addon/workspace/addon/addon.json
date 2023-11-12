@@ -325,6 +325,16 @@
   {
    "hidden": 0,
    "is_query_report": 1,
+   "label": "Project Details",
+   "link_count": 0,
+   "link_to": "Project Details",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
    "label": "Tasks Report",
    "link_count": 0,
    "link_to": "Project Task",
@@ -393,7 +403,7 @@
    "type": "Link"
   }
  ],
- "modified": "2023-11-09 15:45:00.521730",
+ "modified": "2023-11-12 09:57:14.992434",
  "modified_by": "Administrator",
  "module": "Pp Addon",
  "name": "Addon",
