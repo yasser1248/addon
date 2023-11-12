@@ -258,8 +258,73 @@
   }
  ],
  "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2023-09-27 16:25:13.256112",
+ "links": [
+  {
+   "link_doctype": "Projects Deliverable",
+   "link_fieldname": "project"
+  },
+  {
+   "link_doctype": "Projects study",
+   "link_fieldname": "project"
+  },
+  {
+   "link_doctype": "Projects charter",
+   "link_fieldname": "project"
+  },
+  {
+   "link_doctype": "Projects Milestone",
+   "link_fieldname": "project"
+  },
+  {
+   "link_doctype": "Projects Risks",
+   "link_fieldname": "project"
+  },
+  {
+   "link_doctype": "Project quality",
+   "link_fieldname": "project"
+  },
+  {
+   "link_doctype": "Projects Meeting",
+   "link_fieldname": "project"
+  },
+  {
+   "link_doctype": "Projects Achievement scene",
+   "link_fieldname": "project"
+  },
+  {
+   "link_doctype": "Project change",
+   "link_fieldname": "project"
+  },
+  {
+   "link_doctype": "Project team asses",
+   "link_fieldname": "project"
+  },
+  {
+   "link_doctype": "Project learning lesson",
+   "link_fieldname": "project"
+  },
+  {
+   "link_doctype": "Transaction",
+   "link_fieldname": "project"
+  },
+  {
+   "link_doctype": "Project payment",
+   "link_fieldname": "project"
+  },
+  {
+   "link_doctype": "Project items",
+   "link_fieldname": "project"
+  },
+  {
+   "link_doctype": "Task",
+   "link_fieldname": "project"
+  },
+  {
+   "link_doctype": "Project Document",
+   "link_fieldname": "project"
+  }
+ ],
+ "modified": "2023-11-12 13:49:32.625678",
  "modified_by": "Administrator",
  "module": "Pp Addon",
  "name": "Project",
