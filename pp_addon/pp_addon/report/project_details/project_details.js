@@ -12,26 +12,19 @@ frappe.query_reports["Project Details"] = {
 			"reqd": 1,
 		},
 		{
-			"fieldname": "from_date",
-			"label": __("From Date"),
-			"fieldtype": "Date",
-			"reqd": 1,
-			"default": frappe.datetime.add_months(frappe.datetime.get_today(), -1),
-		},
-		{
-			"fieldname": "to_date",
-			"label": __("To Date"),
-			"fieldtype": "Date",
-			"reqd": 1,
-			"default": frappe.datetime.get_today(),
-		},
-		{
 			"fieldname": "doctype",
 			"label": __("DocType"),
-			"fieldtype": "Select",
-			"options": ["", "Projects Deliverable", "Projects study", "Projects charter", "Projects Milestone",
-					"Projects Risks", "Project quality", "Projects Meeting", "Projects Achievement scene", "Project change",
-					"Project team asses", "Project learning lesson", "Transaction", "Project payment", "Project items", "Task", "Project Document"],
+			"fieldtype": "Link",
+			"options": "DocType",
+			"get_query": function() {
+				let doctypes = ["Projects Deliverable", "Projects study", "Projects charter", "Projects Milestone",
+				"Projects Risks", "Project quality", "Projects Meeting", "Projects Achievement scene", "Project change",
+				"Project team asses", "Project learning lesson", "Transaction", "Project payment", "Project items", "Task", "Project Document"];
+				return {
+					filters: {"module": 'Pp Addon', "name": ["IN", doctypes]},
+				}
+			},
+			"default": "",
 			"reqd": 1,
 		},
 	]

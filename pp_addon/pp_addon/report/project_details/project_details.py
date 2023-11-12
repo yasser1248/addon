@@ -12,23 +12,15 @@ def execute(filters=None):
     if not filters:
         return [], []
     columns, data = [], []
-    validate_filters(filters)
     data = get_data(filters)
     columns = get_columns(filters, data)
     return columns, data
 
 
-def validate_filters(filters: dict) -> None:
-    from_date = getdate(filters.from_date)
-    to_date = getdate(filters.to_date)
-    if from_date > to_date:
-        frappe.throw(_("From Date cannot be greater than To Date"))
-
-
 def get_data(filters: dict) -> list[dict]:
     data = frappe.db.sql(f"""
                 SELECT * FROM `tab{filters.get("doctype")}` AS d
-                WHERE d.project = "{filters.get("project")}" AND d.modified BETWEEN "{filters.get("from_date")}" AND "{filters.get("to_date")}"
+                WHERE d.project = "{filters.get("project")}"
             """, as_dict=1)
     return data
 
