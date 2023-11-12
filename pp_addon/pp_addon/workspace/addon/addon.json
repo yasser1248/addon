@@ -179,6 +179,16 @@
   {
    "hidden": 0,
    "is_query_report": 0,
+   "label": "Projects Objectives",
+   "link_count": 0,
+   "link_to": "Projects Objectives",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
    "label": "Project Bedding",
    "link_count": 0,
    "link_to": "Projects Bidding",
@@ -413,7 +423,7 @@
    "type": "Link"
   }
  ],
- "modified": "2023-11-12 10:51:54.955027",
+ "modified": "2023-11-12 15:45:02.970282",
  "modified_by": "Administrator",
  "module": "Pp Addon",
  "name": "Addon",
