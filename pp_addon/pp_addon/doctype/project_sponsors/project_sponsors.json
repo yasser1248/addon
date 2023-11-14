@@ -9,11 +9,13 @@
  "field_order": [
   "sp_name",
   "sp_website",
+  "go_to_web_site",
   "sp_type",
   "contact_info_section",
   "sp_contact_person",
   "sp_contact_email",
-  "sp_contact_mobile"
+  "sp_contact_mobile",
+  "amended_from"
  ],
  "fields": [
   {
@@ -25,19 +27,19 @@
   {
    "fieldname": "sp_website",
    "fieldtype": "Data",
-   "label": "Sponsor Web Site "
+   "label": "Sponsor Web Site",
+   "options": "URL"
   },
   {
-   "default": "+966-",
    "fieldname": "sp_contact_person",
    "fieldtype": "Data",
-   "label": "Sponsor Contact Person",
-   "options": "Phone"
+   "label": "Sponsor Contact Person"
   },
   {
    "fieldname": "sp_contact_email",
    "fieldtype": "Data",
-   "label": "Sponsor Contact Email"
+   "label": "Sponsor Contact Email",
+   "options": "Email"
   },
   {
    "default": "+966-",
@@ -58,11 +60,26 @@
    "fieldname": "contact_info_section",
    "fieldtype": "Section Break",
    "label": "Contact Info"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Project Sponsors",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "go_to_web_site",
+   "fieldtype": "Button",
+   "hidden": 1,
+   "label": "Go To Web Site"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-11-14 09:58:03.322956",
+ "modified": "2023-11-14 12:20:03.467494",
  "modified_by": "Administrator",
  "module": "Pp Addon",
  "name": "Project Sponsors",
