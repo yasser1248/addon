@@ -1,0 +1,88 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-11-14 09:52:07.030092",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "sp_name",
+  "sp_website",
+  "sp_type",
+  "contact_info_section",
+  "sp_contact_person",
+  "sp_contact_email",
+  "sp_contact_mobile"
+ ],
+ "fields": [
+  {
+   "fieldname": "sp_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Sponsor Name"
+  },
+  {
+   "fieldname": "sp_website",
+   "fieldtype": "Data",
+   "label": "Sponsor Web Site "
+  },
+  {
+   "default": "+966-",
+   "fieldname": "sp_contact_person",
+   "fieldtype": "Data",
+   "label": "Sponsor Contact Person",
+   "options": "Phone"
+  },
+  {
+   "fieldname": "sp_contact_email",
+   "fieldtype": "Data",
+   "label": "Sponsor Contact Email"
+  },
+  {
+   "default": "+966-",
+   "fieldname": "sp_contact_mobile",
+   "fieldtype": "Data",
+   "label": "Sponsor Contact Mobile",
+   "options": "Phone"
+  },
+  {
+   "fieldname": "sp_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Sponsor Type",
+   "options": "\nGovernment\nPrivate",
+   "reqd": 1
+  },
+  {
+   "fieldname": "contact_info_section",
+   "fieldtype": "Section Break",
+   "label": "Contact Info"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-11-14 09:58:03.322956",
+ "modified_by": "Administrator",
+ "module": "Pp Addon",
+ "name": "Project Sponsors",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
