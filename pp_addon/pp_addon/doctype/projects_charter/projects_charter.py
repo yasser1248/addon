@@ -6,3 +6,7 @@ from frappe.model.document import Document
 
 class Projectscharter(Document):
 	pass
+
+
+import frappe
+frappe.scrub

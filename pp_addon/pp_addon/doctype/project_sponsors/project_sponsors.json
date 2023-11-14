@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "field:sp_name",
  "creation": "2023-11-14 09:52:07.030092",
  "default_view": "List",
  "doctype": "DocType",
@@ -22,7 +23,8 @@
    "fieldname": "sp_name",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Sponsor Name"
+   "label": "Sponsor Name",
+   "unique": 1
   },
   {
    "fieldname": "sp_website",
@@ -79,10 +81,12 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-11-14 12:20:03.467494",
+ "modified": "2023-11-14 15:28:18.546999",
  "modified_by": "Administrator",
  "module": "Pp Addon",
  "name": "Project Sponsors",
+ "name_case": "Title Case",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {
