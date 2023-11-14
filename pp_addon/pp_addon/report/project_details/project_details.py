@@ -38,10 +38,10 @@ def get_data(filters: dict) -> list[dict]:
 def get_columns(filters: dict, data: list[dict]) -> list[dict]:
     EXCLUDE_Fields = ["creation", "modified", "modified_by", "owner", "docstatus",
                     "idx", "_user_tags", "_comments", "_assign", "_liked_by", "project_name",
-                    "parent", "parentfield", "parenttype",]
+                    "parent", "parentfield", "parenttype", "project_id", "project"]
 
     columns = _get_columns(filters)
-
+    columns = [record for record in columns if record["fieldname"] not in EXCLUDE_Fields]
     # for record in data:
     #     for key, value in record.items():
     #         if key == "name":
