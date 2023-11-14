@@ -59,6 +59,7 @@
    "fieldname": "subject",
    "fieldtype": "Data",
    "in_global_search": 1,
+   "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Subject",
    "reqd": 1,
@@ -69,7 +70,6 @@
    "fieldname": "project",
    "fieldtype": "Link",
    "in_global_search": 1,
-   "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Project",
    "oldfieldname": "project",
@@ -94,7 +94,6 @@
    "default": "0",
    "fieldname": "is_group",
    "fieldtype": "Check",
-   "in_list_view": 1,
    "label": "Is Group"
   },
   {
@@ -114,7 +113,6 @@
    "bold": 1,
    "fieldname": "status",
    "fieldtype": "Select",
-   "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Status",
    "no_copy": 1,
@@ -125,7 +123,6 @@
   {
    "fieldname": "priority",
    "fieldtype": "Select",
-   "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Priority",
    "oldfieldname": "priority",
@@ -144,7 +141,6 @@
    "fieldname": "parent_task",
    "fieldtype": "Link",
    "ignore_user_permissions": 1,
-   "in_list_view": 1,
    "label": "Parent Task",
    "options": "Task",
    "search_index": 1
@@ -153,7 +149,6 @@
    "depends_on": "eval: doc.status == \"Completed\"",
    "fieldname": "completed_by",
    "fieldtype": "Link",
-   "in_list_view": 1,
    "label": "Completed By",
    "no_copy": 1,
    "options": "User"
@@ -162,7 +157,6 @@
    "depends_on": "eval: doc.status == \"Completed\"",
    "fieldname": "completed_on",
    "fieldtype": "Date",
-   "in_list_view": 1,
    "label": "Completed On",
    "mandatory_depends_on": "eval: doc.status == \"Completed\""
   },
@@ -176,7 +170,6 @@
   {
    "fieldname": "exp_start_date",
    "fieldtype": "Date",
-   "in_list_view": 1,
    "label": "Expected Start Date",
    "oldfieldname": "exp_start_date",
    "oldfieldtype": "Date"
@@ -185,7 +178,6 @@
    "default": "0",
    "fieldname": "expected_time",
    "fieldtype": "Float",
-   "in_list_view": 1,
    "label": "Expected Time (in hours)",
    "oldfieldname": "exp_total_hrs",
    "oldfieldtype": "Data"
@@ -194,7 +186,6 @@
    "depends_on": "is_template",
    "fieldname": "start",
    "fieldtype": "Int",
-   "in_list_view": 1,
    "label": "Begin On (Days)"
   },
   {
@@ -205,7 +196,6 @@
    "bold": 1,
    "fieldname": "exp_end_date",
    "fieldtype": "Date",
-   "in_list_view": 1,
    "label": "Expected End Date",
    "oldfieldname": "exp_end_date",
    "oldfieldtype": "Date",
@@ -214,7 +204,6 @@
   {
    "fieldname": "progress",
    "fieldtype": "Percent",
-   "in_list_view": 1,
    "label": "% Progress",
    "no_copy": 1
   },
@@ -222,14 +211,12 @@
    "depends_on": "is_template",
    "fieldname": "duration",
    "fieldtype": "Int",
-   "in_list_view": 1,
    "label": "Duration (Days)"
   },
   {
    "default": "0",
    "fieldname": "is_milestone",
    "fieldtype": "Check",
-   "in_list_view": 1,
    "label": "Is Milestone"
   },
   {
@@ -276,7 +263,6 @@
   {
    "fieldname": "act_start_date",
    "fieldtype": "Date",
-   "in_list_view": 1,
    "label": "Actual Start Date (via Time Sheet)",
    "oldfieldname": "act_start_date",
    "oldfieldtype": "Date",
@@ -295,7 +281,6 @@
   {
    "fieldname": "act_end_date",
    "fieldtype": "Date",
-   "in_list_view": 1,
    "label": "Actual End Date (via Time Sheet)",
    "oldfieldname": "act_end_date",
    "oldfieldtype": "Date",
@@ -310,7 +295,6 @@
   {
    "fieldname": "total_costing_amount",
    "fieldtype": "Float",
-   "in_list_view": 1,
    "label": "Total Costing Amount (via Time Sheet)",
    "oldfieldname": "actual_budget",
    "oldfieldtype": "Currency",
@@ -319,7 +303,6 @@
   {
    "fieldname": "total_expense_claim",
    "fieldtype": "Float",
-   "in_list_view": 1,
    "label": "Total Expense Claim (via Expense Claim)",
    "read_only": 1
   },
@@ -399,7 +382,7 @@
  "is_tree": 1,
  "links": [],
  "max_attachments": 5,
- "modified": "2023-10-11 08:44:42.300290",
+ "modified": "2023-11-14 17:37:23.629394",
  "modified_by": "Administrator",
  "module": "Pp Addon",
  "name": "Task",
