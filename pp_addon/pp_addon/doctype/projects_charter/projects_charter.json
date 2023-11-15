@@ -208,7 +208,9 @@
   },
   {
    "fieldname": "section_break_yn8ig",
-   "fieldtype": "Section Break"
+   "fieldtype": "Section Break",
+   "hidden": 1,
+   "read_only": 1
   },
   {
    "fieldname": "projects_milestone",
@@ -235,7 +237,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-11-15 11:34:26.404200",
+ "modified": "2023-11-15 16:52:43.535774",
  "modified_by": "Administrator",
  "module": "Pp Addon",
  "name": "Projects charter",
