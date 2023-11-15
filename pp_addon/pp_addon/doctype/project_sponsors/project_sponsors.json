@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "field:sp_name",
  "creation": "2023-11-14 09:52:07.030092",
  "default_view": "List",
  "doctype": "DocType",
@@ -9,35 +10,38 @@
  "field_order": [
   "sp_name",
   "sp_website",
+  "go_to_web_site",
   "sp_type",
   "contact_info_section",
   "sp_contact_person",
   "sp_contact_email",
-  "sp_contact_mobile"
+  "sp_contact_mobile",
+  "amended_from"
  ],
  "fields": [
   {
    "fieldname": "sp_name",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Sponsor Name"
+   "label": "Sponsor Name",
+   "unique": 1
   },
   {
    "fieldname": "sp_website",
    "fieldtype": "Data",
-   "label": "Sponsor Web Site "
+   "label": "Sponsor Web Site",
+   "options": "URL"
   },
   {
-   "default": "+966-",
    "fieldname": "sp_contact_person",
    "fieldtype": "Data",
-   "label": "Sponsor Contact Person",
-   "options": "Phone"
+   "label": "Sponsor Contact Person"
   },
   {
    "fieldname": "sp_contact_email",
    "fieldtype": "Data",
-   "label": "Sponsor Contact Email"
+   "label": "Sponsor Contact Email",
+   "options": "Email"
   },
   {
    "default": "+966-",
@@ -58,14 +62,31 @@
    "fieldname": "contact_info_section",
    "fieldtype": "Section Break",
    "label": "Contact Info"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Project Sponsors",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "go_to_web_site",
+   "fieldtype": "Button",
+   "hidden": 1,
+   "label": "Go To Web Site"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-11-14 09:58:03.322956",
+ "modified": "2023-11-14 15:28:18.546999",
  "modified_by": "Administrator",
  "module": "Pp Addon",
  "name": "Project Sponsors",
+ "name_case": "Title Case",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {

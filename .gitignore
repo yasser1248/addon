@@ -4,4 +4,10 @@
 *.swp
 tags
 pp_addon/docs/current
+__pycache__/
 # node_modules/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class

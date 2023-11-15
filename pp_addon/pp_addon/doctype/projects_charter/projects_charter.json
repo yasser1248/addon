@@ -17,6 +17,11 @@
   "expected_life_of_the_project",
   "description",
   "project_end_date",
+  "section_break_yn8ig",
+  "projects_milestone",
+  "projects_risks",
+  "column_break_lma35",
+  "project_quality",
   "scope_section",
   "scope",
   "required_business_section",
@@ -66,7 +71,7 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Project sponsor",
-   "options": "Stakholder",
+   "options": "Project Sponsors",
    "reqd": 1
   },
   {
@@ -199,11 +204,37 @@
    "fieldname": "upload_attach",
    "fieldtype": "Attach",
    "label": "Upload Attach"
+  },
+  {
+   "fieldname": "section_break_yn8ig",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "projects_milestone",
+   "fieldtype": "Link",
+   "label": "Projects Milestone",
+   "options": "Projects Milestone"
+  },
+  {
+   "fieldname": "projects_risks",
+   "fieldtype": "Link",
+   "label": "Projects Risks",
+   "options": "Projects Risks"
+  },
+  {
+   "fieldname": "column_break_lma35",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "project_quality",
+   "fieldtype": "Link",
+   "label": "Project quality",
+   "options": "Project quality"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-11-09 14:27:41.508451",
+ "modified": "2023-11-14 15:24:42.204042",
  "modified_by": "Administrator",
  "module": "Pp Addon",
  "name": "Projects charter",
