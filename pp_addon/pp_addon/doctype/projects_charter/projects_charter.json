@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "PC-.project.-.####.",
  "creation": "2023-01-16 20:32:32.325026",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -234,10 +235,11 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-11-14 15:24:42.204042",
+ "modified": "2023-11-15 11:34:26.404200",
  "modified_by": "Administrator",
  "module": "Pp Addon",
  "name": "Projects charter",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

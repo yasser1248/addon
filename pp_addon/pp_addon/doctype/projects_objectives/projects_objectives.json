@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "PO-.project.-.####.",
  "creation": "2023-11-12 15:07:00.653952",
  "default_view": "List",
  "doctype": "DocType",
@@ -47,10 +48,11 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-11-12 15:07:00.653952",
+ "modified": "2023-11-15 11:37:07.211042",
  "modified_by": "Administrator",
  "module": "Pp Addon",
  "name": "Projects Objectives",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

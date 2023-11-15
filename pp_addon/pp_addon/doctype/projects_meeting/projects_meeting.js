@@ -22,5 +22,13 @@ frappe.ui.form.on('Projects Meeting', {
 	// refresh:function(frm){
 		
 	// }
+
+	send_summary: function(frm) {
+		frappe.call({
+			method: "send_summary",
+			doc : frm.doc,
+			callback: (r) => {console.log(r);},
+		});
+	}
 });
 
