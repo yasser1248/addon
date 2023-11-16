@@ -22,5 +22,3 @@ class ProjectsMeeting(Document):
                 method=frappe.sendmail, queue="short", timeout=300, now=True,
                 **email_kwargs,
             )
-
-# [{'email': 'oy7104745@gmail.com'}, {'email': 'dev7.itsystematic@gmail.com'}]

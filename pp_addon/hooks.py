@@ -102,6 +102,9 @@ app_license = "MIT"
 # ---------------
 
 scheduler_events = {
+    "cron": {
+        "*/1 * * * *": ["pp_addon.scheduler_tasks.projects_meeting.check_completed_meetings"],
+    },
     #  "cron":{
     #     "06 * * * *":["pp_addon.tasks.cron"]
 	#  },

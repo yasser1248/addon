@@ -23,8 +23,8 @@ frappe.ui.form.on('Projects Meeting', {
 		
 	// }
 
-	send_summary: function(frm) {
-		frappe.call({
+	send_summary: async function(frm) {
+		await frappe.call({
 			method: "send_summary",
 			doc : frm.doc,
 			callback: (r) => {console.log(r);},
