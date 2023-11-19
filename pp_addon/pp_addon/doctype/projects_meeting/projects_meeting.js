@@ -29,6 +29,10 @@ frappe.ui.form.on('Projects Meeting', {
 			doc : frm.doc,
 			callback: (r) => {console.log(r);},
 		});
-	}
+	},
+
+	after_save: function(frm) {
+		frm.set_df_property("start_meeting", "hidden", 0);
+	},
 });
 

@@ -51,6 +51,7 @@
   {
    "fieldname": "start_meeting",
    "fieldtype": "Button",
+   "hidden": 1,
    "label": "Start Meeting"
   },
   {
@@ -149,7 +150,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-11-16 10:38:26.571134",
+ "modified": "2023-11-19 11:17:43.510868",
  "modified_by": "Administrator",
  "module": "Pp Addon",
  "name": "Projects Meeting",
