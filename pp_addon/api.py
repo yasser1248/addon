@@ -1,3 +1,5 @@
+import json
+
 import frappe
 from pp_addon.utils import send_mail
 
@@ -16,3 +18,21 @@ def send_to_participate(**args):
             """
             send_mail( doc,doc.email,msg=msg,title="Project Meeting")
     return "Meeting Link sent to participate members"
+
+@frappe.whitelist()
+def auto_save_doc(*args, **kwargs) -> None:
+    "autosave the document"
+    print(kwargs.get("obj"))
+    doc = frappe.get_doc(json.loads(kwargs.get("obj")))
+    print(doc)
+    try:
+        missing = doc._get_missing_mandatory_fields()
+        for d in doc.get_all_children():
+            missing.extend(d._get_missing_mandatory_fields())
+        if missing:
+            return 0
+        doc.save()
+        doc.reload()
+    except Exception as e:
+        print("--> ", e)
+    return {"status": 1, "name": doc.get("name")}

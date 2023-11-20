@@ -14,7 +14,7 @@ app_license = "MIT"
 
 # include js, css files in header of desk.html
 # app_include_css = "/assets/pp_addon/css/pp_addon.css"
-# app_include_js = "/assets/pp_addon/js/pp_addon.js"
+app_include_js = "/assets/pp_addon/js/form.js" # "/assets/pp_addon/js/pp_addon.js"
 
 # include js, css files in header of web template
 # web_include_css = "/assets/pp_addon/css/pp_addon.css"
