@@ -20,10 +20,13 @@
   "kick_of_meeting_document",
   "meeting_elements",
   "elements",
+  "column_break_rgcf",
   "participate",
+  "column_break_kopw",
   "desction",
-  "meeting_summary",
   "send_summary",
+  "section_break_odbj",
+  "meeting_summary",
   "meeting_done"
  ],
  "fields": [
@@ -146,11 +149,23 @@
    "hidden": 1,
    "label": "Meeting Done",
    "read_only": 1
+  },
+  {
+   "fieldname": "column_break_rgcf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_kopw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_odbj",
+   "fieldtype": "Section Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-11-19 11:17:43.510868",
+ "modified": "2023-11-20 11:46:54.948795",
  "modified_by": "Administrator",
  "module": "Pp Addon",
  "name": "Projects Meeting",
