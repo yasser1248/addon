@@ -102,9 +102,9 @@ app_include_js = "/assets/pp_addon/js/form.js" # "/assets/pp_addon/js/pp_addon.j
 # ---------------
 
 scheduler_events = {
-    "cron": {
-        "*/1 * * * *": ["pp_addon.scheduler_tasks.projects_meeting.check_completed_meetings"],
-    },
+    "all": [
+        "pp_addon.scheduler_tasks.projects_meeting.check_completed_meetings"
+    ],
     #  "cron":{
     #     "06 * * * *":["pp_addon.tasks.cron"]
 	#  },

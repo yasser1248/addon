@@ -27,7 +27,8 @@
   "send_summary",
   "section_break_odbj",
   "meeting_summary",
-  "meeting_done"
+  "meeting_done",
+  "invitation_sent"
  ],
  "fields": [
   {
@@ -161,11 +162,19 @@
   {
    "fieldname": "section_break_odbj",
    "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "invitation_sent",
+   "fieldtype": "Check",
+   "hidden": 1,
+   "label": "Invitation Sent",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-11-20 11:46:54.948795",
+ "modified": "2023-11-20 15:42:06.814274",
  "modified_by": "Administrator",
  "module": "Pp Addon",
  "name": "Projects Meeting",
