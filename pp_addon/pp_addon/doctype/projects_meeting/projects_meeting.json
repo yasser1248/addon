@@ -7,10 +7,12 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "meeting_done",
   "project",
   "meeting_date",
   "meeting_title",
   "start_meeting",
+  "status",
   "column_break_4",
   "project_name",
   "meeting_manager",
@@ -24,10 +26,9 @@
   "participate",
   "column_break_kopw",
   "desction",
-  "send_summary",
   "section_break_odbj",
   "meeting_summary",
-  "meeting_done",
+  "send_summary",
   "invitation_sent"
  ],
  "fields": [
@@ -93,7 +94,7 @@
    "bold": 1,
    "fieldname": "elements",
    "fieldtype": "Table",
-   "label": "Elements",
+   "label": "Meeting Agenda",
    "options": "Projects Meeting Melement"
   },
   {
@@ -105,9 +106,10 @@
   },
   {
    "bold": 1,
+   "depends_on": "eval:doc.meeting_done;",
    "fieldname": "desction",
    "fieldtype": "Table",
-   "label": "Desction",
+   "label": "Discussion",
    "options": "Projects Meeting Desction"
   },
   {
@@ -145,11 +147,10 @@
   },
   {
    "default": "0",
+   "depends_on": "eval: doc.status == \"Invited\";",
    "fieldname": "meeting_done",
    "fieldtype": "Check",
-   "hidden": 1,
-   "label": "Meeting Done",
-   "read_only": 1
+   "label": "Meeting Done"
   },
   {
    "fieldname": "column_break_rgcf",
@@ -170,11 +171,20 @@
    "hidden": 1,
    "label": "Invitation Sent",
    "read_only": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_standard_filter": 1,
+   "label": "Status",
+   "no_copy": 1,
+   "options": "Before\nInvited\nAfter\nPrint"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-11-20 15:42:06.814274",
+ "modified": "2023-11-22 11:44:09.591188",
  "modified_by": "Administrator",
  "module": "Pp Addon",
  "name": "Projects Meeting",

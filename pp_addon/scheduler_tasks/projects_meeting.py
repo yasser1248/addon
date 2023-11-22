@@ -12,6 +12,6 @@ def check_completed_meetings():
                                             filters={"meeting_done": 0}, fields=["name", "meeting_date"])
     for doc in PM_with_status_zero:
         if now_datetime() > doc["meeting_date"]:
-            frappe.set_value(doctype="Projects Meeting", docname=doc["name"],
-                            fieldname="meeting_done", value=1)
+            frappe.set_value("Projects Meeting", doc["name"],
+                            {"meeting_done": 1, "status": "After"})
             frappe.db.commit()
