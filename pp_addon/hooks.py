@@ -9,12 +9,27 @@ app_color = "grey"
 app_email = "mabualata1@gmail.com"
 app_license = "MIT"
 
+# node_modules
+# ____________
+
+node_modules = {
+	'frappe-gantt': {
+		'js': [
+			'assets/pp_addon/node_modules/frappe-gantt/dist/frappe-gantt.min.js',
+			'assets/pp_addon/node_modules/frappe-gantt/dist/frappe-gantt.js',
+		],
+        'css': [
+			'assets/pp_addon/node_modules/frappe-gantt/dist/frappe-gantt.min.css',
+		],
+	}
+}
+
 # Includes in <head>
 # ------------------
 
 # include js, css files in header of desk.html
-# app_include_css = "/assets/pp_addon/css/pp_addon.css"
-app_include_js = "/assets/pp_addon/js/form.js" # "/assets/pp_addon/js/pp_addon.js"
+app_include_css = node_modules.get("frappe-gantt").get("css") # "/assets/pp_addon/css/pp_addon.css"
+app_include_js = ["/assets/pp_addon/js/form.js", "/assets/pp_addon/js/gantt_view.js",] + node_modules.get("frappe-gantt").get("js") # "/assets/pp_addon/js/pp_addon.js"
 
 # include js, css files in header of web template
 # web_include_css = "/assets/pp_addon/css/pp_addon.css"
@@ -141,9 +156,9 @@ scheduler_events = {
 # override_whitelisted_methods={
 # 	"frappe.public.js.frappe.ui.page.add_button":"pp_addon.event.overrides"
 # }
-# override_whitelisted_methods = {
-# 	"frappe.desk.doctype.event.event.get_events": "pp_addon.event.get_events"
-# }
+override_whitelisted_methods = {
+	"frappe.desk.reportview.get": "pp_addon.override.whitelisted_methods.reportview.get",
+}
 #
 # each overriding function accepts a `data` argument;
 # generated from the base implementation of the doctype dashboard,
@@ -213,3 +228,6 @@ fixtures = [
     # },
 ]
 
+calendars = [
+	"Task",
+]

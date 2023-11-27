@@ -382,7 +382,7 @@
  "is_tree": 1,
  "links": [],
  "max_attachments": 5,
- "modified": "2023-11-14 17:37:23.629394",
+ "modified": "2023-11-26 17:34:06.161917",
  "modified_by": "Administrator",
  "module": "Pp Addon",
  "name": "Task",
@@ -402,6 +402,7 @@
    "write": 1
   }
  ],
+ "quick_entry": 1,
  "search_fields": "subject",
  "show_name_in_global_search": 1,
  "show_preview_popup": 1,
