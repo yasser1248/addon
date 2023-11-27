@@ -21,15 +21,23 @@ node_modules = {
         'css': [
 			'assets/pp_addon/node_modules/frappe-gantt/dist/frappe-gantt.min.css',
 		],
-	}
+	},
+	'dhtmlx-gantt': {
+		'js': [
+			'assets/pp_addon/node_modules/dhtmlx-gantt/codebase/dhtmlxgantt.js',
+		],
+        'css': [
+			'assets/pp_addon/node_modules/dhtmlx-gantt/codebase/dhtmlxgantt.css',
+		],
+	},
 }
 
 # Includes in <head>
 # ------------------
 
 # include js, css files in header of desk.html
-app_include_css = node_modules.get("frappe-gantt").get("css") # "/assets/pp_addon/css/pp_addon.css"
-app_include_js = ["/assets/pp_addon/js/form.js", "/assets/pp_addon/js/gantt_view.js",] + node_modules.get("frappe-gantt").get("js") # "/assets/pp_addon/js/pp_addon.js"
+app_include_css = node_modules.get("frappe-gantt").get("css") + node_modules.get("dhtmlx-gantt").get("css") # "/assets/pp_addon/css/pp_addon.css"
+app_include_js = ["/assets/pp_addon/js/form.js", "/assets/pp_addon/js/gantt_view.js",] + node_modules.get("frappe-gantt").get("js") + node_modules.get("dhtmlx-gantt").get("js") # "/assets/pp_addon/js/pp_addon.js"
 
 # include js, css files in header of web template
 # web_include_css = "/assets/pp_addon/css/pp_addon.css"
