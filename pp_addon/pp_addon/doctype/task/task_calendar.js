@@ -16,10 +16,7 @@ frappe.views.calendar["Task"] = {
 			"options": "Project",
 			"label": __("Project"),
             order_by: 'starts_on',
-
 		}
-        
-
 	],
     style_map: {
         Public: 'success',
