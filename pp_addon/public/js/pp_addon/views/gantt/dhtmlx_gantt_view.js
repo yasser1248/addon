@@ -123,7 +123,7 @@ frappe.views.DHTMLXGanttView = class DHTMLXGanttView extends frappe.views.ListVi
 		this.$result.empty();
 		this.$result.addClass("gantt-modern");
 		this.$result.attr("id", "gantt-modern");
-		this.$result.attr("style", "width:100%; height:100vh;");
+		// this.$result.attr("style", "width:100%; height:100vh;");
 
 		// initialize gantt
 		// gantt.config.fit_tasks = true; 
@@ -191,6 +191,7 @@ frappe.views.DHTMLXGanttView = class DHTMLXGanttView extends frappe.views.ListVi
 		});
 
 		gantt.attachEvent("onAfterTaskAdd", function(id,item){
+			// Checks
 			if (!me.can_write) return;
 			// Handle multiple events
 			if (frappe.flags.callServer === false) {
@@ -216,7 +217,7 @@ frappe.views.DHTMLXGanttView = class DHTMLXGanttView extends frappe.views.ListVi
 				error: (r) => { console.log(r.message) },
 			});
 		});
-	
+
 		// this.setup_view_mode_buttons();
 		// this.set_colors();
 	}

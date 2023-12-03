@@ -31,17 +31,6 @@ def on_after_task_add(*args, **kwargs) -> dict:
     if not kwargs.get("item"):
         return {}
     item = json.loads(kwargs.get("item"))
-    print(item)
-    # if frappe.db.exists({
-    #     "doctype": kwargs.get("doctype"),
-    #     "subject": item.get("text"),
-    #     "parent_task": item.get("parent") if item.get("parent") else None,
-    #     "exp_start_date": get_date_str(item.get("start_date")),
-    #     "exp_end_date": get_date_str(item.get("end_date")),
-    #     "progress": item.get("progress"),
-    # }):
-    #     return {}
-    # try:
     doc = frappe.get_doc(
         {
             "doctype": kwargs.get("doctype"),
@@ -53,7 +42,22 @@ def on_after_task_add(*args, **kwargs) -> dict:
         },
     )
     doc.save()
-    # except Exception as e:
-    #     print(e)
-    # else:
+    return doc
+
+
+@frappe.whitelist()
+def on_after_task_update(*args, **kwargs) -> dict:
+    """Update task from gantt view"""
+    if not kwargs.get("item"):
+        return {}
+    item = json.loads(kwargs.get("item"))
+    doc = frappe.get_doc(item.get("doctype"), kwargs.get("id"))
+    doc.update({
+        "subject": item.get("text"),
+        "parent_task": item.get("parent") if item.get("parent") else None,
+        "exp_start_date": get_date_str(item.get("start_date")),
+        "exp_end_date": get_date_str(item.get("end_date")),
+        "progress": item.get("progress"),
+    })
+    doc.save()
     return doc
