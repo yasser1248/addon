@@ -53,7 +53,7 @@ def on_after_task_update(*args, **kwargs) -> dict:
     item = json.loads(kwargs.get("item"))
     doc = frappe.get_doc(item.get("doctype"), kwargs.get("id"))
     doc.update({
-        "subject": item.get("text"),
+        # "subject": item.get("text"),
         "parent_task": item.get("parent") if item.get("parent") else None,
         "exp_start_date": get_date_str(item.get("start_date")),
         "exp_end_date": get_date_str(item.get("end_date")),

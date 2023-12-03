@@ -218,6 +218,30 @@ frappe.views.DHTMLXGanttView = class DHTMLXGanttView extends frappe.views.ListVi
 			});
 		});
 
+		gantt.attachEvent("onAfterTaskUpdate", function(id,item){
+			// Checks
+			if (!me.can_write) return;
+			// Handle multiple events
+			if (frappe.flags.callServer === false) {
+				frappe.flags.callServer = true;
+			}
+			else {
+				return;
+			}
+
+			frappe.call({
+				method: "pp_addon.public.js.pp_addon.views.gantt.gantt_apis.on_after_task_update",
+				args: { doctype: me.doctype, item: item, id: id, },
+				callback: (r) => {
+					if (Object.keys(r.message).length > 0) {
+						console.log(r.message);
+						frappe.flags.callServer = false;
+					}
+				},
+				error: (r) => { console.log(r.message); }
+			});
+		});
+
 		// this.setup_view_mode_buttons();
 		// this.set_colors();
 	}
