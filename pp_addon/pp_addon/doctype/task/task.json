@@ -220,6 +220,7 @@
    "label": "Is Milestone"
   },
   {
+   "collapsible": 1,
    "fieldname": "sb_details",
    "fieldtype": "Section Break",
    "label": "Details",
@@ -382,7 +383,7 @@
  "is_tree": 1,
  "links": [],
  "max_attachments": 5,
- "modified": "2023-11-26 17:34:06.161917",
+ "modified": "2023-12-04 11:57:21.510479",
  "modified_by": "Administrator",
  "module": "Pp Addon",
  "name": "Task",

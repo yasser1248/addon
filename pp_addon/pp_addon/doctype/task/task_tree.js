@@ -82,8 +82,8 @@ function click_edit_node(node, btn) {
                 });
                 d.show();
                 setTimeout(() => {
-                    dragElement(document.getElementsByClassName("modal")[0]);
-                }, 2 * 1000);
+                    dragElement(document.getElementsByClassName("modal-content")[0]);
+                }, 1 * 1000);
             }
         },
         error: (r) => {console.log(r);},
