@@ -1,45 +1,41 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:Qy_{organization}_{department}",
- "creation": "2023-01-16 20:55:07.437422",
+ "autoname": "format:Qy_{standard}",
+ "creation": "2023-12-05 13:00:19.988159",
  "doctype": "DocType",
- "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "department_section",
-  "department",
-  "organization"
+  "standards_section",
+  "standard",
+  "weight"
  ],
  "fields": [
   {
-   "fieldname": "department",
+   "fieldname": "standards_section",
+   "fieldtype": "Section Break",
+   "label": "Standards"
+  },
+  {
+   "fieldname": "standard",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Department",
-   "reqd": 1,
-   "unique": 1
+   "label": "Standard",
+   "reqd": 1
   },
   {
-   "fieldname": "department_section",
-   "fieldtype": "Section Break",
-   "label": "Department"
-  },
-  {
-   "depends_on": "eval: doc.department;",
-   "fieldname": "organization",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Organization",
-   "options": "Organization"
+   "fieldname": "weight",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "label": "Weight"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-12-05 12:52:43.582289",
+ "modified": "2023-12-05 13:03:29.676914",
  "modified_by": "Administrator",
  "module": "Pp Addon",
- "name": "Department",
+ "name": "Standards",
  "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [

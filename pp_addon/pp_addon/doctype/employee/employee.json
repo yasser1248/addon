@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:{employee_id}---{employee_name}",
+ "autoname": "format:{employee_id}.{employee_name}",
  "creation": "2023-01-16 14:29:23.512803",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -44,12 +44,13 @@
   {
    "fieldname": "email",
    "fieldtype": "Data",
-   "label": "Email"
+   "label": "Email",
+   "options": "Email"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-09-21 15:07:35.193309",
+ "modified": "2023-12-05 12:56:44.415338",
  "modified_by": "Administrator",
  "module": "Pp Addon",
  "name": "Employee",

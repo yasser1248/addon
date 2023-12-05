@@ -1,45 +1,34 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:Qy_{organization}_{department}",
- "creation": "2023-01-16 20:55:07.437422",
+ "autoname": "format:Qy_{organization}",
+ "creation": "2023-12-05 12:43:14.147704",
  "doctype": "DocType",
- "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "department_section",
-  "department",
+  "organization_section",
   "organization"
  ],
  "fields": [
   {
-   "fieldname": "department",
+   "fieldname": "organization_section",
+   "fieldtype": "Section Break",
+   "label": "Organization"
+  },
+  {
+   "fieldname": "organization",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Department",
-   "reqd": 1,
-   "unique": 1
-  },
-  {
-   "fieldname": "department_section",
-   "fieldtype": "Section Break",
-   "label": "Department"
-  },
-  {
-   "depends_on": "eval: doc.department;",
-   "fieldname": "organization",
-   "fieldtype": "Link",
-   "in_list_view": 1,
    "label": "Organization",
-   "options": "Organization"
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-12-05 12:52:43.582289",
+ "modified": "2023-12-05 12:54:06.577450",
  "modified_by": "Administrator",
  "module": "Pp Addon",
- "name": "Department",
+ "name": "Organization",
  "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
