@@ -9,4 +9,4 @@ import pp_addon.model.delete_doc
 
 # Monkey patch to allow Cascading deletion
 
-frappe.model.delete_doc = pp_addon.model.delete_doc
+# frappe.model.delete_doc = pp_addon.model.delete_doc
