@@ -13,33 +13,44 @@ app_license = "MIT"
 # ____________
 
 node_modules = {
-	'frappe-gantt': {
-		'js': [
-			'assets/pp_addon/node_modules/frappe-gantt/dist/frappe-gantt.min.js',
-			'assets/pp_addon/node_modules/frappe-gantt/dist/frappe-gantt.js',
-		],
-        'css': [
-			'assets/pp_addon/node_modules/frappe-gantt/dist/frappe-gantt.min.css',
-		],
-	},
-	'dhtmlx-gantt': {
-		'js': [
-			'assets/pp_addon/node_modules/dhtmlx-gantt/codebase/dhtmlxgantt.js',
-		],
-        'css': [
-			'assets/pp_addon/node_modules/dhtmlx-gantt/codebase/dhtmlxgantt.css',
-		],
-	},
+    "frappe-gantt": {
+        "js": [
+            "assets/pp_addon/node_modules/frappe-gantt/dist/frappe-gantt.min.js",
+            "assets/pp_addon/node_modules/frappe-gantt/dist/frappe-gantt.js",
+        ],
+        "css": [
+            "assets/pp_addon/node_modules/frappe-gantt/dist/frappe-gantt.min.css",
+        ],
+    },
+    "dhtmlx-gantt": {
+        "js": [
+            "assets/pp_addon/node_modules/dhtmlx-gantt/codebase/dhtmlxgantt.js",
+        ],
+        "css": [
+            "assets/pp_addon/node_modules/dhtmlx-gantt/codebase/dhtmlxgantt.css",
+        ],
+    },
 }
 
 # Includes in <head>
 # ------------------
 
 # include js, css files in header of desk.html
-app_include_css = node_modules.get("frappe-gantt").get("css") + node_modules.get("dhtmlx-gantt").get("css") # "/assets/pp_addon/css/pp_addon.css"
-app_include_js = ["/assets/pp_addon/js/form.js", "/assets/pp_addon/js/gantt_view.js", "/assets/pp_addon/js/pp_addon/views/gantt/dhtmlx_gantt_view.js", "/assets/pp_addon/js/pp_addon/views/list_factory.js"] \
-				+ node_modules.get("frappe-gantt").get("js") \
-				+ node_modules.get("dhtmlx-gantt").get("js") # "/assets/pp_addon/js/pp_addon.js"
+app_include_css = node_modules.get("frappe-gantt").get("css") + node_modules.get(
+    "dhtmlx-gantt"
+).get(
+    "css"
+)  # "/assets/pp_addon/css/pp_addon.css"
+app_include_js = (
+    [
+        "/assets/pp_addon/js/form.js",
+        "/assets/pp_addon/js/gantt_view.js",
+        "/assets/pp_addon/js/pp_addon/views/gantt/dhtmlx_gantt_view.js",
+        "/assets/pp_addon/js/pp_addon/views/list_factory.js",
+    ]
+    + node_modules.get("frappe-gantt").get("js")
+    + node_modules.get("dhtmlx-gantt").get("js")
+)  # "/assets/pp_addon/js/pp_addon.js"
 
 # include js, css files in header of web template
 # web_include_css = "/assets/pp_addon/css/pp_addon.css"
@@ -70,7 +81,7 @@ app_include_js = ["/assets/pp_addon/js/form.js", "/assets/pp_addon/js/gantt_view
 
 # website user home page (by Role)
 # role_home_page = {
-#	"Role": "home_page"
+# 	"Role": "home_page"
 # }
 
 # Generators
@@ -120,40 +131,34 @@ app_include_js = ["/assets/pp_addon/js/form.js", "/assets/pp_addon/js/gantt_view
 # 		"on_update": "method",
 # 		"on_cancel": "method",
 # 		"on_trash": "method"
-#	}
+# 	}
 # }
 
 # Scheduled Tasks
 # ---------------
 
 scheduler_events = {
-    "all": [
-        "pp_addon.scheduler_tasks.projects_meeting.check_completed_meetings"
-    ],
+    "all": ["pp_addon.scheduler_tasks.projects_meeting.check_completed_meetings"],
     #  "cron":{
     #     "06 * * * *":["pp_addon.tasks.cron"]
-	#  },
+    #  },
     #  "cron":{
     #     "07 * * * *":["pp_addon.tasks.cron"]
-	#  },
-     "cron":{
-        "01 00 * * *":["pp_addon.tasks.cron"]
-	 },
-# 	"all": [
-# 		"pp_addon.tasks.all"
-# 	],
-	"daily": [
-		"pp_addon.tasks.daily"
-	],
-# 	"hourly": [
-# 		"pp_addon.tasks.hourly"
-# 	],
-# 	"weekly": [
-# 		"pp_addon.tasks.weekly"
-# 	]
-# 	"monthly": [
-# 		"pp_addon.tasks.monthly"
-# 	]
+    #  },
+    "cron": {"01 00 * * *": ["pp_addon.tasks.cron"]},
+    # 	"all": [
+    # 		"pp_addon.tasks.all"
+    # 	],
+    "daily": ["pp_addon.tasks.daily"],
+    # 	"hourly": [
+    # 		"pp_addon.tasks.hourly"
+    # 	],
+    # 	"weekly": [
+    # 		"pp_addon.tasks.weekly"
+    # 	]
+    # 	"monthly": [
+    # 		"pp_addon.tasks.monthly"
+    # 	]
 }
 
 # Testing
@@ -186,24 +191,22 @@ scheduler_events = {
 # --------------------
 
 user_data_fields = [
-	{
-		"doctype": "{doctype_1}",
-		"filter_by": "{filter_by}",
-		"redact_fields": ["{field_1}", "{field_2}"],
-		"partial": 1,
-	},
-	{
-		"doctype": "{doctype_2}",
-		"filter_by": "{filter_by}",
-		"partial": 1,
-	},
-	{
-		"doctype": "{doctype_3}",
-		"strict": False,
-	},
-	{
-		"doctype": "{doctype_4}"
-	}
+    {
+        "doctype": "{doctype_1}",
+        "filter_by": "{filter_by}",
+        "redact_fields": ["{field_1}", "{field_2}"],
+        "partial": 1,
+    },
+    {
+        "doctype": "{doctype_2}",
+        "filter_by": "{filter_by}",
+        "partial": 1,
+    },
+    {
+        "doctype": "{doctype_3}",
+        "strict": False,
+    },
+    {"doctype": "{doctype_4}"},
 ]
 
 # Authentication and authorization
@@ -215,18 +218,12 @@ user_data_fields = [
 fixtures = [
     {
         "dt": ("Property Setter"),
-        "filters": [["doc_type", "in", ("Kanban Board")],
-                    ["field_name","in",(
-                        "kanban_board_name",
-                        
-                        )]
-                    
-                    ]
+        "filters": [
+            ["doc_type", "in", ("Kanban Board")],
+            ["field_name", "in", ("kanban_board_name",)],
+        ],
     },
-    {
-        "dt": ("Kanban Board"),
-        "filters": [["kanban_board_name", "in", ("Task")]]
-    },
+    {"dt": ("Kanban Board"), "filters": [["kanban_board_name", "in", ("Task")]]},
     # {
     #     "dt": ("Custom Field"),
     #     "filters": [["dt", "in", ("", "", "")]]
@@ -239,5 +236,94 @@ fixtures = [
 ]
 
 calendars = [
-	"Task",
+    "Task",
 ]
+
+# To ignore links to specific DocTypes when deleting documents
+# ignore_links_on_delete
+# ------------------------------------------------------------
+
+doctypes = [
+    "Department",
+    "Standard Item",
+    "Standards Group",
+    "Standards",
+    "Employee",
+    "Organization",
+    "Projects Meeting",
+    "Task",
+    "Projects Meeting Desction",
+    "Vendor",
+    "Project items",
+    "Projects Objectives",
+    "Vend employee",
+    "Projects charter",
+    "Project Sponsors",
+    "Projects Objectives Child",
+    "Project",
+    "Project payment",
+    "Stakholder",
+    "Kick of Meeting Documents",
+    "pp1",
+    "Projects Tender",
+    "Project close",
+    "Project close child",
+    "Project Qtable",
+    "Project stakholder",
+    "Project Phase",
+    "Projects Risks child",
+    "Project Risk type",
+    "Project learn child3",
+    "Project learn child2",
+    "Task type",
+    "Actions",
+    "Transaction child",
+    "Project Document Type",
+    "Stakholder Role",
+    "Performance type",
+    "Item type",
+    "Project status",
+    "Position",
+    "Project Catogery",
+    "Project learning lesson",
+    "Project learn child4",
+    "Project learn child1",
+    "Project team asses",
+    "Project change",
+    "Projects Achievement scene",
+    "Type of asses",
+    "project team ass child",
+    "Project Meeting Participate",
+    "Projects Meeting Melement",
+    "Project quality",
+    "Projects Bidding",
+    "Projects Deliverable",
+    "Projects study",
+    "Projects Risks",
+    "Projects Milestone",
+    "Projects Milestone child",
+    "Project quality rules",
+    "Project labor",
+    "Project change approve",
+    "Tender company",
+    "Project Document Child",
+    "Project Document",
+    "Dependent task",
+    "Project quality metrices",
+    "Project payment child",
+    "Transaction",
+    "Project qty",
+    "Project child",
+    "Service",
+    "PP_Project milestone",
+    "Transaction type",
+    "Deliverable child",
+    "Project change child",
+]
+# ignore_links_on_delete = doctypes
+
+# Custom Hook
+# Cascading deletion for specified doctypes
+# -----------------------------------------
+
+cascading_deletion_doctypes = doctypes
