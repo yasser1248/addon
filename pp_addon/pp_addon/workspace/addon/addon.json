@@ -93,84 +93,6 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "More Setting",
-   "link_count": 7,
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Stakholder Role",
-   "link_count": 0,
-   "link_to": "Stakholder Role",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Stakholder",
-   "link_count": 0,
-   "link_to": "Stakholder",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Doc Type",
-   "link_count": 0,
-   "link_to": "Project Document Type",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Actions",
-   "link_count": 0,
-   "link_to": "Actions",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Task Type",
-   "link_count": 0,
-   "link_to": "Task type",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Risk Type",
-   "link_count": 0,
-   "link_to": "Project Risk type",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Project Phases",
-   "link_count": 0,
-   "link_to": "Project Phase",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
    "label": "Project",
    "link_count": 7,
    "onboard": 0,
@@ -431,10 +353,98 @@
    "link_type": "Report",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "More Setting",
+   "link_count": 8,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "User Projects",
+   "link_count": 0,
+   "link_to": "User Projects",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Stakholder Role",
+   "link_count": 0,
+   "link_to": "Stakholder Role",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Stakholder",
+   "link_count": 0,
+   "link_to": "Stakholder",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Doc Type",
+   "link_count": 0,
+   "link_to": "Project Document Type",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Actions",
+   "link_count": 0,
+   "link_to": "Actions",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Task Type",
+   "link_count": 0,
+   "link_to": "Task type",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Risk Type",
+   "link_count": 0,
+   "link_to": "Project Risk type",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Project Phases",
+   "link_count": 0,
+   "link_to": "Project Phase",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2023-12-05 13:42:54.866500",
- "modified_by": "Administrator",
+ "modified": "2023-12-10 13:13:03.760612",
+ "modified_by": "dev7.itsystematic@gmail.com",
  "module": "Pp Addon",
  "name": "Addon",
  "number_cards": [
@@ -454,13 +464,6 @@
  "roles": [],
  "sequence_id": 1.0,
  "shortcuts": [
-  {
-   "color": "#808080",
-   "doc_view": "List",
-   "label": "Project Sponsors",
-   "link_to": "Project Sponsors",
-   "type": "DocType"
-  },
   {
    "color": "Grey",
    "doc_view": "List",
