@@ -320,7 +320,7 @@ doctypes = [
     "Deliverable child",
     "Project change child",
 ]
-# ignore_links_on_delete = doctypes
+ignore_links_on_delete = doctypes
 
 # Custom Hook
 # Cascading deletion for specified doctypes
