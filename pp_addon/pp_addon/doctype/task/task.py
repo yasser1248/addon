@@ -42,3 +42,18 @@ def _get_children(doctype, parent="", ignore_permissions=False):
 		order_by="name",
 		ignore_permissions=ignore_permissions,
 	)
+
+
+@frappe.whitelist()
+def add_node():
+	from frappe.desk.treeview import make_tree_args
+
+	args = frappe.form_dict
+
+	# args.update({"name_field": "subject"})
+	args = make_tree_args(**args)
+
+	if args.parent_task == "Task" or args.parent_task == args.project:
+		args.parent_task = None
+
+	frappe.get_doc(args).insert()

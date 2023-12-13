@@ -10,6 +10,7 @@ frappe.treeview_settings['Task'] = {
         }
     ],
     get_tree_nodes: 'pp_addon.pp_addon.doctype.task.task.get_children',
+    add_tree_node: 'pp_addon.pp_addon.doctype.task.task.add_node',
     on_get_node: function(nodes) {
         // triggered when `get_tree_nodes` returns nodes
             setTimeout(() => {
