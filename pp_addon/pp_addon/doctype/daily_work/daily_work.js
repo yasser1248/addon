@@ -15,4 +15,15 @@ frappe.ui.form.on("Daily Work", {
             } );
         }
     },
+
+    milestone(frm) {
+        const milestone_days = frappe.call({
+            method: "set_milestone_days",
+            doc: frm.doc,
+        });
+        milestone_days.then( (r) => {
+            frm.set_value("days", r.message.days);
+            frm.refresh_field("days");
+        });
+    },
 });
