@@ -48,8 +48,13 @@
   }
  ],
  "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2023-12-13 13:33:07.350890",
+ "links": [
+  {
+   "link_doctype": "Project",
+   "link_fieldname": "name"
+  }
+ ],
+ "modified": "2023-12-17 11:26:26.601266",
  "modified_by": "Administrator",
  "module": "Pp Addon",
  "name": "Daily Work",

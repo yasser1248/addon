@@ -18,12 +18,12 @@ frappe.treeview_settings['Task'] = {
             description: 'Further nodes can be only created under \'Group\' type nodes'
         },
         {
-            fieldtype: 'Data', fieldname: 'subject',
-            label: 'Subject', reqd: true
-        },
-        {
             fieldtype: 'Link', fieldname: 'project',
             label: 'Project', options: 'Project'
+        },
+        {
+            fieldtype: 'Data', fieldname: 'subject',
+            label: 'Subject', reqd: true
         },
     ],
     on_get_node: function(nodes) {

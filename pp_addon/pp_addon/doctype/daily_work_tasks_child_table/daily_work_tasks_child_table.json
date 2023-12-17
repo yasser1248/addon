@@ -12,7 +12,8 @@
   "done_by",
   "column_break_voca",
   "progress",
-  "weight"
+  "weight",
+  "attachment"
  ],
  "fields": [
   {
@@ -61,12 +62,17 @@
    "in_list_view": 1,
    "label": "Task",
    "reqd": 1
+  },
+  {
+   "fieldname": "attachment",
+   "fieldtype": "Attach",
+   "label": "Daily Work Attachment"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-12-13 16:37:10.628428",
+ "modified": "2023-12-17 11:16:27.075299",
  "modified_by": "Administrator",
  "module": "Pp Addon",
  "name": "Daily Work Tasks Child Table",
