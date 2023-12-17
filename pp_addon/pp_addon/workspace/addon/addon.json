@@ -474,7 +474,7 @@
   },
   {
    "hidden": 0,
-   "is_query_report": 0,
+   "is_query_report": 1,
    "label": "Project Milestones Details",
    "link_count": 0,
    "link_to": "Milestones Details",
@@ -483,7 +483,7 @@
    "type": "Link"
   }
  ],
- "modified": "2023-12-17 10:03:05.029394",
+ "modified": "2023-12-17 10:18:35.779592",
  "modified_by": "Administrator",
  "module": "Pp Addon",
  "name": "Addon",
