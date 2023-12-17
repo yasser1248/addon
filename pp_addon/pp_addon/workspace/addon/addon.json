@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"2MiF_NlfU7\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Addon</span>\",\"col\":12}},{\"id\":\"uVkuhT7KIS\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Project\",\"col\":3}},{\"id\":\"NIraCum1f1\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Project Transaction\",\"col\":3}},{\"id\":\"wlrfxBsOd1\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Project Payment Plan\",\"col\":3}},{\"id\":\"2BPvICGekc\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Project Payment\",\"col\":3}},{\"id\":\"bQg4_FXW8O\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Project Task\",\"col\":3}},{\"id\":\"KRZ7A2qRTo\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Project Document\",\"col\":3}},{\"id\":\"TuyFbp8EIy\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Project Dashboard\",\"col\":3}},{\"id\":\"YEcEHulwkM\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Daily Work\",\"col\":3}},{\"id\":\"krrJdXJ7aT\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"eaJWoAU8hx\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Projects\",\"col\":6}},{\"id\":\"aXtitq_Cu_\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Projects Study\",\"col\":6}},{\"id\":\"64Vb3eJdzO\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"50KAjak0LW\",\"type\":\"card\",\"data\":{\"card_name\":\"Project\",\"col\":4}},{\"id\":\"oP4wjdIfYM\",\"type\":\"card\",\"data\":{\"card_name\":\"Transaction\",\"col\":4}},{\"id\":\"hXpxiwZ6ms\",\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":4}},{\"id\":\"DYJgd2ql_v\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"XTAoAee80c\",\"type\":\"card\",\"data\":{\"card_name\":\"Basic Setting\",\"col\":4}},{\"id\":\"atfDhhe0c5\",\"type\":\"card\",\"data\":{\"card_name\":\"More Setting\",\"col\":4}}]",
+ "content": "[{\"id\":\"2MiF_NlfU7\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Addon</span>\",\"col\":12}},{\"id\":\"uVkuhT7KIS\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Project\",\"col\":3}},{\"id\":\"NIraCum1f1\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Project Transaction\",\"col\":3}},{\"id\":\"wlrfxBsOd1\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Project Payment Plan\",\"col\":3}},{\"id\":\"2BPvICGekc\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Project Payment\",\"col\":3}},{\"id\":\"bQg4_FXW8O\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Project Task\",\"col\":3}},{\"id\":\"KRZ7A2qRTo\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Project Document\",\"col\":3}},{\"id\":\"TuyFbp8EIy\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Project Dashboard\",\"col\":3}},{\"id\":\"YEcEHulwkM\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Daily Work\",\"col\":3}},{\"id\":\"OaXKdSRYYB\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Daily Work Dashboard\",\"col\":3}},{\"id\":\"krrJdXJ7aT\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"eaJWoAU8hx\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Projects\",\"col\":6}},{\"id\":\"aXtitq_Cu_\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Projects Study\",\"col\":6}},{\"id\":\"64Vb3eJdzO\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"50KAjak0LW\",\"type\":\"card\",\"data\":{\"card_name\":\"Project\",\"col\":4}},{\"id\":\"oP4wjdIfYM\",\"type\":\"card\",\"data\":{\"card_name\":\"Transaction\",\"col\":4}},{\"id\":\"hXpxiwZ6ms\",\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":4}},{\"id\":\"DYJgd2ql_v\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"XTAoAee80c\",\"type\":\"card\",\"data\":{\"card_name\":\"Basic Setting\",\"col\":4}},{\"id\":\"atfDhhe0c5\",\"type\":\"card\",\"data\":{\"card_name\":\"More Setting\",\"col\":4}}]",
  "creation": "2023-09-21 08:32:34.368794",
  "custom_blocks": [],
  "docstatus": 0,
@@ -248,94 +248,6 @@
   },
   {
    "hidden": 0,
-   "is_query_report": 0,
-   "label": "Reports",
-   "link_count": 8,
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Projects Report",
-   "link_count": 0,
-   "link_to": "Projects",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Project Details",
-   "link_count": 0,
-   "link_to": "Project Details",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Project Details with Date",
-   "link_count": 0,
-   "link_to": "Project Details with Date",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Tasks Report",
-   "link_count": 0,
-   "link_to": "Project Task",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Transaction Report",
-   "link_count": 0,
-   "link_to": "Transaction",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Project Meeting",
-   "link_count": 0,
-   "link_to": "Project Meeting",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Project Payment Report",
-   "link_count": 0,
-   "link_to": "Project payment",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Project Task",
-   "link_count": 0,
-   "link_to": "Project Task",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
    "is_query_report": 1,
    "label": "Project Document",
    "link_count": 0,
@@ -441,9 +353,137 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Reports",
+   "link_count": 12,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Projects Report",
+   "link_count": 0,
+   "link_to": "Projects",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Project Details",
+   "link_count": 0,
+   "link_to": "Project Details",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Project Details with Date",
+   "link_count": 0,
+   "link_to": "Project Details with Date",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Tasks Report",
+   "link_count": 0,
+   "link_to": "Project Task",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Transaction Report",
+   "link_count": 0,
+   "link_to": "Transaction",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Project Meeting",
+   "link_count": 0,
+   "link_to": "Project Meeting",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Project Payment Report",
+   "link_count": 0,
+   "link_to": "Project payment",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Project Task",
+   "link_count": 0,
+   "link_to": "Project Task",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Project Document",
+   "link_count": 0,
+   "link_to": "Project Document",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Project Bidding",
+   "link_count": 0,
+   "link_to": "Projects Bidding",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Project Milestones Status",
+   "link_count": 0,
+   "link_to": "Milestone & Tasks",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Project Milestones Details",
+   "link_count": 0,
+   "link_to": "Milestones Details",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2023-12-13 13:50:58.978938",
+ "modified": "2023-12-17 10:03:05.029394",
  "modified_by": "Administrator",
  "module": "Pp Addon",
  "name": "Addon",
@@ -469,8 +509,14 @@
    "doc_view": "List",
    "label": "Daily Work",
    "link_to": "Daily Work",
-   "stats_filter": "[]",
    "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Daily Work Dashboard",
+   "link_to": "Daily Work",
+   "type": "Dashboard"
   },
   {
    "color": "Grey",

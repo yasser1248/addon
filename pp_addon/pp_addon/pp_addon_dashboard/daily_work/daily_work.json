@@ -1,0 +1,25 @@
+{
+ "cards": [],
+ "charts": [
+  {
+   "chart": "Milestones Finished",
+   "width": "Full"
+  },
+  {
+   "chart": "Milestones Details",
+   "width": "Full"
+  }
+ ],
+ "creation": "2023-12-14 12:53:18.901806",
+ "dashboard_name": "Daily Work",
+ "docstatus": 0,
+ "doctype": "Dashboard",
+ "idx": 11,
+ "is_default": 0,
+ "is_standard": 1,
+ "modified": "2023-12-17 10:01:08.042261",
+ "modified_by": "Administrator",
+ "module": "Pp Addon",
+ "name": "Daily Work",
+ "owner": "Administrator"
+}

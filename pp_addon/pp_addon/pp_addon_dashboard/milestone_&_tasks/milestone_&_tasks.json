@@ -1,0 +1,21 @@
+{
+ "cards": [],
+ "charts": [
+  {
+   "chart": "Milestone Chart",
+   "width": "Half"
+  }
+ ],
+ "creation": "2023-12-13 14:31:15.158565",
+ "dashboard_name": "Milestone & Tasks",
+ "docstatus": 0,
+ "doctype": "Dashboard",
+ "idx": 0,
+ "is_default": 0,
+ "is_standard": 1,
+ "modified": "2023-12-13 14:40:53.969243",
+ "modified_by": "Administrator",
+ "module": "Pp Addon",
+ "name": "Milestone & Tasks",
+ "owner": "Administrator"
+}

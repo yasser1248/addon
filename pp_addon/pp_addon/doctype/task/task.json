@@ -66,6 +66,7 @@
    "search_index": 1
   },
   {
+   "allow_in_quick_entry": 1,
    "bold": 1,
    "fieldname": "project",
    "fieldtype": "Link",
@@ -383,7 +384,7 @@
  "is_tree": 1,
  "links": [],
  "max_attachments": 5,
- "modified": "2023-12-04 11:57:21.510479",
+ "modified": "2023-12-17 09:50:10.259042",
  "modified_by": "Administrator",
  "module": "Pp Addon",
  "name": "Task",
