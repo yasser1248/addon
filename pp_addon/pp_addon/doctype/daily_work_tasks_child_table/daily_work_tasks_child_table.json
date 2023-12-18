@@ -44,7 +44,7 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Done By",
-   "options": "User"
+   "options": "Employee"
   },
   {
    "fieldname": "weight",
@@ -80,7 +80,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-12-17 12:56:03.584042",
+ "modified": "2023-12-18 10:56:11.001729",
  "modified_by": "Administrator",
  "module": "Pp Addon",
  "name": "Daily Work Tasks Child Table",
