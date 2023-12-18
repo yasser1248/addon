@@ -2,7 +2,7 @@
  "cards": [],
  "charts": [
   {
-   "chart": "Milestones Finished",
+   "chart": "Project Status",
    "width": "Full"
   },
   {
@@ -14,10 +14,10 @@
  "dashboard_name": "Daily Work",
  "docstatus": 0,
  "doctype": "Dashboard",
- "idx": 11,
+ "idx": 15,
  "is_default": 0,
  "is_standard": 1,
- "modified": "2023-12-17 10:01:08.042261",
+ "modified": "2023-12-18 14:10:39.493501",
  "modified_by": "Administrator",
  "module": "Pp Addon",
  "name": "Daily Work",

@@ -10,7 +10,10 @@ def execute(filters=None):
     columns, data = [], []
     columns = get_columns()
     data = get_data(filters)
-    add_remaining_milestones(filters, data,)
+    add_remaining_milestones(
+        filters,
+        data,
+    )
     graph = get_graph(data)
     return columns, data, None, graph
 
@@ -106,7 +109,11 @@ def milestone_to_tasks(milestones: list[dict], tasks: list[dict]) -> None:
 
 def get_graph(milestones: list[dict]) -> dict:
     graph = {
+        "title": "Milestone Details",
         "type": "bar",
+        "height": 500,
+        "colors": ["#36AE7C", "#E64848"],
+        "valuesOverPoints": True,
     }
     labels_list = [milestone.get("milestone") for milestone in milestones]
     completion = [
@@ -124,7 +131,7 @@ def get_graph(milestones: list[dict]) -> dict:
     return graph
 
 
-def add_remaining_milestones(filters: dict, data: list[dict], graph: dict={}) -> None:
+def add_remaining_milestones(filters: dict, data: list[dict], graph: dict = {}) -> None:
     milestones = [f"'{milestone.get('milestone')}'" for milestone in data]
     if not milestones:
         return
@@ -139,4 +146,7 @@ def add_remaining_milestones(filters: dict, data: list[dict], graph: dict={}) ->
         ),
         as_dict=1,
     )
-    [data.append(milestone.update({"completion": 0.0, "remain": 1.0})) for milestone in remaining_milestones]
+    [
+        data.append(milestone.update({"completion": 0.0, "remain": 1.0}))
+        for milestone in remaining_milestones
+    ]
