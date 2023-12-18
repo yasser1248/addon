@@ -125,7 +125,7 @@ def get_graph(milestones: list[dict]) -> dict:
 
 
 def add_remaining_milestones(filters: dict, data: list[dict], graph: dict={}) -> None:
-    milestones = [milestone.get("milestone") for milestone in data]
+    milestones = [f"'{milestone.get('milestone')}'" for milestone in data]
     if not milestones:
         return
     remaining_milestones = frappe.db.sql(
@@ -133,9 +133,9 @@ def add_remaining_milestones(filters: dict, data: list[dict], graph: dict={}) ->
             SELECT p.project, c.name AS milestone
             FROM `tabProjects Milestone` AS p
             LEFT JOIN `tabProjects Milestone child` AS c ON p.name = c.parent
-            WHERE p.project = '{project}' AND c.name NOT IN {milestones}
+            WHERE p.project = '{project}' AND c.name NOT IN ({milestones})
             """.format(
-            project=filters.get("project"), milestones=tuple(milestones)
+            project=filters.get("project"), milestones=", ".join(milestones)
         ),
         as_dict=1,
     )
