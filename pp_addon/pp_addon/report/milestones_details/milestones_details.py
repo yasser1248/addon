@@ -10,6 +10,7 @@ def execute(filters=None):
     columns, data = [], []
     columns = get_columns()
     data = get_data(filters)
+    add_remaining_milestones(filters, data,)
     graph = get_graph(data)
     return columns, data, None, graph
 
@@ -104,13 +105,38 @@ def milestone_to_tasks(milestones: list[dict], tasks: list[dict]) -> None:
 
 
 def get_graph(milestones: list[dict]) -> dict:
-    graph = {"type": "bar",}
+    graph = {
+        "type": "bar",
+    }
     labels_list = [milestone.get("milestone") for milestone in milestones]
-    completion = [flt(milestone.get("completion", 0) * 100, precision=2) for milestone in milestones]
-    remain = [flt(milestone.get("remain", 0) * 100, precision=2) for milestone in milestones]
+    completion = [
+        flt(milestone.get("completion", 0) * 100, precision=2)
+        for milestone in milestones
+    ]
+    remain = [
+        flt(milestone.get("remain", 0) * 100, precision=2) for milestone in milestones
+    ]
     datasets = [
         {"name": "Completion", "values": completion},
         {"name": "Remain", "values": remain},
     ]
     graph["data"] = {"labels": labels_list, "datasets": datasets}
     return graph
+
+
+def add_remaining_milestones(filters: dict, data: list[dict], graph: dict={}) -> None:
+    milestones = [milestone.get("milestone") for milestone in data]
+    if not milestones:
+        return
+    remaining_milestones = frappe.db.sql(
+        """
+            SELECT p.project, c.name AS milestone
+            FROM `tabProjects Milestone` AS p
+            LEFT JOIN `tabProjects Milestone child` AS c ON p.name = c.parent
+            WHERE p.project = '{project}' AND c.name NOT IN {milestones}
+            """.format(
+            project=filters.get("project"), milestones=tuple(milestones)
+        ),
+        as_dict=1,
+    )
+    [data.append(milestone.update({"completion": 0.0, "remain": 1.0})) for milestone in remaining_milestones]
