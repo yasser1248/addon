@@ -17,11 +17,20 @@ class DailyWork(Document):
             )
 
     @frappe.whitelist()
-    def set_milestone_days(self):
-        return {
-            "days": frappe.db.get_value(
-                "Projects Milestone child",
-                {"name": self.milestone},
-                "days",
+    def set_milestone_days_weight(self):
+        data = frappe.db.sql(
+            """
+                SELECT days, weight
+                FROM `tabProjects Milestone child`
+                WHERE name = '{0}';
+                            """.format(
+                self.milestone
             ),
-        }
+            as_dict=1,
+        )
+        if data:
+            return {
+                "days": data[0].get('days'),
+                "weight": data[0].get('weight'),
+            }
+        return {}

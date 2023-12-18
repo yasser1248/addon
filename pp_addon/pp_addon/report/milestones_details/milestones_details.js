@@ -15,8 +15,9 @@ frappe.query_reports["Milestones Details"] = {
 			"label": __("Milestone"),
 			"fieldtype": "Link",
 			"options": "Projects Milestone child",
+			"depends_on": "eval: doc.project",
 			"reqd": 0,
-			"hidden": 1,
+			"hidden": 0,
 		},
 		{
 			"fieldname": "task",

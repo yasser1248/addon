@@ -10,6 +10,7 @@
   "project",
   "milestone",
   "days",
+  "weight",
   "tasks_section",
   "tasks"
  ],
@@ -48,9 +49,18 @@
    "options": "Daily Work Tasks Child Table"
   },
   {
+   "default": "0",
    "fieldname": "days",
    "fieldtype": "Float",
    "label": "Days",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "weight",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "label": "Weight",
    "precision": "2",
    "read_only": 1
   }
@@ -62,7 +72,7 @@
    "link_fieldname": "name"
   }
  ],
- "modified": "2023-12-17 15:05:32.569040",
+ "modified": "2023-12-18 17:47:07.868462",
  "modified_by": "Administrator",
  "module": "Pp Addon",
  "name": "Daily Work",

@@ -55,7 +55,7 @@ def get_data(filters: dict) -> list[dict]:
 
     milestones = frappe.db.sql(
         """SELECT
-            p.project, p.milestone, SUM(c.weight) AS sum_total_weight , p.name
+            p.project, p.milestone, SUM(c.weight) AS sum_total_weight, p.name
         FROM `tabDaily Work` AS p
         LEFT JOIN `tabDaily Work Tasks Child Table` AS c
             ON p.name = c.parent
@@ -66,6 +66,21 @@ def get_data(filters: dict) -> list[dict]:
         ),
         as_dict=1,
     )
+
+    project_total_milestones = frappe.db.sql(
+        """SELECT
+                p.project,
+                SUM(c.weight) AS total_weight
+            FROM `tabProjects Milestone` AS p
+            LEFT JOIN `tabProjects Milestone child` AS c
+                ON p.name = c.parent
+            WHERE p.project = '{project}';
+        """.format(
+            project=filters.get("project")
+        ),
+        as_dict=1,
+    )
+
     for milestone in milestones:
         milestone["tasks"] = []
     milestone_to_tasks(milestones, tasks)
@@ -76,6 +91,21 @@ def get_data(filters: dict) -> list[dict]:
     ]
     for milestone in milestones:
         milestone["completion"] = calculate_milestone_completion(milestone["tasks"])
+        temp = frappe.db.sql(
+            """SELECT
+                    c.weight
+                FROM `tabProjects Milestone child` AS c
+                WHERE c.name = '{milestone}';
+            """.format(
+                milestone=milestone.get("milestone")
+            ),
+            as_dict=1,
+        )
+        milestone["project_contribution"] = flt(
+            (milestone["completion"] * temp[0].get("weight"))
+            / project_total_milestones[0].get("total_weight"),
+            precision=2,
+        )
     return milestones
 
 
@@ -113,7 +143,7 @@ def get_graph(milestones: list[dict]) -> dict:
     labels_list = ["Finished", "Unfinished"]
     # finished = sum(milestone.get("completion") for milestone in milestones) * 100
     finished = flt(
-        sum(map(lambda x: x.get("completion", 0), milestones)) * 100, precision=2
+        sum(map(lambda x: x.get("project_contribution", 0), milestones)) * 100, precision=2
     )
     unfinished = flt(100.0 - finished, precision=2)
     datasets = [{"values": [finished, unfinished]}]

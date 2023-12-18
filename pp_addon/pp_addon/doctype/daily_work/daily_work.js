@@ -17,13 +17,17 @@ frappe.ui.form.on("Daily Work", {
     },
 
     milestone(frm) {
-        const milestone_days = frappe.call({
-            method: "set_milestone_days",
+        frappe.call({
+            method: "set_milestone_days_weight",
             doc: frm.doc,
-        });
-        milestone_days.then( (r) => {
-            frm.set_value("days", r.message.days);
-            frm.refresh_field("days");
+            callback: (r) => {
+                if (Object.keys(r.message).length) {
+                    frm.set_value("days", r.message.days);
+                    frm.set_value("weight", r.message.weight);
+                    frm.refresh_field("days");
+                    frm.refresh_field("weight");
+                }
+            },
         });
     },
 });

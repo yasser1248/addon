@@ -7,13 +7,16 @@ from frappe.utils import flt
 
 
 def execute(filters=None):
+    if not filters:
+        return None, None
     columns, data = [], []
     columns = get_columns()
     data = get_data(filters)
-    add_remaining_milestones(
-        filters,
-        data,
-    )
+    if not filters.get("milestone"):
+        add_remaining_milestones(
+            filters,
+            data,
+        )
     graph = get_graph(data)
     return columns, data, None, graph
 
@@ -45,15 +48,19 @@ def get_columns() -> list[dict]:
 
 
 def get_data(filters: dict) -> list[dict]:
+    conditions = ""
+    if filters.get("milestone"):
+        conditions += " AND p.milestone = '{milestone}'".format(milestone=filters.get("milestone"))
     tasks = frappe.db.sql(
         """
 			SELECT p.project, p.milestone,
 				c.task, c.task_data, c.progress, c.weight
 			FROM `tabDaily Work` AS p
 			LEFT JOIN `tabDaily Work Tasks Child Table` AS c ON p.name = c.parent
-			WHERE p.project = "{project}";
+			WHERE p.project = "{project}" {conditions};
 		""".format(
             project=filters.get("project"),
+            conditions=conditions,
         ),
         as_dict=1,
     )
@@ -63,10 +70,11 @@ def get_data(filters: dict) -> list[dict]:
         FROM `tabDaily Work` AS p
         LEFT JOIN `tabDaily Work Tasks Child Table` AS c
             ON p.name = c.parent
-        WHERE p.project = "{project}"
+        WHERE p.project = "{project}" {conditions}
         GROUP BY p.name;
         """.format(
-            project=filters.get("project")
+            project=filters.get("project"),
+            conditions=conditions,
         ),
         as_dict=1,
     )
