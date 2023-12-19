@@ -358,7 +358,7 @@
    "hidden": 0,
    "is_query_report": 0,
    "label": "Reports",
-   "link_count": 12,
+   "link_count": 13,
    "onboard": 0,
    "type": "Card Break"
   },
@@ -481,9 +481,19 @@
    "link_type": "Report",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Employee Daily Work",
+   "link_count": 0,
+   "link_to": "Employee Daily Work",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2023-12-17 10:18:35.779592",
+ "modified": "2023-12-19 10:58:02.407880",
  "modified_by": "Administrator",
  "module": "Pp Addon",
  "name": "Addon",
