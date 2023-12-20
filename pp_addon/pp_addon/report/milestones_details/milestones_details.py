@@ -95,7 +95,7 @@ def get_data(filters: dict) -> list[dict]:
 def calculate_task_contribution(task: dict, sum_total_weight: float) -> float:
     # Calculate the contribution of a task to its milestone completion
     task["contribution"] = flt(
-        ((task["progress"] / 100) * task["weight"]) / sum_total_weight, precision=2
+        ((task["progress"] / 100) * task["weight"]) / sum_total_weight if sum_total_weight != 0 else 1, precision=2
     )
     # return (task['progress'] * task['weight']) / 100.0
 
