@@ -42,12 +42,13 @@
   {
    "fieldname": "items",
    "fieldtype": "Table",
-   "options": "Projects Milestone child"
+   "options": "Projects Milestone child",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-12-20 14:13:29.256860",
+ "modified": "2023-12-20 17:04:52.043192",
  "modified_by": "Administrator",
  "module": "Pp Addon",
  "name": "Projects Milestone",

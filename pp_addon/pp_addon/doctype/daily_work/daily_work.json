@@ -46,7 +46,8 @@
    "fieldname": "tasks",
    "fieldtype": "Table",
    "label": "Tasks",
-   "options": "Daily Work Tasks Child Table"
+   "options": "Daily Work Tasks Child Table",
+   "reqd": 1
   },
   {
    "default": "0",
@@ -67,7 +68,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-12-20 13:54:06.997915",
+ "modified": "2023-12-20 17:06:52.701135",
  "modified_by": "Administrator",
  "module": "Pp Addon",
  "name": "Daily Work",

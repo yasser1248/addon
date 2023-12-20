@@ -51,7 +51,8 @@
    "fieldtype": "Float",
    "in_list_view": 1,
    "label": "Weight",
-   "precision": "2"
+   "precision": "2",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_voca",
@@ -81,7 +82,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-12-18 17:47:36.246693",
+ "modified": "2023-12-20 17:05:46.254268",
  "modified_by": "Administrator",
  "module": "Pp Addon",
  "name": "Daily Work Tasks Child Table",
