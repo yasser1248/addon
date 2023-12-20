@@ -14,6 +14,7 @@ def execute(filters=None):
     columns = get_columns(filters)
     data = get_data(filters)
     graph = get_graph(data)
+    data = convert_data_treeview(filters, data)
     return columns, data, None, graph
 
 
@@ -24,7 +25,7 @@ def get_columns(filters: dict) -> list[dict]:
             "label": _("Employee"),
             "fieldtype": "Link",
             "options": "Employee",
-            "width": 200,
+            "width": 500,
         },
         {
             "fieldname": "project",
@@ -33,13 +34,13 @@ def get_columns(filters: dict) -> list[dict]:
             "options": "Project",
             "width": 200,
         },
-        {
-            "fieldname": "milestone",
-            "label": _("Milestone"),
-            "fieldtype": "Link",
-            "options": "Milestone",
-            "width": 200,
-        },
+        # {
+        #     "fieldname": "milestone",
+        #     "label": _("Milestone"),
+        #     "fieldtype": "Link",
+        #     "options": "Milestone",
+        #     "width": 200,
+        # },
         {
             "fieldname": "task_data",
             "label": _("Task"),
@@ -100,6 +101,78 @@ def get_conditions(filters: dict) -> str:
     return conditions
 
 
+def convert_data_treeview(filters: dict, data: list[dict]) -> list[dict]:
+    root = frappe._dict(
+        {
+            'employee': filters.get("employee"),
+            'project': filters.get("project"),
+            'milestone': None,
+            'task_data': '',
+            'progress': 0.0,
+            'weight': 0.0,
+            'days': 0.0,
+            'indent': 0,
+            'name': 'root',
+            'parent': None,
+        },
+    )
+
+    new_data = [root]
+    new_data.append(
+        {
+            'employee': "Milestone",
+            'project': '',
+            'milestone': "Milestone",
+            'task_data': '',
+            'progress': 0.0,
+            'weight': 0.0,
+            'days': 0.0,
+            'indent': 1,
+            'name': "Milestone",
+            'parent': 'root', 
+        }
+    )
+    milestones = list(set(milestone.get('milestone') for milestone in data))
+    if not milestones:
+        return
+    for milestone in milestones:
+        new_data.append(
+            frappe._dict(
+                {
+                    'employee': milestone,
+                    'project': '',
+                    'milestone': milestone,
+                    'task_data': '',
+                    'progress': 0.0,
+                    'weight': 0.0,
+                    'days': 0.0,
+                    'indent': 2,
+                    'name': milestone,
+                    'parent': 'Milestone',
+                },
+            )
+        )
+        for task in data:
+            if task.get("milestone") == milestone:
+                task["employee"] = task.get("task_data")
+                new_data.append(
+                    task.update(
+                        {
+                            'employee': task.get("task_data"),
+                            'project': '',
+                            'milestone': '',
+                            'progress': task.get("progress"),
+                            'weight': task.get("weight"),
+                            'days': task.get("days"),
+                            'indent': 3,
+                            'name': task.get("task_data"),
+                            'parent': milestone
+                        }
+                    )
+                )
+    return new_data
+
+
 def get_graph(data: list[dict]) -> dict:
     graph = {
         "title": "Employee Tasks Detals",
@@ -122,3 +195,13 @@ def get_graph(data: list[dict]) -> dict:
     ]
     graph["data"] = {"labels": labels_list, "datasets": datasets}
     return graph
+
+"""
+{'employee': '124295---مجدي ابوالعطا',
+'project': '01594-Public Prosecution',
+'milestone': 'تقرير المقارنات المعيارية و الدراسات المرجعية',
+'task_data': 'TEST 2',
+'progress': 100.0,
+'weight': 5.0,
+'days': 5.0}
+"""
