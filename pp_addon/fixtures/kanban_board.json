@@ -4,7 +4,7 @@
    {
     "column_name": "Open",
     "indicator": "Gray",
-    "order": "[\"TASK-1996-Desoky House-0001\", \"TASK-1996-Desoky House-.####.\", \"TASK--.####\"]",
+    "order": "[]",
     "parent": "Task",
     "parentfield": "columns",
     "parenttype": "Kanban Board",
@@ -13,7 +13,7 @@
    {
     "column_name": "Working",
     "indicator": "Gray",
-    "order": "[\"TASK-1996-Desoky House-0003\", \"TASK-1996-Desoky House-.####\", \"TASK-1996-Desoky House-0002\"]",
+    "order": "[]",
     "parent": "Task",
     "parentfield": "columns",
     "parenttype": "Kanban Board",

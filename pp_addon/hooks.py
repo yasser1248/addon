@@ -224,6 +224,12 @@ fixtures = [
         ],
     },
     {"dt": ("Kanban Board"), "filters": [["kanban_board_name", "in", ("Task")]]},
+    {
+    "dt": "Role",
+    "filters": [
+            ["name", "in", ("Addon Manager", "Addon User", "Addon Limited")],
+        ],
+    }
     # {
     #     "dt": ("Custom Field"),
     #     "filters": [["dt", "in", ("", "", "")]]
