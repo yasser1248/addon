@@ -23,8 +23,8 @@ def get_columns(filters: dict) -> list[dict]:
         {
             "fieldname": "employee",
             "label": _("Employee"),
-            "fieldtype": "Link",
-            "options": "Employee",
+            "fieldtype": "Data",
+            # "options": "Employee",
             "width": 500,
         },
         {
