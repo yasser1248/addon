@@ -1,0 +1,35 @@
+{
+ "add_total_row": 0,
+ "columns": [],
+ "creation": "2023-12-21 10:20:14.478297",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letterhead": null,
+ "modified": "2023-12-21 10:21:07.774738",
+ "modified_by": "Administrator",
+ "module": "Pp Addon",
+ "name": "Project Status",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "ref_doctype": "Project",
+ "report_name": "Project Status",
+ "report_type": "Script Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "Addon Manager"
+  },
+  {
+   "role": "Addon User"
+  },
+  {
+   "role": "Addon Limited"
+  }
+ ]
+}

@@ -1,0 +1,267 @@
+{% var doc = data[0] %}
+
+<!-- Center the div -->
+<div class="print-heading">
+    <h2>
+        <div>{{ doc.name }} Project Status Report</div>
+    </h2>
+</div>
+
+
+<table class="w-100 p-3 table table-striped table-hover project-data table-bordered" style="width:99%;">
+    <tr>
+        <th class="grey-background" rowspan="2">Project ID</th>
+        <td rowspan="2">{{ doc.project_id }}</td>
+        <th rowspan="2" class="grey-background">Project Period</th>
+        <th class="grey-background">From</th>
+        <td>{{ doc.from }}</td>
+    </tr>
+    <tr>
+        <th class="grey-background">TO</th>
+        <td>{{ doc.to }}</td>
+    </tr>
+    <tr>
+        <th class="grey-background">Project Name</th>
+        <td colspan="4">{{ doc.project_name }}</td>
+    </tr>
+    <tr>
+        <th class="grey-background">Project Category</th>
+        <td colspan="4">{{ doc.project_category }}</td>
+    </tr>
+</table>
+
+
+<table class="w-100 p-3 table table-striped table-hover project-data table-bordered" style="width:99%;">
+    <thead>
+        <th colspan="4" class="purple">PROJECT SUMMARY</th>
+    </thead>
+    <tbody>
+        <tr>
+            <th rowspan="4" class="purple">
+                Overall Project Status
+
+                *Key indicators:
+                budget, schedule,
+                stakeholders,
+                scope, resources
+            </th>
+            <td>
+                <div>
+                    <input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="1" aria-label="...">
+                </div>
+            </td>
+            <td id="on-track">
+                On Track
+            </td>
+            <td class="td-grey-background">
+                The project is well controlled. Some issues may have been
+                identified, but effective actions are planned for solving them.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div>
+                    <input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="...">
+                </div>
+            </td>
+            <td id="off-track">
+                off Track
+            </td>
+            <td class="td-grey-background">
+                The project has problems that require change in plans. Additional
+                focus and management is essential to bring the project back
+                under control.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div>
+                    <input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="1" aria-label="...">
+                </div>
+            </td>
+            <td id="at-risk">
+                At Risk
+            </td>
+            <td class="td-grey-background">
+                The project has serious problems. One or more* key indicators
+                are in At Risk status.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div>
+                    <input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="...">
+                </div>
+            </td>
+            <td id="not-started">
+                Not Started
+            </td>
+            <td class="td-grey-background">
+                Not started (and not scheduled to start)
+            </td>
+        </tr>
+        <tr>
+            <th class="purple">Comments</th>
+            <td colspan="3">{{ "TEST" * 5}}</td>
+        </tr>
+    </tbody>
+</table>
+
+
+<table class="w-100 p-3 table table-striped table-hover project-data table-bordered" style="width:99%;">
+    <thead>
+        <th colspan="5" class="purple">Project Schedule</th>
+    </thead>
+    <tbody>
+        <tr>
+            <th class="grey-background">Project Start Date: </th>
+            <td>{{ doc.start_date }}</td>
+            <td></td>
+            <th class="grey-background">Planned End Date: </th>
+            <td>{{ doc.end_date }}</td>
+        </tr>
+        <tr>
+            <th class="grey-background">Current Phase: </th>
+            <td rowspan="4">{{ doc.phase }}</td>
+        </tr>
+    </tbody>
+</table>
+
+
+<table class="w-100 p-3 table table-striped table-hover project-data table-bordered" style="width:99%;">
+    <thead>
+        <tr>
+            <th class="grey-background">IDX</th>
+            <th class="grey-background">Major Milestones or Deliverables</th>
+            <th class="grey-background">Status</th>
+            <th class="grey-background">Plan Date</th>
+            <th class="grey-background">Revised</th>
+            <th class="grey-background">Actual Date</th>
+            <th class="grey-background">% Cmplete</th>
+        </tr>
+        <tr>
+            <th class="grey-background"></th>
+            <th class="grey-background"></th>
+            <th class="grey-background"></th>
+            <th class="grey-background"></th>
+            <th class="grey-background"></th>
+            <th class="grey-background"></th>
+            <th class="grey-background"></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for milestone in doc.get("projects_milestones") %}
+        <tr>
+            <td>{{ loop.index + 1 }}</td>
+            <td>{{ milestone.get("milestone") }}</td>
+            <td>{{ milestone.get("status") }}</td>
+            <td>{{ milestone.get("creation") }}</td>
+            <td></td>
+            <td>{{ frappe.utils.nowdate() }}</td>
+            <td>{{ doc.get("completion") * 100 }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="4">
+                <p id="left">
+                <p id="green">GREEN</p> – On target to achieve Milestone/Deliverable
+                Date. Baseline date = Forecast Date.
+                <p id="yollow">AMBER</p> – Milestone Target Delivery Date is in
+                danger of not being achieved but a managed
+                solution capable of bringing forward the Forecast
+                date is being applied. Baseline date < Forecast Date </p>
+            </td>
+            <td colspan="3">
+                <p id="right">
+                <p id="red">RED</p> – Milestone Target Delivery Date is not going to be achieved
+                or has already passed. No work rounds or solutions capable of
+                bringing forward the forecast date is available.
+                </p>
+            </td>
+        </tr>
+    </tfoot>
+</table>
+
+
+<table class="w-100 p-3 table table-striped table-hover project-data table-bordered" style="width:99%;">
+    <caption class="grey-background">
+        <p class="purple">Project Costing & Tracking: </p> Please provide details regarding project costs for this
+        reporting period (budget,
+        actual expenditures, and variance) and include comments for all variances, including the row ID and description
+        of the
+        variance. ‘Budget’ refers to the amount received by the LHIN. ‘Actual’ refers to what is spent to-date.
+        ‘Variance’ is
+        the difference between ‘Budget’ and ‘Actual’.
+    </caption>
+    <thead>
+        <tr>
+            <th class="grey-background">Comment</th>
+            <th colspan="3" class="grey-background">Project To-Date</th>
+        </tr>
+        <tr>
+            <th class="grey-background"></th>
+            <th class="grey-background">Budget</th>
+            <th class="grey-background">Actual</th>
+            <th class="grey-background">Variance</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for i in range(3) %}
+        <tr>
+            <td>{{ i }}</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+<table class="w-100 p-3 table table-striped table-hover project-data table-bordered" style="width:99%;">
+    <caption class="grey-background">
+        <p class="purple">Project Issues and Risks</p> – Briefly describe the risk/issue and current status.
+    </caption>
+    <thead>
+        <tr>
+            <th class="grey-background">Date Added</th>
+            <th class="grey-background">Issue or Risk</th>
+            <th class="light grey-background">Description</th>
+            <th class="light grey-background">Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for risk in doc.get("projects_risks") %}
+        <tr>
+            <td>{{ risk.get("creation") }}</td>
+            <td>{{ risk.get("risk") }}</td>
+            <td>{{ risk.get("action") }}</td>
+            <td>{{ risk.get("impact") }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+<table class="w-100 p-3 table table-striped table-hover project-data table-bordered" style="width:99%;">
+    <caption class="grey-background">
+        <p class="purple">Additional Comments</p>
+    </caption>
+    <tbody>
+        <tr>
+            <td>
+                {% for i in range(3) %}
+                <ul>
+                    <li>{{ i }}</li>
+                </ul>
+                {% endfor %}
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+<p class="purple" style="background-color: white;">Please submit this report to your LHIN Senior Officer.</p>
+<p class="purple" style="background-color: white;">Thank you!</p>

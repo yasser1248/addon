@@ -1,0 +1,89 @@
+.print-heading {
+    text-align: center;
+}
+
+.grey-background {
+    background-color: #dfdfdf;
+    font-weight: bold !important;
+    color: black !important;
+    font-size: 14px !important;
+}
+
+.form-check-input {
+    border-color: blue !important;
+}
+
+#on-track {
+    display: table-cell;
+    padding: 10px;
+    background-color: green;
+    color: black;
+    border-radius: 5px;
+}
+
+#off-track {
+    display: table-cell;
+    padding: 10px;
+    background-color: yellow;
+    color: black;
+    border-radius: 5px;
+}
+
+#at-risk {
+    display: table-cell;
+    padding: 10px;
+    background-color: red;
+    color: black;
+    border-radius: 5px;
+}
+
+#not-started {
+    display: table-cell;
+    padding: 10px;
+    background-color: grey;
+    color: black;
+    border-radius: 5px;
+}
+
+.td-grey-background {
+    background-color: #dfdfdf;
+    color: black !important;
+}
+
+#green {
+    color: green;
+    font-weight: bold !important;
+}
+
+#yollow {
+    color: yellow;
+    font-weight: bold !important;
+}
+
+#red {
+    color: red;
+    font-weight: bold !important;
+}
+
+.print-format td,
+.print-format th,
+.print-format caption {
+    border: 1px solid black !important;
+    vertical-align: middle !important;
+    padding: 3px !important;
+    text-align: center !important;
+}
+
+.print-format th {
+    background-color: #dfdfdf;
+    font-weight: bold !important;
+    color: black;
+    font-size: 14px !important;
+}
+
+.purple {
+    background-color: #dfdfdf;
+    font-weight: bold !important;
+    color: purple !important;
+    font-size: 14px !important;
+}
