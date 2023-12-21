@@ -13,7 +13,7 @@ def execute(filters=None):
     columns, data = [], []
     columns = get_columns(filters)
     data = get_data(filters)
-    graph = get_graph(data)
+    graph = get_graph(data, filters)
     data = convert_data_treeview(filters, data)
     return columns, data, None, graph
 
@@ -173,7 +173,13 @@ def convert_data_treeview(filters: dict, data: list[dict]) -> list[dict]:
     return new_data
 
 
-def get_graph(data: list[dict]) -> dict:
+def get_graph(data: list[dict], filters: dict) -> dict:
+    report = frappe.get_doc("Report", "Milestone & Tasks")
+    _, project_data, _, graph = report.execute_module(filters)
+    milestones = list(set(milestone.get("milestone") for milestone in data))
+    labels_list = []
+    completion = []
+    remain = []
     graph = {
         "title": "Employee Tasks Detals",
         "type": "bar",
@@ -181,20 +187,19 @@ def get_graph(data: list[dict]) -> dict:
         "colors": ["#36AE7C", "#E64848"],
         "valuesOverPoints": True,
     }
-    labels_list = [task.get("task_data") for task in data]
-    completion = [
-        flt(task.get("progress", 0), precision=2)
-        for task in data
-    ]
-    remain = [
-        flt(100 - task.get("progress", 0), precision=2) for task in data
-    ]
+    for milestone in project_data:
+        if milestone.get("milestone") in milestones:
+            labels_list.append(milestone.get("milestone"))
+            completion.append(flt(milestone.get("completion", 0)*100, precision=2))
+            remain.append(flt(100 - milestone.get("completion", 0)*100, precision=2))
+
     datasets = [
         {"name": "Completion", "values": completion},
         {"name": "Remain", "values": remain},
     ]
     graph["data"] = {"labels": labels_list, "datasets": datasets}
     return graph
+
 
 """
 {'employee': '124295---مجدي ابوالعطا',

@@ -55,7 +55,7 @@ def get_data(filters: dict) -> list[dict]:
 
     milestones = frappe.db.sql(
         """SELECT
-            p.project, p.milestone, SUM(c.weight) AS sum_total_weight, p.name
+            p.project, p.milestone, SUM(c.weight) AS sum_total_weight, p.name, p.creation
         FROM `tabDaily Work` AS p
         LEFT JOIN `tabDaily Work Tasks Child Table` AS c
             ON p.name = c.parent
