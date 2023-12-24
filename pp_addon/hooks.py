@@ -333,3 +333,7 @@ ignore_links_on_delete = doctypes
 # -----------------------------------------
 
 cascading_deletion_doctypes = doctypes
+
+# login
+
+after_login = "pp_addon.login.login.after_login"

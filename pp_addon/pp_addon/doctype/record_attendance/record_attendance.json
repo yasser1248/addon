@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_import": 1,
  "allow_rename": 1,
  "autoname": "format:{attendance_time}.{name1}",
  "creation": "2023-12-24 09:32:16.831326",
@@ -62,8 +63,7 @@
    "fieldname": "log_type",
    "fieldtype": "Select",
    "label": "Log Type",
-   "options": "\nIN\nOUT",
-   "reqd": 1
+   "options": "\nIN\nOUT\nExit\nEnter"
   },
   {
    "fieldname": "column_break_pfxt",
@@ -98,7 +98,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-12-24 15:49:14.876071",
+ "modified": "2023-12-24 16:24:04.674047",
  "modified_by": "Administrator",
  "module": "Pp Addon",
  "name": "Record Attendance",
