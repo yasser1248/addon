@@ -14,14 +14,15 @@ class RecordAttendance(Document):
         start_of_day = datetime.combine(today, datetime.min.time())
         end_of_day = datetime.combine(today, datetime.max.time())
 
-        if doc := frappe.db.exists(
+        if (doc := frappe.db.exists(
             "Record Attendance",
             {
                 "name1": self.get("name1"),
                 "attendance_time": ["between", (start_of_day, end_of_day)],
                 "log_type": self.get("log_type"),
+                "name": ["!=", self.name],
             },
-        ) and self.docstatus == 1:
+        )):
             frappe.throw(
                 msg=f"Employee is aleardy present on {today}", title="Already Present"
             )
