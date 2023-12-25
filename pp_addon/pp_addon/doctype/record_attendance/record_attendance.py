@@ -6,6 +6,8 @@ from datetime import datetime, date
 import frappe
 from frappe.model.document import Document
 
+from pp_addon.pp_addon.doctype.day_attendance_details.day_attendance_details import update_day_attendance
+
 
 class RecordAttendance(Document):
     def validate(self):
@@ -26,3 +28,7 @@ class RecordAttendance(Document):
             frappe.throw(
                 msg=f"Employee is aleardy present on {today}", title="Already Present"
             )
+
+    def on_submit(self):
+        
+        update_day_attendance(self)

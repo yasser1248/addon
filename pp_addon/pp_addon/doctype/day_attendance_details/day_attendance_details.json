@@ -1,0 +1,51 @@
+{
+ "actions": [],
+ "autoname": "format:{day}",
+ "creation": "2023-12-25 01:33:57.326496",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "day",
+  "day_details"
+ ],
+ "fields": [
+  {
+   "fieldname": "day",
+   "fieldtype": "Date",
+   "label": "Day",
+   "read_only": 1
+  },
+  {
+   "fieldname": "day_details",
+   "fieldtype": "Table",
+   "label": "Day Details",
+   "options": "Day Attendance Details Child"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-12-25 02:11:54.153188",
+ "modified_by": "Administrator",
+ "module": "Pp Addon",
+ "name": "Day Attendance Details",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
