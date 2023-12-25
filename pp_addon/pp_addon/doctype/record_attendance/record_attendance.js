@@ -5,10 +5,14 @@ frappe.ui.form.on("Record Attendance", {
 	setup(frm) {
         if (frappe.session.user !== "Administrator") {
             frappe.db.get_value("Employee", {"user_id": frappe.session.user}, "name", function(r) {
-                frm.set_value("name1", r.name);
-                frm.refresh_field("name");
+                if (Object.keys(r).length > 0) {
+                    frm.set_value("name1", r.name);
+                    frm.refresh_field("name");
+                }
             });
         }
+        frm.set_value("attendance_time", frappe.datetime.get_today() + ' 08:00:00');
+        frm.refresh_field("attendance_time");
 	},
 
     onload(frm) {
@@ -40,5 +44,20 @@ frappe.ui.form.on("Record Attendance", {
                 navigator.geolocation.getCurrentPosition(onPositionRecieved, locationNotRecieved, { enableHighAccuracy: true });
             }
         }
-    }
+    },
+
+    log_type(frm) {
+        if (frm.doc.log_type === "IN") {
+            frm.set_value("attendance_time", frappe.datetime.get_today() + ' 08:00:00');
+            frm.refresh_field("attendance_time");
+        }
+        else if (frm.doc.log_type === "OUT") {
+            frm.set_value("attendance_time", frappe.datetime.get_today() + ' 16:00:00');
+            frm.refresh_field("attendance_time");
+        }
+        else if (in_list(["Exit", "Enter"], frm.doc.log_type)) {
+            frm.set_value("attendance_time", frappe.datetime.now_datetime());
+            frm.refresh_field("attendance_time");
+        }
+    },
 });

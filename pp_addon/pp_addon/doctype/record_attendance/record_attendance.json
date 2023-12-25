@@ -63,7 +63,8 @@
    "fieldname": "log_type",
    "fieldtype": "Select",
    "label": "Log Type",
-   "options": "\nIN\nOUT\nExit\nEnter"
+   "options": "IN\nOUT\nExit\nEnter",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_pfxt",
@@ -98,7 +99,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-12-25 12:22:49.262410",
+ "modified": "2023-12-25 17:12:18.846580",
  "modified_by": "Administrator",
  "module": "Pp Addon",
  "name": "Record Attendance",
