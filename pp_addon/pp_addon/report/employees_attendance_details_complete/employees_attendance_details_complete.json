@@ -1,0 +1,36 @@
+{
+ "add_total_row": 0,
+ "columns": [],
+ "creation": "2023-12-25 11:37:41.781581",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letter_head": "Project Status Header",
+ "letterhead": null,
+ "modified": "2023-12-25 11:37:41.781581",
+ "modified_by": "Administrator",
+ "module": "Pp Addon",
+ "name": "Employees Attendance Details Complete",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "ref_doctype": "Record Attendance",
+ "report_name": "Employees Attendance Details Complete",
+ "report_type": "Script Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "Addon Manager"
+  },
+  {
+   "role": "Addon User"
+  },
+  {
+   "role": "Addon Limited"
+  }
+ ]
+}

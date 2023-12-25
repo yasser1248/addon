@@ -25,42 +25,37 @@
    "fieldname": "in",
    "fieldtype": "Datetime",
    "in_list_view": 1,
-   "label": "IN",
-   "read_only": 1
+   "label": "IN"
   },
   {
    "fieldname": "out",
    "fieldtype": "Datetime",
    "in_list_view": 1,
-   "label": "OUT",
-   "read_only": 1
+   "label": "OUT"
   },
   {
    "fieldname": "exit",
    "fieldtype": "Datetime",
    "in_list_view": 1,
-   "label": "EXIT",
-   "read_only": 1
+   "label": "EXIT"
   },
   {
    "fieldname": "enter",
    "fieldtype": "Datetime",
    "in_list_view": 1,
-   "label": "ENTER",
-   "read_only": 1
+   "label": "ENTER"
   },
   {
    "fieldname": "total_working",
    "fieldtype": "Float",
    "in_list_view": 1,
-   "label": "Total Working",
-   "read_only": 1
+   "label": "Total Working"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-12-25 02:16:17.235345",
+ "modified": "2023-12-25 10:42:21.673567",
  "modified_by": "Administrator",
  "module": "Pp Addon",
  "name": "Day Attendance Details Child",

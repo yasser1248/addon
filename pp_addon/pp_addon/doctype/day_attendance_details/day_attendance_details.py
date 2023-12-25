@@ -13,14 +13,9 @@ class DayAttendanceDetails(Document):
 def update_day_attendance(doc):
     day_attendance_details = check_day_attendance_details(doc)
     day_attendance_details_child = check_day_attendance_details_child(
-        day_attendance_details
+        doc,
+        day_attendance_details,
     )
-    set_fields(doc, day_attendance_details, day_attendance_details_child)
-    update_total_working(doc, day_attendance_details, day_attendance_details_child)
-
-    day_attendance_details.save(ignore_permissions=True)
-    frappe.throw(str(day_attendance_details_child.get("employee")))
-    # day_attendance_details_child.save(ignore_permissions=True)
 
 
 def check_day_attendance_details(doc: Document) -> Document:
@@ -33,28 +28,29 @@ def check_day_attendance_details(doc: Document) -> Document:
         )
     else:
         day_attendance_details = frappe.new_doc("Day Attendance Details")
-        day_attendance_details.day = str(day.date())
+        day_attendance_details.day = day.date()
+    day_attendance_details.save(ignore_permissions=True)
     return day_attendance_details
 
 
-def check_day_attendance_details_child(day_attendance_details: Document) -> Document:
+def check_day_attendance_details_child(doc: Document, day_attendance_details: Document) -> Document:
     if day_attendance_details_child := frappe.db.exists(
         "Day Attendance Details Child",
         {
-            "employee": day_attendance_details.get("name1"),
+            "employee": doc.get("name1"),
             "parent": day_attendance_details.get("name"),
         },
     ):
         day_attendance_details_child = frappe.get_doc(
             "Day Attendance Details Child", day_attendance_details_child
         )
+        
+
     else:
-        day_attendance_details_child = frappe.new_doc(
-            "Day Attendance Details Child",
-            parent_doc=day_attendance_details,
-            parentfield="day_details",
-            employee=day_attendance_details.get("name1"),
-        )
+        day_attendance_details_child = day_attendance_details.append("day_details", {"employee": doc.get("name1")})
+
+    day_attendance_details_child = set_fields(doc, day_attendance_details, day_attendance_details_child)
+    day_attendance_details_child = update_total_working(doc, day_attendance_details, day_attendance_details_child)
     return day_attendance_details_child
 
 
@@ -64,8 +60,8 @@ def set_fields(
     day_attendance_details_child: Document,
 ):
     FIELDS = {
-        "IN": "check_in",
-        "OUT": "check_out",
+        "IN": "in",
+        "OUT": "out",
         "Exit": "exit",
         "Enter": "enter",
     }
@@ -73,20 +69,25 @@ def set_fields(
         FIELDS[doc.get("log_type")], doc.get("attendance_time")
     )
 
+    day_attendance_details_child = day_attendance_details_child.save(ignore_permissions=True)
+    return day_attendance_details_child
+
+
 
 def update_total_working(
     doc: Document,
     day_attendance_details: Document,
     day_attendance_details_child: Document,
 ):
+
     if (
-        doc.get("log_type") == "OUT"
-        and day_attendance_details_child.get("check_in")
-        and day_attendance_details_child.get("check_out")
+        day_attendance_details_child.get("in")
+        and day_attendance_details_child.get("out")
     ):
+
         total_working = time_diff_in_hours(
-            day_attendance_details_child.get("check_out"),
-            day_attendance_details_child.get("check_in"),
+            day_attendance_details_child.get("out"),
+            day_attendance_details_child.get("in"),
         )
         if day_attendance_details_child.get(
             "exit"
@@ -97,3 +98,5 @@ def update_total_working(
             )
 
         day_attendance_details_child.set("total_working", total_working)
+
+        day_attendance_details_child.save(ignore_permissions=True)

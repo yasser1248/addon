@@ -1,8 +1,11 @@
 # Copyright (c) 2023, magdyabouelatta and contributors
 # For license information, please see license.txt
 
+from datetime import datetime, time
+
 import frappe
 from frappe import _
+from frappe.utils import time_diff_in_hours
 
 
 def execute(filters=None):
@@ -48,6 +51,7 @@ def get_columns(filters: frappe._dict) -> list[dict]:
 def get_data(filters: frappe._dict) -> list[dict]:
     query = get_query(filters)
     data = _get_data(filters, query)
+    data = complete_data(data)
     return data
 
 
@@ -92,4 +96,13 @@ def get_conditions(filters: frappe._dict) -> str:
 
 def _get_data(filters: frappe._dict, query: str) -> list[frappe._dict]:
     data = frappe.db.sql(query, as_dict=1)
+    return data
+
+
+def complete_data(data: list[frappe._dict]) -> list[frappe._dict]:
+    for record in data:
+        record["check_in"] = record["check_in"].replace(hour=8, minute=0, second=0, microsecond=0)
+        record["check_out"] = record["check_out"].replace(hour=16, minute=0, second=0, microsecond=0)
+        record["total_working"] = time_diff_in_hours(record["check_out"], record["check_in"])
+
     return data
