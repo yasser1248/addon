@@ -26,9 +26,8 @@ class RecordAttendance(Document):
             },
         )):
             frappe.throw(
-                msg=f"Employee is aleardy present on {today}", title="Already Present"
+                msg=f"Employee is aleardy present on {today}", title="Already Presen t"
             )
 
-    def on_submit(self):
-        
+    def before_save(self):
         update_day_attendance(self)
