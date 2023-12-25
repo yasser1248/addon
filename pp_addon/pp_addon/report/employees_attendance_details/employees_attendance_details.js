@@ -7,13 +7,13 @@ frappe.query_reports["Employees Attendance Details"] = {
 			"label": __("From Date"),
 			"fieldname": "from_date",
 			"fieldtype": "Date",
-			"default": frappe.datetime.add_months(frappe.datetime.get_today(), -1),
+			"default": frappe.datetime.month_start(),
 		},
 		{
 			"fieldname": "to_date",
 			"label": __("To Date"),
 			"fieldtype": "Date",
-			"default": frappe.datetime.get_today(),
+			"default": frappe.datetime.month_end(),
 		},
 		{
 			"label": __("Employee"),

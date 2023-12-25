@@ -23,12 +23,19 @@ def get_columns(filters: frappe._dict) -> list[dict]:
             "fieldname": "day",
             "fieldtype": "Date",
         },
-        {
-            "label": _("Employee"),
-            "fieldname": "name1",
-            "fieldtype": "Link",
-            "options": "Employee",
-        },
+    ]
+
+    if not filters.get("employee"):
+        columns.append(
+            {
+                "label": _("Employee"),
+                "fieldname": "name1",
+                "fieldtype": "Link",
+                "options": "Employee",
+            }
+        )
+
+    columns += [
         {
             "label": _("Check IN"),
             "fieldname": "check_in",
