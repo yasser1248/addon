@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:Qy_{organization}",
+ "autoname": "format:{organization}",
  "creation": "2023-12-05 12:43:14.147704",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -25,7 +25,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-12-20 14:09:12.771125",
+ "modified": "2023-12-25 09:12:53.993233",
  "modified_by": "Administrator",
  "module": "Pp Addon",
  "name": "Organization",
