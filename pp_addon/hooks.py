@@ -171,9 +171,10 @@ scheduler_events = {
 # override_whitelisted_methods={
 # 	"frappe.public.js.frappe.ui.page.add_button":"pp_addon.event.overrides"
 # }
-# override_whitelisted_methods = {
+override_whitelisted_methods = {
+    "frappe.client.validate_link": "pp_addon.override.whitelisted_methods.client.validate_link",
 # 	"frappe.desk.reportview.get": "pp_addon.override.whitelisted_methods.reportview.get",
-# }
+}
 #
 # each overriding function accepts a `data` argument;
 # generated from the base implementation of the doctype dashboard,

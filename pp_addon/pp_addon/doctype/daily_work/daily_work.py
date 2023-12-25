@@ -34,3 +34,22 @@ class DailyWork(Document):
                 "weight": data[0].get('weight'),
             }
         return {}
+
+
+@frappe.whitelist()
+@frappe.validate_and_sanitize_search_inputs
+def get_milestones_for_project(doctype, txt, searchfield, start, page_len, filters):
+
+    conditions = f"WHERE p.project = '{filters.get('project')}'" if filters.get("project") else ""
+    return frappe.db.sql(
+        """
+        SELECT
+            c.name, p.name
+        FROM `tabProjects Milestone` AS p
+        LEFT JOIN `tabProjects Milestone child` AS c
+            ON p.name = c.parent
+        {conditions}
+        """.format(
+            conditions=conditions,
+        ),
+    )
