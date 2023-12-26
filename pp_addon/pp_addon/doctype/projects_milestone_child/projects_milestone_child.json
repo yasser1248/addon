@@ -57,7 +57,7 @@
    "fieldtype": "Float",
    "in_list_view": 1,
    "label": "Weight",
-   "precision": "2",
+   "precision": "5",
    "reqd": 1
   },
   {
@@ -88,7 +88,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-12-26 16:33:17.006864",
+ "modified": "2023-12-26 20:10:01.731900",
  "modified_by": "Administrator",
  "module": "Pp Addon",
  "name": "Projects Milestone child",
