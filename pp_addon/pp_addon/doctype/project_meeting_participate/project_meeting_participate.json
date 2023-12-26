@@ -6,21 +6,29 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "participate_type",
   "participate"
  ],
  "fields": [
   {
    "fieldname": "participate",
-   "fieldtype": "Link",
+   "fieldtype": "Dynamic Link",
    "in_list_view": 1,
    "label": "participate",
-   "options": "Stakholder"
+   "options": "participate_type"
+  },
+  {
+   "fieldname": "participate_type",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Participate Type",
+   "options": "DocType"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-09-21 14:34:52.159276",
+ "modified": "2023-12-26 15:49:29.124473",
  "modified_by": "Administrator",
  "module": "Pp Addon",
  "name": "Project Meeting Participate",

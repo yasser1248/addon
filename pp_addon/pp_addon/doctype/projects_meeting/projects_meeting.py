@@ -12,9 +12,14 @@ class ProjectsMeeting(Document):
     @frappe.whitelist()
     def send_summary(self):
         if self.participate:
-            names = (item.participate for item in self.participate)
-            participates_emails = frappe.db.get_list("Stakholder",
-                                                    filters={"name": ["IN", tuple(names)]}, fields=["email"])
+            participates_emails = []
+            for item in self.participate:
+                participates_emails.append(
+                    frappe.db.get_value(item.participate_type, item.participate, "email")
+                )
+            # names = (item.participate for item in self.participate)
+            # participates_emails = frappe.db.get_list("Stakholder",
+            #                                         filters={"name": ["IN", tuple(names)]}, fields=["email"])
             html = frappe.get_print(self.doctype, self.name,)
             pdf_file = frappe.utils.pdf.get_pdf(html)
             print(type(pdf_file))

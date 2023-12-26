@@ -6,9 +6,8 @@ from pp_addon.utils import send_mail
 
 @frappe.whitelist()
 def send_to_participate(*args, **kwargs):
-    print(kwargs)
-    for  value in json.loads(kwargs.get("parti")):
-        doc=frappe.get_doc("Stakholder",value)
+    for value in json.loads(kwargs.get("parti")):
+        doc=frappe.get_doc(value.get("participate_type"), value.get("participate"))
         # msg=f"To: {doc.name} <br> Invite for meeting <br> <a href='https://addon.newera-soft.com/meeting'>Press Here for Meeting</a>"
         msg = f"""
             To: {doc.name}
@@ -16,7 +15,7 @@ def send_to_participate(*args, **kwargs):
             <a href='https://addon.newera-soft.com/meeting'>Press Here for Meeting</a>
             in {(json.loads(kwargs.get("obj"))).get("meeting_date")}
         """
-        send_mail( doc,doc.email,msg=msg,title="Project Meeting")
+        send_mail(doc,doc.email,msg=msg,title="Project Meeting")
     return "Meeting Link sent to participate members"
 
 

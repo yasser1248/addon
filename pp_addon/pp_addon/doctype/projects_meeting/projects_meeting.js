@@ -14,7 +14,7 @@ frappe.ui.form.on('Projects Meeting', {
 			frm.add_custom_button(__("Send Invitation"), function() {
 				let parti=[]
 				frm.doc.participate.forEach(part => {
-					parti.push(part.participate)
+					parti.push(part)
 					console.log(parti)
 				})
 				frappe.call({
@@ -96,6 +96,14 @@ frappe.ui.form.on('Projects Meeting', {
 		if (frm.doc.meeting_done) {
 			frm.remove_custom_button('Start Meeting');
 		}
+
+		frm.set_query("participate_type", "participate", function() {
+			return {
+				filters: {
+					"name": ["in", ["Stakholder", "Employee"]]
+				}
+			}
+		})
 	},
 
 	meeting_done: function(frm) {
