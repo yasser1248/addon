@@ -55,10 +55,14 @@ def get_data(filters: dict) -> list[dict]:
 
     milestones = frappe.db.sql(
         """SELECT
-            p.project, p.milestone, SUM(c.weight) AS sum_total_weight, p.name, p.creation
+            p.project, p.milestone, SUM(c.weight) AS sum_total_weight, p.name, p.creation,
+            projects_milestone_child.plan_start__date, projects_milestone_child.plan_end__date,
+            projects_milestone_child.actual_start__date, projects_milestone_child.actual_end__date
         FROM `tabDaily Work` AS p
         LEFT JOIN `tabDaily Work Tasks Child Table` AS c
             ON p.name = c.parent
+        LEFT JOIN `tabProjects Milestone child` AS projects_milestone_child
+            ON p.milestone = projects_milestone_child.name
         WHERE p.project = "{project}"
         GROUP BY p.name;
         """.format(
@@ -70,7 +74,8 @@ def get_data(filters: dict) -> list[dict]:
     project_total_milestones = frappe.db.sql(
         """SELECT
                 p.project,
-                SUM(c.weight) AS total_weight
+                SUM(c.weight) AS total_weight, c.plan_start__date, c.plan_end__date,
+                c.actual_start__date, c.actual_end__date
             FROM `tabProjects Milestone` AS p
             LEFT JOIN `tabProjects Milestone child` AS c
                 ON p.name = c.parent
@@ -157,7 +162,9 @@ def add_remaining_milestones(filters: dict, data: list[dict], graph: dict = {}) 
         return
     remaining_milestones = frappe.db.sql(
         """
-            SELECT p.project, c.name AS milestone
+            SELECT p.project, c.name AS milestone,
+            c.plan_start__date, c.plan_end__date,
+            c.actual_start__date, c.actual_end__date
             FROM `tabProjects Milestone` AS p
             LEFT JOIN `tabProjects Milestone child` AS c ON p.name = c.parent
             WHERE p.project = '{project}' AND c.name NOT IN ({milestones})

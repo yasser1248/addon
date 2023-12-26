@@ -236,9 +236,9 @@
             <td>{{ i + 1 }}</td>
             <td>{{ (doc["projects_milestones"][i])["milestone"] }}</td>
             <td>{{ (doc["projects_milestones"][i])["status"] }}</td>
+            <td>{{ (doc["projects_milestones"][i])["plan_start__date"] }}</td>
             <td></td>
-            <td></td>
-            <td>{{ frappe.datetime.now_date() }}</td>
+            <td>{{ (doc["projects_milestones"][i])["actual_start__date"] }}</td>
             <td>{{ (doc["projects_milestones"][i])["completion"] * 100 }}</td>
         </tr>
         {% } %}
