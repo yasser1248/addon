@@ -13,10 +13,9 @@ def execute(filters=None):
     columns, data = [], []
     columns = get_columns(filters)
     data = get_data(filters)
-    graph = get_graph(data, filters)
-    data = convert_data(filters, data)
-    data = convert_data_treeview(filters, data)
-    return columns, data, None, graph
+    # graph = get_graph(data, filters)
+    # data = convert_data_treeview(filters, data)
+    return columns, data, None  # , graph
 
 
 def get_columns(filters: dict) -> list[dict]:
@@ -24,8 +23,8 @@ def get_columns(filters: dict) -> list[dict]:
         {
             "fieldname": "employee",
             "label": _("Employee"),
-            "fieldtype": "Data",
-            # "options": "Employee",
+            "fieldtype": "Link",
+            "options": "Employee",
             "width": 500,
         },
         {
@@ -35,13 +34,13 @@ def get_columns(filters: dict) -> list[dict]:
             "options": "Project",
             "width": 200,
         },
-        # {
-        #     "fieldname": "milestone",
-        #     "label": _("Milestone"),
-        #     "fieldtype": "Link",
-        #     "options": "Milestone",
-        #     "width": 200,
-        # },
+        {
+            "fieldname": "milestone",
+            "label": _("Milestone"),
+            "fieldtype": "Data",
+            "options": "Milestone",
+            "width": 200,
+        },
         {
             "fieldname": "task_data",
             "label": _("Task"),
@@ -52,21 +51,21 @@ def get_columns(filters: dict) -> list[dict]:
             "fieldname": "progress",
             "label": _("Progress"),
             "fieldtype": "Percent",
-            "width": 100,
+            "width": 200,
         },
         {
             "fieldname": "weight",
             "label": _("Weight"),
             "fieldtype": "Float",
             "precision": 2,
-            "width": 100,
+            "width": 200,
         },
         {
             "fieldname": "days",
             "label": _("Days"),
             "fieldtype": "Float",
             "precision": 2,
-            "width": 100,
+            "width": 200,
         },
     ]
     return columns
@@ -84,7 +83,7 @@ def get_query(filters: dict) -> list[dict]:
     conditions = get_conditions(filters)
     query = f"""
         SELECT
-            dwc.done_by AS employee, d.project, d.milestone, dwc.task_data, dwc.progress, dwc.weight, dwc.days
+            d.done_by AS employee, d.project, d.milestone, dwc.task_data, dwc.progress, dwc.weight, dwc.days
         FROM `tabDaily Work` AS d
         LEFT JOIN `tabDaily Work Tasks Child Table` AS dwc
             ON d.name = dwc.parent
@@ -96,27 +95,49 @@ def get_query(filters: dict) -> list[dict]:
 def get_conditions(filters: dict) -> str:
     conditions = ""
     if filters.get("project"):
-        conditions += "d.project = '{project}'".format(project=filters.get("project"))
+        conditions += " d.project = '{project}'".format(project=filters.get("project"))
+
     if filters.get("milestone"):
-        conditions += " AND d.milestone = '{milestone}'".format(
+        if conditions:
+            conditions += " AND "
+        conditions += " d.milestone = '{milestone}'".format(
             milestone=filters.get("milestone")
         )
+
     if filters.get("from_date") and filters.get("to_date"):
-        conditions += " AND d.modified BETWEEN '{from_date}' AND '{to_date}'".format(
+        if conditions:
+            conditions += " AND "
+        conditions += " d.modified BETWEEN '{from_date}' AND '{to_date}'".format(
             from_date=filters.get("from_date"), to_date=filters.get("to_date")
         )
+    elif filters.get("from_date"):
+        if conditions:
+            conditions += " AND "
+        conditions += " d.modified >= '{from_date}'".format(
+            from_date=filters.get("from_date")
+        )
+    elif filters.get("to_date"):
+        if conditions:
+            conditions += " AND "
+        conditions += " d.modified <= '{to_date}'".format(
+            from_date=filters.get("to_date")
+        )
+
     if filters.get("employee"):
-        conditions += " AND dwc.done_by = '{employee}'".format(
+        if conditions:
+            conditions += " AND "
+        conditions += " d.done_by = '{employee}'".format(
             employee=filters.get("employee")
         )
+
     return conditions
 
 
 def convert_data_treeview(filters: dict, data: list[dict]) -> list[dict]:
     root = frappe._dict(
         {
-            "employee": filters.get("employee"),
-            "project": filters.get("project"),
+            "employee": "Employees",
+            "project": None,
             "milestone": None,
             "task_data": "",
             "progress": 0.0,
@@ -129,58 +150,121 @@ def convert_data_treeview(filters: dict, data: list[dict]) -> list[dict]:
     )
 
     new_data = [root]
-    new_data.append(
-        {
-            "employee": "Milestone",
-            "project": "",
-            "milestone": "Milestone",
-            "task_data": "",
-            "progress": 0.0,
-            "weight": 0.0,
-            "days": 0.0,
-            "indent": 1,
-            "name": "Milestone",
-            "parent": "root",
-        }
-    )
-    milestones = list(set(milestone.get("milestone") for milestone in data))
-    if not milestones:
-        return
-    for milestone in milestones:
+    employees = list(set(map(lambda x: x.get("employee"), data)))
+
+    for emp in employees:
+        # Add Employee row
         new_data.append(
-            frappe._dict(
+            {
+                "employee": emp,
+                "project": "",
+                "milestone": "",
+                "task_data": "",
+                "progress": 0.0,
+                "weight": 0.0,
+                "days": 0.0,
+                "indent": 1,
+                "name": emp,
+                "parent": "root",
+            },
+        )
+
+        # Add Projects under Employee
+        projects = list(set(map(lambda x: x.get("project"), filter(lambda x: x.get("employee") == emp, data))))
+        new_data.append(
+            {
+                "employee": "Projects",
+                "project": "",
+                "milestone": "",
+                "task_data": "",
+                "progress": 0.0,
+                "weight": 0.0,
+                "days": 0.0,
+                "indent": 2,
+                "name": "Projects",
+                "parent": emp,
+            },
+        )
+        for proj in projects:
+            new_data.append(
                 {
-                    "employee": milestone,
+                    "employee": proj,
                     "project": "",
-                    "milestone": milestone,
+                    "milestone": "",
                     "task_data": "",
                     "progress": 0.0,
                     "weight": 0.0,
                     "days": 0.0,
-                    "indent": 2,
-                    "name": milestone,
-                    "parent": "Milestone",
+                    "indent": 3,
+                    "name": proj,
+                    "parent": "Projects",
                 },
             )
-        )
-        for task in data:
-            if task.get("milestone") == milestone:
-                task["employee"] = task.get("task_data")
+
+            # Add Milestones undrer Projects
+            milestones = list(set(map(lambda x: x.get("milestone"), filter(lambda x: x.get("project") == proj and x.get("employee") == emp, data))))
+            new_data.append(
+                    {
+                        "employee": "Milestones",
+                        "project": "",
+                        "milestone": "",
+                        "task_data": "",
+                        "progress": 0.0,
+                        "weight": 0.0,
+                        "days": 0.0,
+                        "indent": 4,
+                        "name": "Milestones",
+                        "parent": proj,
+                    },
+                )
+            for ms in milestones:
                 new_data.append(
-                    task.update(
+                    {
+                        "employee": ms,
+                        "project": "",
+                        "milestone": "",
+                        "task_data": "",
+                        "progress": 0.0,
+                        "weight": 0.0,
+                        "days": 0.0,
+                        "indent": 5,
+                        "name": ms,
+                        "parent": "Milestones",
+                    },
+                )
+                
+                # Add Tasks under Milestones
+                tasks = filter(lambda x: x.get("milestone") == ms and x.get("project") == proj and x.get("employee") == emp, data)
+                new_data.append(
+                    {
+                        "employee": "Tasks",
+                        "project": "",
+                        "milestone": "",
+                        "task_data": "",
+                        "progress": 0.0,
+                        "weight": 0.0,
+                        "days": 0.0,
+                        "indent": 6,
+                        "name": "Tasks",
+                        "parent": ms,
+                    },
+                )
+                for task in tasks:
+                    new_data.append(
                         {
                             "employee": task.get("task_data"),
                             "project": "",
                             "milestone": "",
+                            "task_data": "",
                             "progress": task.get("progress"),
                             "weight": task.get("weight"),
                             "days": task.get("days"),
-                            "indent": 3,
-                            "name": task.get("task_data"),
-                            "parent": milestone,
-                        }
+                            "indent": 7,
+                            "name": task,
+                            "parent": "Tasks",
+                        },
                     )
-                )
+
     return new_data
 
 
@@ -210,178 +294,3 @@ def get_graph(data: list[dict], filters: dict) -> dict:
     ]
     graph["data"] = {"labels": labels_list, "datasets": datasets}
     return graph
-
-
-def convert_data(data: list[dict]) -> list[dict]:
-	employees = frappe.db.sql(
-		"""
-		SELECT dwc.done_by AS employee
-		""",
-	)
-"""
-{'employee': '124295---مجدي ابوالعطا',
-'project': '01594-Public Prosecution',
-'milestone': 'تقرير المقارنات المعيارية و الدراسات المرجعية',
-'task_data': 'TEST 2',
-'progress': 100.0,
-'weight': 5.0,
-'days': 5.0}
-"""
-
-import datetime
-
-[
-    {
-        "employee": "124295---مجدي ابوالعطا",
-        "project": "01594-Public Prosecution",
-        "milestone": "تقرير المقارنات المعيارية و الدراسات المرجعية",
-        "task_data": "TEST 2",
-        "progress": 100.0,
-        "weight": 5.0,
-        "days": 5.0,
-    },
-    {
-        "employee": "124295---مجدي ابوالعطا",
-        "project": "01594-Public Prosecution",
-        "milestone": "تقرير المقارنات المعيارية و الدراسات المرجعية",
-        "task_data": "TEST 1",
-        "progress": 100.0,
-        "weight": 10.0,
-        "days": 2.0,
-    },
-    {
-        "employee": "1234.Moath alawaji",
-        "project": "01594-Public Prosecution",
-        "milestone": "مدير مشروع ادارة البيانات",
-        "task_data": "تحليل كراسة مشروع مكتب البيانات",
-        "progress": 100.0,
-        "weight": 100.0,
-        "days": 3.0,
-    },
-    {
-        "employee": "1234.Moath alawaji",
-        "project": "01594-Public Prosecution",
-        "milestone": "مدير مشروع ادارة البيانات",
-        "task_data": "إعداد عرض مشروع مكتب إدارة البيانات \x0b(التحول الرقمي)",
-        "progress": 80.0,
-        "weight": 100.0,
-        "days": 5.0,
-    },
-    {
-        "employee": "1234.Moath alawaji",
-        "project": "01594-Public Prosecution",
-        "milestone": "مدير مشروع ادارة البيانات",
-        "task_data": "حضور ملتقى هيئة الحكومة الرقمية",
-        "progress": 100.0,
-        "weight": 100.0,
-        "days": 1.0,
-    },
-    {
-        "employee": "1234.Moath alawaji",
-        "project": "01594-Public Prosecution",
-        "milestone": "مدير مشروع ادارة البيانات",
-        "task_data": "حضور ورشة العمل الخاصة بـ COBIT",
-        "progress": 80.0,
-        "weight": 100.0,
-        "days": 10.0,
-    },
-    {
-        "employee": "1234.Moath alawaji",
-        "project": "01594-Public Prosecution",
-        "milestone": "مدير مشروع ادارة البيانات",
-        "task_data": "تحليل وثيقة نضج البيانات ",
-        "progress": 100.0,
-        "weight": 100.0,
-        "days": 2.0,
-    },
-    {
-        "employee": "124295---مجدي ابوالعطا",
-        "project": "01594-Public Prosecution",
-        "milestone": "وثيقة استراتيجية التحول الرقمي",
-        "task_data": "TEST 1",
-        "progress": 100.0,
-        "weight": 10.0,
-        "days": 0.0,
-    },
-    {
-        "employee": "124295---مجدي ابوالعطا",
-        "project": "01594-Public Prosecution",
-        "milestone": "وثيقة استراتيجية التحول الرقمي",
-        "task_data": "TEST 4",
-        "progress": 50.0,
-        "weight": 50.0,
-        "days": 0.0,
-    },
-    {
-        "employee": "124295---مجدي ابوالعطا",
-        "project": "01594-Public Prosecution",
-        "milestone": "وثيقة استراتيجية التحول الرقمي",
-        "task_data": "TEST 2",
-        "progress": 100.0,
-        "weight": 1.0,
-        "days": 0.0,
-    },
-    {
-        "employee": "124295---مجدي ابوالعطا",
-        "project": "01594-Public Prosecution",
-        "milestone": "وثيقة استراتيجية التحول الرقمي",
-        "task_data": "TEST 3",
-        "progress": 100.0,
-        "weight": 5.0,
-        "days": 0.0,
-    },
-    {
-        "employee": None,
-        "project": "01594-Public Prosecution",
-        "milestone": "وثيقة تحليل الوضع الراهن للتحول الرقمي",
-        "task_data": "meeting ",
-        "progress": 0.0,
-        "weight": 0.0,
-        "days": 0.0,
-    },
-    {
-        "employee": "1234.Moath alawaji",
-        "project": "01594-Public Prosecution",
-        "milestone": "وثيقة تحليل الوضع الراهن للتحول الرقمي",
-        "task_data": "Cobit 2019 Workshop",
-        "progress": 2.0,
-        "weight": 10.0,
-        "days": 0.0,
-    },
-    {
-        "employee": "124295---مجدي ابوالعطا",
-        "project": "01594-Public Prosecution",
-        "milestone": "وثيقة التصور المستقبلي لمكتب مشاريع التحول الرقمي",
-        "task_data": "TEST 2",
-        "progress": 100.0,
-        "weight": 5.0,
-        "days": 2.0,
-    },
-    {
-        "employee": "124295---مجدي ابوالعطا",
-        "project": "01594-Public Prosecution",
-        "milestone": "وثيقة التصور المستقبلي لمكتب مشاريع التحول الرقمي",
-        "task_data": "TEST 1",
-        "progress": 100.0,
-        "weight": 10.0,
-        "days": 10.0,
-    },
-    {
-        "employee": "124295---مجدي ابوالعطا",
-        "project": "01594-Public Prosecution",
-        "milestone": "وثيقة خارطة الطريق و خطة التنفيذ",
-        "task_data": "TASK 2",
-        "progress": 100.0,
-        "weight": 10.0,
-        "days": 2.0,
-    },
-    {
-        "employee": "124295---مجدي ابوالعطا",
-        "project": "01594-Public Prosecution",
-        "milestone": "وثيقة خارطة الطريق و خطة التنفيذ",
-        "task_data": "TASK 1",
-        "progress": 10.0,
-        "weight": 5.0,
-        "days": 2.0,
-    },
-]

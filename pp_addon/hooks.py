@@ -145,7 +145,10 @@ scheduler_events = {
     #  "cron":{
     #     "07 * * * *":["pp_addon.tasks.cron"]
     #  },
-    "cron": {"01 00 * * *": ["pp_addon.tasks.cron"]},
+    "cron": {
+        "01 00 * * *": ["pp_addon.tasks.cron"],
+        "0 14 * * 4": ["pp_addon.scheduler_tasks.employee_daily_work.send_report"],
+    },
     # 	"all": [
     # 		"pp_addon.tasks.all"
     # 	],
@@ -173,7 +176,7 @@ scheduler_events = {
 # }
 override_whitelisted_methods = {
     "frappe.client.validate_link": "pp_addon.override.whitelisted_methods.client.validate_link",
-# 	"frappe.desk.reportview.get": "pp_addon.override.whitelisted_methods.reportview.get",
+    # 	"frappe.desk.reportview.get": "pp_addon.override.whitelisted_methods.reportview.get",
 }
 #
 # each overriding function accepts a `data` argument;
@@ -226,8 +229,8 @@ fixtures = [
     },
     {"dt": ("Kanban Board"), "filters": [["kanban_board_name", "in", ("Task")]]},
     {
-    "dt": "Role",
-    "filters": [
+        "dt": "Role",
+        "filters": [
             ["name", "in", ("Addon Manager", "Addon User", "Addon Limited")],
         ],
     }
