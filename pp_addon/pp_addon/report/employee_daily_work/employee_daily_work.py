@@ -57,7 +57,7 @@ def get_columns(filters: dict) -> list[dict]:
             "fieldname": "weight",
             "label": _("Weight"),
             "fieldtype": "Float",
-            "precision": 2,
+            "precision": 5,
             "width": 100,
         },
         {
@@ -80,7 +80,7 @@ def get_query(filters: dict) -> list[dict]:
     conditions = get_conditions(filters)
     query = f"""
         SELECT
-            dwc.done_by AS employee, d.project, d.milestone, dwc.task_data, dwc.progress, dwc.weight, dwc.days
+            d.done_by AS employee, d.project, d.milestone, dwc.task_data, dwc.progress, dwc.weight, dwc.days
         FROM `tabDaily Work` AS d
         LEFT JOIN `tabDaily Work Tasks Child Table` AS dwc
             ON d.name = dwc.parent
@@ -97,7 +97,7 @@ def get_conditions(filters: dict) -> str:
     if filters.get("from_date") and filters.get("to_date"):
         conditions += " AND d.modified BETWEEN '{from_date}' AND '{to_date}'".format(from_date=filters.get("from_date"), to_date=filters.get("to_date"))
     if filters.get("employee"):
-        conditions += " AND dwc.done_by = '{employee}'".format(employee=filters.get("employee"))
+        conditions += " AND d.done_by = '{employee}'".format(employee=filters.get("employee"))
     return conditions
 
 

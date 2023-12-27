@@ -11,6 +11,7 @@
   "milestone",
   "days",
   "weight",
+  "done_by",
   "tasks_section",
   "tasks"
  ],
@@ -65,11 +66,18 @@
    "label": "Weight",
    "precision": "2",
    "read_only": 1
+  },
+  {
+   "fieldname": "done_by",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Done By",
+   "options": "Employee"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-12-25 16:33:58.085692",
+ "modified": "2023-12-27 09:52:45.309644",
  "modified_by": "Administrator",
  "module": "Pp Addon",
  "name": "Daily Work",
