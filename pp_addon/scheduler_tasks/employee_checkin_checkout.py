@@ -7,7 +7,7 @@ The checkout function performs the same check but for check-out instead of check
 """
 
 import frappe
-from frappe.utils import now_datetime
+from frappe.utils import now_datetime, nowdate
 
 
 def checkin() -> None:
@@ -38,6 +38,7 @@ def get_employees(log_type: str) -> list[frappe._dict]:
                 WHERE
                     emp.name = rec_atten.name1 AND 
                     rec_atten.log_type = "{log_type}" AND 
+                    rec_atten.modified >= "{nowdate() + ' 00:00:00'}" AND 
                     rec_atten.modified <= "{now_datetime()}"
             )
         ;
