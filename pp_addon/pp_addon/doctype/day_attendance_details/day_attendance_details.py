@@ -3,7 +3,7 @@
 
 import frappe
 from frappe.model.document import Document
-from frappe.utils import get_datetime, time_diff_in_hours
+from frappe.utils import get_datetime, time_diff_in_hours, nowdate, now_datetime
 
 
 class DayAttendanceDetails(Document):
@@ -68,6 +68,20 @@ def set_fields(
     day_attendance_details_child.set(
         FIELDS[doc.get("log_type")], doc.get("attendance_time")
     )
+    # set status and late_time fields
+    if FIELDS[doc.get("log_type")] == "in":
+        late_time = time_diff_in_hours(
+            get_datetime(nowdate() + " 08:00:00"),
+            doc.get("attendance_time"),
+        )
+        if late_time == 0:
+            day_attendance_details_child.set("status", "On Time")
+            day_attendance_details_child.set("late_time", late_time)
+        elif late_time < 0:
+            day_attendance_details_child.set("status", "Late")
+            day_attendance_details_child.set("late_time", abs(late_time))
+        else:
+            ...
 
     day_attendance_details_child = day_attendance_details_child.save(ignore_permissions=True)
     return day_attendance_details_child

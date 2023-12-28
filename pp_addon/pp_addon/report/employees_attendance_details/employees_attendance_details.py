@@ -44,8 +44,18 @@ def get_columns(filters: frappe._dict) -> list[dict]:
             "fieldtype": "Datetime",
         },
         {
-            "label": _("Total Working"),
+            "label": _("Total Working (Hour)"),
             "fiedname": "total_working",
+            "fieldtype": "Data",
+        },
+        {
+            "label": _("Status"),
+            "fieldname": "status",
+            "fieldtype": "Data",
+        },
+        {
+            "label": _("Late Time (Hour)"),
+            "fieldname": "late_time",
             "fieldtype": "Data",
         },
     ]
@@ -67,7 +77,9 @@ def get_query(filters: frappe._dict) -> str:
             day_attendance_details_child.employee AS name1,
             day_attendance_details_child.in AS check_in,
             day_attendance_details_child.out AS check_out,
-            day_attendance_details_child.total_working
+            day_attendance_details_child.total_working,
+            day_attendance_details_child.status,
+            day_attendance_details_child.late_time
         FROM `tabDay Attendance Details` AS day_attendance_details
         LEFT JOIN `tabDay Attendance Details Child` AS day_attendance_details_child
             ON day_attendance_details.name = day_attendance_details_child.parent
