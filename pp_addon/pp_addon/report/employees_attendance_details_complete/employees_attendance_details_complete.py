@@ -5,7 +5,7 @@ from datetime import datetime, time
 
 import frappe
 from frappe import _
-from frappe.utils import time_diff_in_hours
+from frappe.utils import time_diff_in_hours, get_datetime
 
 
 def execute(filters=None):
@@ -108,11 +108,16 @@ def _get_data(filters: frappe._dict, query: str) -> list[frappe._dict]:
 
 def complete_data(data: list[frappe._dict]) -> list[frappe._dict]:
     for record in data:
-        if record.get("check_in"):
-            record["check_in"] = record["check_in"].replace(hour=8, minute=0, second=0, microsecond=0)
-        if record.get("check_out"):
-            record["check_out"] = record["check_out"].replace(hour=16, minute=0, second=0, microsecond=0)
-        if record.get("check_in") and record.get("check_out"):
-            record["total_working"] = time_diff_in_hours(record["check_out"], record["check_in"])
+
+        # if record.get("check_in"):
+        #     record["check_in"] = record["check_in"].replace(hour=8, minute=0, second=0, microsecond=0)
+        # if record.get("check_out"):
+        #     record["check_out"] = record["check_out"].replace(hour=16, minute=0, second=0, microsecond=0)
+        # if record.get("check_in") and record.get("check_out"):
+        #     record["total_working"] = time_diff_in_hours(record["check_out"], record["check_in"])
+
+        record["check_in"] = get_datetime(str(record["day"]) + " 08:00:00")
+        record["check_out"] = get_datetime(str(record["day"]) + " 16:00:00")
+        record["total_working"] = time_diff_in_hours(record["check_out"], record["check_in"])
 
     return data
