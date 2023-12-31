@@ -148,8 +148,8 @@ scheduler_events = {
     "cron": {
         "01 00 * * *": ["pp_addon.tasks.cron"],
         "0 14 * * 4": ["pp_addon.scheduler_tasks.employee_daily_work.send_report"],
-        "0 10 * * *": ["pp_addon.scheduler_tasks.employee_checkin_checkout.checkin"],
-        "0 18 * * *": ["pp_addon.scheduler_tasks.employee_checkin_checkout.checkout"],
+        "0 10 * * 0,1,2,3,4": ["pp_addon.scheduler_tasks.employee_checkin_checkout.checkin"],
+        "0 18 * * 0,1,2,3,4": ["pp_addon.scheduler_tasks.employee_checkin_checkout.checkout"],
     },
     # 	"all": [
     # 		"pp_addon.tasks.all"

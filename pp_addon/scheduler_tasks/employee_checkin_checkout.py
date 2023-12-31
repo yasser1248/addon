@@ -38,8 +38,8 @@ def get_employees(log_type: str) -> list[frappe._dict]:
                 WHERE
                     emp.name = rec_atten.name1 AND 
                     rec_atten.log_type = "{log_type}" AND 
-                    rec_atten.modified >= "{nowdate() + ' 00:00:00'}" AND 
-                    rec_atten.modified <= "{now_datetime()}"
+                    rec_atten.attendance_time >= "{nowdate() + ' 00:00:00'}" AND 
+                    rec_atten.attendance_time <= "{now_datetime()}"
             )
         ;
         """,
