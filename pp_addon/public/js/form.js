@@ -6,7 +6,7 @@ frappe.ui.form.Form = class FrappeForm extends frappe.ui.form.Form {
         console.log(this);
         const h = 1080;
         const w = 1920;
-        if ((window.innerHeight / window.innerWidth) > (h / w)) {
+        if ((window.innerHeight / window.innerWidth) > (h / w) && !isMobileDevice()) {
             this.layout_main.addEventListener("change", async(event) => {
                 console.log("event -> ");
                 console.log(event);
@@ -144,3 +144,8 @@ function scroll_to(frm, fieldname){
     frm.scroll_to_field(fieldname);
     frm.scroll_set = true;
 };
+
+// Function to check if the device is mobile
+function isMobileDevice() {
+    return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+}
