@@ -8,6 +8,7 @@
  "engine": "InnoDB",
  "field_order": [
   "project",
+  "employee",
   "column_break_2",
   "project_name",
   "section_break_3",
@@ -45,11 +46,18 @@
    "fieldtype": "Table",
    "label": "Assesment",
    "options": "project team ass child"
+  },
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "label": "Employee",
+   "options": "Employee",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-12-20 13:59:01.856072",
+ "modified": "2023-12-31 12:25:53.943943",
  "modified_by": "Administrator",
  "module": "Pp Addon",
  "name": "Project team asses",
