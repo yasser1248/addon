@@ -1,0 +1,60 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"URkumaJYth\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Attendance</span>\",\"col\":12}},{\"id\":\"YutRYPJMub\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Record Attendance\",\"col\":3}},{\"id\":\"jPnxSqMow5\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Day Attendance Details\",\"col\":3}},{\"id\":\"LiLGHi50W9\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Employees Attendance Details\",\"col\":3}},{\"id\":\"yGimZAljWg\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Employees Attendance Details Complete\",\"col\":3}}]",
+ "creation": "2023-12-31 12:37:27.800682",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "hr",
+ "idx": 0,
+ "indicator_color": "",
+ "is_hidden": 0,
+ "label": "Attendance",
+ "links": [],
+ "modified": "2023-12-31 12:42:53.748291",
+ "modified_by": "Administrator",
+ "module": "Pp Addon",
+ "name": "Attendance",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 2.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Day Attendance Details",
+   "link_to": "Day Attendance Details",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Employees Attendance Details",
+   "link_to": "Employees Attendance Details",
+   "type": "Report"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Employees Attendance Details Complete",
+   "link_to": "Employees Attendance Details Complete",
+   "type": "Report"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Record Attendance",
+   "link_to": "Record Attendance",
+   "stats_filter": "[]",
+   "type": "DocType"
+  }
+ ],
+ "title": "Attendance"
+}
