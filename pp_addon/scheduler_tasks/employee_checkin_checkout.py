@@ -11,18 +11,34 @@ from frappe.utils import now_datetime, nowdate
 
 
 def checkin() -> None:
-    employees = frappe.db.get_list("Employee", fields=["name", "employee_name", "email", "user_id"])
+    employees = frappe.db.get_list(
+        "Employee", fields=["name", "employee_name", "email", "user_id"]
+    )
     employees_not_make_checkin = get_employees("IN")
     if employees_not_make_checkin:
-        send_email_to_employees(employees_not_make_checkin, subject="You Did Not Make Check-in", message="You did not make IN in the system")
-        send_employees_to_manager(employees_not_make_checkin, subject="Employees Not Make Check-In in System",)
+        send_email_to_employees(
+            employees_not_make_checkin,
+            subject="You Did Not Make Check-in",
+            message="You did not make IN in the system",
+        )
+        send_employees_to_manager(
+            employees_not_make_checkin,
+            subject="Employees Not Make Check-In in System",
+        )
 
 
 def checkout() -> None:
     employees_not_make_checkout = get_employees("OUT")
     if employees_not_make_checkout:
-        send_email_to_employees(employees_not_make_checkout, subject="You Did Not Make Check-out", message="You did not make OUT in the system")
-        send_employees_to_manager(employees_not_make_checkout, subject="Employees Not Make Check-OUT in System",)
+        send_email_to_employees(
+            employees_not_make_checkout,
+            subject="You Did Not Make Check-out",
+            message="You did not make OUT in the system",
+        )
+        send_employees_to_manager(
+            employees_not_make_checkout,
+            subject="Employees Not Make Check-OUT in System",
+        )
 
 
 def get_employees(log_type: str) -> list[frappe._dict]:
@@ -44,11 +60,13 @@ def get_employees(log_type: str) -> list[frappe._dict]:
         ;
         """,
         as_dict=1,
-        )
+    )
     return employees
 
 
-def send_email_to_employees(employees: list[frappe._dict], subject: str, message: str) -> None:
+def send_email_to_employees(
+    employees: list[frappe._dict], subject: str, message: str
+) -> None:
     employees_emails = []
     if employees:
         for emp in employees:
@@ -58,10 +76,10 @@ def send_email_to_employees(employees: list[frappe._dict], subject: str, message
                 if emp.get("user_id"):
                     employees_emails.append(emp.get("user_id"))
     if employees_emails:
-        email_args= {
-        'recipients': employees_emails,
-        'subject': subject,
-        'message': message,
+        email_args = {
+            "recipients": employees_emails,
+            "subject": subject,
+            "message": message,
         }
         frappe.enqueue(
             method=frappe.sendmail,
@@ -73,17 +91,64 @@ def send_email_to_employees(employees: list[frappe._dict], subject: str, message
         )
 
 
-def send_employees_to_manager(employees: frappe._dict, subject: str,) -> None:
-    email_args= {
-        'recipients': "magdy.abouelatta@700apps.net",
-        'subject': subject,
-        'message': "\n".join([emp.get("employee_name") for emp in employees]),
-        }
+def send_employees_to_manager(
+    employees: frappe._dict,
+    subject: str,
+) -> None:
+    email_args = {
+        "recipients": "magdy.abouelatta@700apps.net",
+        "subject": subject,
+        "message": "\n".join([emp.get("employee_name") for emp in employees]),
+    }
     frappe.enqueue(
-            method=frappe.sendmail,
-            queue="default",
-            is_async=True,
-            now=True,
-            job_name="employees_not_make_checkin",
-            **email_args,
+        method=frappe.sendmail,
+        queue="default",
+        is_async=True,
+        now=True,
+        job_name="employees_not_make_checkin",
+        **email_args,
+    )
+
+
+def employees_not_done_any_tasks() -> None:
+    employees_made_checkin = frappe.db.get_list(
+        "Record Attendance",
+        filters={
+            "log_type": "IN",
+            "attendance_time": ["between", (nowdate() + " 00:00:00", now_datetime())],
+        },
+        fields=["name1"],
+    )
+    today_tasks = frappe.db.sql(
+        f"""
+        SELECT
+            dw.done_by, dwc.date, dwc.task_data
+        FROM `tabDaily Work` AS dw
+        LEFT JOIN `tabDaily Work Tasks Child Table` AS dwc
+            ON dw.name = dwc.parent
+        WHERE
+            dwc.date BETWEEN "{nowdate() + '00:00:00'}" AND "{now_datetime()}"
+        ;""",
+        as_dict=1,
+    )
+    employees_not_made_tasks = []
+    for emp in employees_made_checkin:
+        if emp.get("name1") not in [t.get("done_by") for t in today_tasks]:
+            employees_not_made_tasks.append(f"'{emp.get('name1')}'")
+    if employees_not_made_tasks:
+        employees_emails = frappe.db.sql(
+            f"""
+            SELECT
+                emp.name, emp.employee_name, emp.email, emp.user_id
+            FROM `tabEmployee` AS emp
+            WHERE
+                emp.name IN ({', '.join(employees_not_made_tasks)})
+            ;
+            """,
+            as_dict=1,
+        )
+        send_email_to_employees(
+            employees_emails,
+            subject="You Did Not Make Tasks",
+            message="You did not make tasks in the system",
         )
