@@ -42,25 +42,56 @@ def checkout() -> None:
 
 
 def get_employees(log_type: str) -> list[frappe._dict]:
-    employees = frappe.db.sql(
-        f"""
-        SELECT
-            emp.name, emp.employee_name, emp.email, emp.user_id
-        FROM `tabEmployee` AS emp
-        WHERE
-            NOT EXISTS (
-                SELECT *
-                FROM `tabRecord Attendance` AS rec_atten
-                WHERE
-                    emp.name = rec_atten.name1 AND 
-                    rec_atten.log_type = "{log_type}" AND 
-                    rec_atten.attendance_time >= "{nowdate() + ' 00:00:00'}" AND 
-                    rec_atten.attendance_time <= "{now_datetime()}"
-            )
-        ;
-        """,
-        as_dict=1,
+    # employees = frappe.db.sql(
+    #     f"""
+    #     SELECT
+    #         emp.name, emp.employee_name, emp.email, emp.user_id
+    #     FROM `tabEmployee` AS emp
+    #     WHERE
+    #         NOT EXISTS (
+    #             SELECT *
+    #             FROM `tabRecord Attendance` AS rec_atten
+    #             WHERE
+    #                 emp.name = rec_atten.name1 AND 
+    #                 rec_atten.log_type = "{log_type}" AND 
+    #                 rec_atten.attendance_time >= "{nowdate() + ' 00:00:00'}" AND 
+    #                 rec_atten.attendance_time <= "{now_datetime()}"
+    #         )
+    #     ;
+    #     """,
+    #     as_dict=1,
+    # )
+    employees = frappe.db.get_list(
+        "Employee", fields=["name", "employee_name", "email", "user_id"]
     )
+    if log_type == "IN":
+        today_in = frappe.db.sql(
+            f"""
+            SELECT c.employee
+            FROM `tabDay Attendance Details Child` AS c
+            WHERE c.parent = "{nowdate()}" AND c.in IS NOT NULL
+            ;
+            """,
+            as_dict=1,
+        )
+        employees_set = set(emp.get("name") for emp in employees)
+        today_in_set = set(emp.get("employee") for emp in today_in)
+        employees_not_make_checkin = employees_set - today_in_set
+        employees = [emp for emp in employees if emp.get("name") in employees_not_make_checkin]
+    elif log_type == "OUT":
+        employees_made_checkin_but_not_made_checkout = frappe.db.sql(
+            f"""
+            SELECT c.employee
+            FROM `tabDay Attendance Details Child` AS c
+            WHERE c.parent = "{nowdate()}" AND c.out IS NULL
+            ;
+            """,
+            as_dict=1,
+        )
+        employees_made_checkin_but_not_made_checkout = set(
+            emp.get("employee") for emp in employees_made_checkin_but_not_made_checkout
+        )
+        employees = [emp for emp in employees if emp.get("name") in employees_made_checkin_but_not_made_checkout]
     return employees
 
 
