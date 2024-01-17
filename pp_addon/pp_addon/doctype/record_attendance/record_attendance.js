@@ -3,6 +3,7 @@
 
 frappe.ui.form.on("Record Attendance", {
 	setup(frm) {
+        if (!frm.is_new()) {return;}
         if (frappe.session.user !== "Administrator") {
             frappe.db.get_value("Employee", {"user_id": frappe.session.user}, "name", function(r) {
                 if (Object.keys(r).length > 0) {
