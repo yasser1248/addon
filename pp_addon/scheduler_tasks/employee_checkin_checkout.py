@@ -183,3 +183,7 @@ def employees_not_done_any_tasks() -> None:
             subject="You Did Not Make Tasks",
             message="You did not make tasks in the system",
         )
+        send_employees_to_manager(
+            employees_not_made_tasks,
+            subject="Employees Not Make Any Task Today",
+        )
