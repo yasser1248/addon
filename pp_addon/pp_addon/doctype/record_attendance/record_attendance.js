@@ -25,6 +25,7 @@ frappe.ui.form.on("Record Attendance", {
 	},
 
     onload(frm) {
+        if (!frm.is_new()) {return;}
         function onPositionRecieved(position) {
             var longitude = position.coords.longitude;
             var latitude = position.coords.latitude;
