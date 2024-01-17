@@ -2,17 +2,32 @@
 // For license information, please see license.txt
 
 frappe.ui.form.on('Project team asses', {
-	project: function(frm) {
-		if (frm.doc.project) {
-			add_child_table_row(frm);
-		}
+	setup: function(frm) {
+		frappe.call({
+			method: "pp_addon.pp_addon.doctype.project_team_asses.project_team_asses.get_all_type_of_asses",
+			args: {},
+			callback: (r) => {
+				if (r.message) {
+					r.message.forEach((item) => {
+						frm.add_child("items", {"item": item.name});
+					});
+					frm.refresh_field("items");
+				}
+			},
+		});
 	},
 
-	employee: function(frm) {
-		if (frm.doc.project) {
-			add_child_table_row(frm);
-		}
-	}
+	// project: function(frm) {
+	// 	if (frm.doc.project) {
+	// 		add_child_table_row(frm);
+	// 	}
+	// },
+
+	// employee: function(frm) {
+	// 	if (frm.doc.project) {
+	// 		add_child_table_row(frm);
+	// 	}
+	// }
 });
 
 
