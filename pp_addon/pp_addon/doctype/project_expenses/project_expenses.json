@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:EXP-{project}",
  "creation": "2024-01-18 09:38:39.194036",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -16,6 +17,7 @@
    "fieldname": "project",
    "fieldtype": "Link",
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Project",
    "options": "Project",
    "reqd": 1
@@ -45,10 +47,11 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-01-18 09:45:00.548587",
+ "modified": "2024-01-18 10:34:36.867243",
  "modified_by": "Administrator",
  "module": "Pp Addon",
  "name": "Project Expenses",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
