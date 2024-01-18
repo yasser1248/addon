@@ -418,7 +418,7 @@
    "hidden": 0,
    "is_query_report": 0,
    "label": "More Setting",
-   "link_count": 9,
+   "link_count": 10,
    "onboard": 0,
    "type": "Card Break"
   },
@@ -511,9 +511,19 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Type of Assessment",
+   "link_count": 0,
+   "link_to": "Type of asses",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2024-01-18 10:32:46.394625",
+ "modified": "2024-01-18 10:40:24.393638",
  "modified_by": "Administrator",
  "module": "Pp Addon",
  "name": "Addon",
