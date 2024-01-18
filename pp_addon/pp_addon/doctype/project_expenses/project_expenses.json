@@ -10,7 +10,8 @@
   "column_break_pjqk",
   "project_name",
   "details_section",
-  "expenses"
+  "expenses",
+  "totals"
  ],
  "fields": [
   {
@@ -43,11 +44,19 @@
    "fieldtype": "Table",
    "label": "Expenses",
    "options": "Project Expenses Details"
+  },
+  {
+   "default": "0",
+   "fieldname": "totals",
+   "fieldtype": "Float",
+   "label": "Totals",
+   "precision": "3",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-01-18 10:34:36.867243",
+ "modified": "2024-01-18 14:36:58.195548",
  "modified_by": "Administrator",
  "module": "Pp Addon",
  "name": "Project Expenses",

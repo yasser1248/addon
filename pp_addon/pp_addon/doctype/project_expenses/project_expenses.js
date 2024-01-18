@@ -9,19 +9,19 @@
 
 
 frappe.ui.form.on("Project Expenses Details", {
-    debit(frm, cdt, cdn) {
-        let row = locals[cdt][cdn];
-        if (row.debit) {
-            row.balance = row.debit - row.credit;
-            frm.refresh_field("expenses");
+    expenses_remove(frm, cdt, cdn) {
+        if (frm.doc.expenses.length > 0) {
+            frm.doc.totals = 0;
+            for (let i=0; i< frm.doc.expenses.length; i++) {
+                frm.set_value("totals", frm.doc.totals + frm.doc.expenses[i].amount);
+            }
+            frm.refresh_field("totals");
         }
+        else { frm.set_value("totals", 0); frm.refresh_field("totals"); }
     },
-
-    credit(frm, cdt, cdn) {
+    amount(frm, cdt, cdn) {
         let row = locals[cdt][cdn];
-        if (row.credit) {
-            row.balance = row.debit - row.credit;
-            frm.refresh_field("expenses");
-        }
+        frm.set_value("totals", frm.doc.totals + row.amount);
+        frm.refresh_field("totals");
     },
 });
