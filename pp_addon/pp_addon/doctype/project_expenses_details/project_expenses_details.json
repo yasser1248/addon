@@ -1,0 +1,74 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-01-18 09:42:09.477246",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "date",
+  "debit",
+  "credit",
+  "balance",
+  "description",
+  "attachment"
+ ],
+ "fields": [
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text",
+   "in_list_view": 1,
+   "label": "Description",
+   "max_height": "60px"
+  },
+  {
+   "fieldname": "attachment",
+   "fieldtype": "Attach",
+   "in_list_view": 1,
+   "label": "Attachment"
+  },
+  {
+   "default": "0",
+   "fieldname": "debit",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Debit",
+   "precision": "3"
+  },
+  {
+   "default": "0",
+   "fieldname": "credit",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Credit",
+   "precision": "3"
+  },
+  {
+   "default": "0",
+   "fieldname": "balance",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Balance",
+   "precision": "3",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-01-18 10:25:38.571960",
+ "modified_by": "Administrator",
+ "module": "Pp Addon",
+ "name": "Project Expenses Details",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
