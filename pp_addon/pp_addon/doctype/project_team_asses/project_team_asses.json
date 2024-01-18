@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:{employee_name}.{project_name}",
+ "autoname": "format:{employee_name}.{project_name} - {from} : {to}",
  "creation": "2023-01-29 14:22:20.571487",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -9,11 +9,12 @@
  "field_order": [
   "project",
   "employee",
-  "from",
-  "to",
+  "from_to",
   "column_break_2",
   "project_name",
   "employee_name",
+  "from",
+  "to",
   "section_break_3",
   "items"
  ],
@@ -21,7 +22,9 @@
   {
    "fieldname": "project",
    "fieldtype": "Link",
+   "in_filter": 1,
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Project id",
    "options": "Project",
    "reqd": 1
@@ -51,11 +54,15 @@
    "options": "project team ass child"
   },
   {
+   "depends_on": "eval: doc.project;",
    "fieldname": "employee",
    "fieldtype": "Link",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Employee",
-   "options": "Employee",
-   "reqd": 1
+   "mandatory_depends_on": "eval: doc.project;",
+   "options": "Employee"
   },
   {
    "depends_on": "eval: doc.employee;",
@@ -65,19 +72,28 @@
    "label": "Employee Name"
   },
   {
+   "depends_on": "eval: doc.employee;",
+   "fieldname": "from_to",
+   "fieldtype": "Select",
+   "label": "From - To",
+   "mandatory_depends_on": "eval: doc.employee;"
+  },
+  {
    "fieldname": "from",
    "fieldtype": "Date",
-   "label": "From"
+   "label": "From",
+   "read_only": 1
   },
   {
    "fieldname": "to",
    "fieldtype": "Date",
-   "label": "To"
+   "label": "To",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-01-17 15:02:46.942936",
+ "modified": "2024-01-18 13:34:57.162682",
  "modified_by": "Administrator",
  "module": "Pp Addon",
  "name": "Project team asses",

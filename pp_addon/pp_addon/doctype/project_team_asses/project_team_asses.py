@@ -24,3 +24,12 @@ def get_all_type_of_asses(*args, **kwargs):
         return data
     else:
         return None
+
+
+@frappe.whitelist()
+def get_aleardy_assesed(*args, **kwargs):
+    data = frappe.get_all("Project team asses", ["from_to", "from", "to"], {"project": kwargs.get("project"), "employee": kwargs.get("employee")})
+    if len(data) > 0:
+        return {"from_to": [f"{item.get('from')} : {item.get('to')}" for item in data]}
+    else:
+        return None
