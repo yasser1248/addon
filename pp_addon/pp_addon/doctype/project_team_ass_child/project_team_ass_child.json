@@ -8,6 +8,7 @@
  "field_order": [
   "item",
   "degree",
+  "self",
   "comments",
   "attachment"
  ],
@@ -21,10 +22,10 @@
   },
   {
    "fieldname": "degree",
-   "fieldtype": "Select",
+   "fieldtype": "Percent",
    "in_list_view": 1,
    "label": "Degree",
-   "options": "5\n10\n15\n20\n25\n30\n35\n40\n45\n50\n55\n60\n65\n70\n75\n80\n85\n90\n95\n100"
+   "precision": "3"
   },
   {
    "fieldname": "comments",
@@ -37,12 +38,19 @@
    "fieldtype": "Attach",
    "in_list_view": 1,
    "label": "Attachment"
+  },
+  {
+   "fieldname": "self",
+   "fieldtype": "Percent",
+   "in_list_view": 1,
+   "label": "Self",
+   "precision": "3"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-01-18 12:08:09.373010",
+ "modified": "2024-01-18 15:22:24.261815",
  "modified_by": "Administrator",
  "module": "Pp Addon",
  "name": "project team ass child",
