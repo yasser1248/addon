@@ -235,11 +235,12 @@ fixtures = [
         "filters": [
             ["name", "in", ("Addon Manager", "Addon User", "Addon Limited")],
         ],
-    }
-    # {
-    #     "dt": ("Custom Field"),
-    #     "filters": [["dt", "in", ("", "", "")]]
-    # }, "Lead Source",
+    },
+    {
+        "dt": ("Custom Field"),
+        "filters": [["dt", "in", ("Employee",)], ["fieldname", "in", ("custom_employee_signature")]],
+    },
+    # "Lead Source",
     # {
     #     "dt": ("Print Format"),
     #     "filters": [
