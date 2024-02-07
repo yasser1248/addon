@@ -1,0 +1,52 @@
+<h2 class="">{%= __(report.report_name) %}</h2>
+<hr>
+<p>{%= __("From Date")%} : {%= frappe.datetime.str_to_user(filters.from_date) %}</p>
+<p>{%= __("To Date")%} : {%= frappe.datetime.str_to_user(filters.to_date) %}</p>
+{% if(filters.employee) { %}
+<p>{%= __("Employee")%} : {%= filters.employee  %}</p>
+{% } %}
+<hr>
+<table>
+    <thead>
+        <tr>
+            <th width="5%">{%= __("#") %}</th>
+            <th width="10%">{%= __("Day") %}</th>
+            {% if (!filters.employee) { %}
+            <th width="20%">{%= __("Employee") %}</th>
+            {% } %}
+            <th width="12%">{%= __("Check IN") %}</th>
+            <th width="12%">{%= __("Check OUT") %}</th>
+            <th width="12%">{%= __("Total Working (Hour)") %}</th>
+            <th width="10%">{%= __("Status") %}</th>
+            <th width="12%">{%= __("Late Time (Hour)") %}</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for(var i=0, l=data.length; i<l; i++) { %}
+        <tr>
+            <td width="5%">{%= i+1 %}</td>
+            <td width="10%">{%= data[i].day %}</td>
+            {% if (!filters.employee) { %}
+            <td width="20%">{%= data[i].name1 %}</td>
+            {% } %}
+            <td width="12%">{%= data[i].check_in %}</td>
+            <td width="12%">{%= data[i].check_out %}</td>
+            <td width="12%">{%= data[i].total_working %}</td>
+            <td width="10%">{%= data[i].status %}</td>
+            <td width="12%">{%= data[i].late_time %}</td>
+        </tr>
+        {% } %}
+    </tbody>
+</table>
+<hr>
+{% if(filters.employee) { %}
+<p>{%= __("Employee Signature:") %}</p>
+<p class="text-left">
+    {% if(data[0].signature) { %}
+        <img src="{%= data[0].signature %}" alt="Employee Signature">
+    {% } else { %}
+    No Signature Found
+    {% } %}
+
+</p>
+{% } %}
