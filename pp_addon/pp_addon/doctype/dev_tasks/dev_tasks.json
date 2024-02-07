@@ -7,7 +7,11 @@
  "engine": "InnoDB",
  "field_order": [
   "task_name",
-  "status"
+  "status",
+  "column_break_xbmx",
+  "revision_comments",
+  "section_break_imcc",
+  "description"
  ],
  "fields": [
   {
@@ -25,11 +29,31 @@
    "label": "Task Name",
    "reqd": 1,
    "unique": 1
+  },
+  {
+   "fieldname": "column_break_xbmx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.status== \"Revision\"",
+   "fieldname": "revision_comments",
+   "fieldtype": "Small Text",
+   "label": "Revision Comments",
+   "mandatory_depends_on": "eval:doc.status== \"Revision\""
+  },
+  {
+   "fieldname": "section_break_imcc",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text Editor",
+   "label": "Description"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-02-07 12:06:19.772810",
+ "modified": "2024-02-07 12:23:00.543272",
  "modified_by": "Administrator",
  "module": "Pp Addon",
  "name": "Dev Tasks",
