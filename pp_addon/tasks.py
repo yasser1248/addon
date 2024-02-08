@@ -54,4 +54,7 @@ def set_time_untill_project_end(period_value,doc_name):
             get_project.time_untill_project_end="Today is last Day"
             
         get_project.save()
-        return True          
+        return True  
+
+def custom_time():
+    print("#"*500)

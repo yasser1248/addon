@@ -139,6 +139,7 @@ app_include_js = (
 
 scheduler_events = {
     "all": ["pp_addon.scheduler_tasks.projects_meeting.check_completed_meetings"],
+    # "all": ["pp_addon.tasks.custom_time"],
     #  "cron":{
     #     "06 * * * *":["pp_addon.tasks.cron"]
     #  },
@@ -150,6 +151,8 @@ scheduler_events = {
         "0 14 * * 4": ["pp_addon.scheduler_tasks.employee_daily_work.send_report"],
         "0 10 * * 0,1,2,3,4": ["pp_addon.scheduler_tasks.employee_checkin_checkout.checkin"],
         "0 18 * * 0,1,2,3,4": ["pp_addon.scheduler_tasks.employee_checkout.check_out", "pp_addon.scheduler_tasks.employee_checkin_checkout.employees_not_done_any_tasks"],
+        # "0 0 28,29,30,31 * *":[[ "$(date --date=tomorrow +\%d)" == "01" ]] && ["pp_addon.scheduler_tasks.projects_meeting.check_completed_meetings"],
+        "* * * * *": ["pp_addon.tasks.custom_time"],
     },
     # 	"all": [
     # 		"pp_addon.tasks.all"

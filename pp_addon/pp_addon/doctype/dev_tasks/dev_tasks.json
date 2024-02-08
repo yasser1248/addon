@@ -7,8 +7,12 @@
  "engine": "InnoDB",
  "field_order": [
   "task_name",
+  "project",
   "status",
+  "priority",
   "column_break_xbmx",
+  "approval_status",
+  "added_by",
   "revision_comments",
   "section_break_imcc",
   "description"
@@ -49,11 +53,44 @@
    "fieldname": "description",
    "fieldtype": "Text Editor",
    "label": "Description"
+  },
+  {
+   "default": "Addon",
+   "fieldname": "project",
+   "fieldtype": "Select",
+   "label": "Project",
+   "options": "Addon\n\u0642\u064a\u0627\u0633",
+   "reqd": 1
+  },
+  {
+   "default": "Pending",
+   "depends_on": "eval:frappe.user.has_role(\"System Manager\")",
+   "fieldname": "approval_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Approval Status",
+   "options": "Approved\nNot Approved\nPending"
+  },
+  {
+   "fieldname": "added_by",
+   "fieldtype": "Link",
+   "label": "Added By",
+   "options": "Employee"
+  },
+  {
+   "default": "Low",
+   "fieldname": "priority",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Priority",
+   "options": "High\nMedium\nLow"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-02-07 12:23:00.543272",
+ "modified": "2024-02-08 11:29:14.230083",
  "modified_by": "Administrator",
  "module": "Pp Addon",
  "name": "Dev Tasks",
