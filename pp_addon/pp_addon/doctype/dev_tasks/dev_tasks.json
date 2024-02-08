@@ -10,6 +10,7 @@
   "project",
   "status",
   "priority",
+  "expected_received_date",
   "column_break_xbmx",
   "approval_status",
   "added_by",
@@ -86,11 +87,17 @@
    "in_standard_filter": 1,
    "label": "Priority",
    "options": "High\nMedium\nLow"
+  },
+  {
+   "default": "Today",
+   "fieldname": "expected_received_date",
+   "fieldtype": "Date",
+   "label": "Expected Received Date"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-02-08 11:29:14.230083",
+ "modified": "2024-02-08 11:55:49.990343",
  "modified_by": "Administrator",
  "module": "Pp Addon",
  "name": "Dev Tasks",

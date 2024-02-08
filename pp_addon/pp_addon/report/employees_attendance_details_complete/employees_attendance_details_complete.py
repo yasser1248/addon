@@ -59,7 +59,7 @@ def get_data(filters: frappe._dict) -> list[dict]:
     query = get_query(filters)
     data = _get_data(filters, query)
     if filters.employee:
-        if frappe.db.get_value('Employee', filters.get("employee"), 'custom_employee_signature'):
+        if frappe.db.get_value('Employee', filters.get("employee"), 'custom_employee_signature') and len(data)>0:
             data[0].signature = frappe.db.get_value('Employee', filters.get("employee"), 'custom_employee_signature')
     data = complete_data(data)
     return data

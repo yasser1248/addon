@@ -56,5 +56,17 @@ def set_time_untill_project_end(period_value,doc_name):
         get_project.save()
         return True  
 
-def custom_time():
-    print("#"*500)
+
+def send_report():
+    doc = frappe.get_doc("Auto Email Report", "Employees Attendance Details Complete")
+    doc.send()
+    
+    # email_args = {
+    #     "message": "Employees Attendance Details Complete",
+    #     "recipients": "mohamed.selim@itsystematic.com",
+    #     "subject": "Employees Attendance Details Complete",
+    # }
+    # frappe.enqueue(method=frappe.sendmail, queue="short", timeout=300, now=True ,
+    #     **email_args)
+    
+    # doc.email_to = "mohamed.selim@itsystematic.com"
