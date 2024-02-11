@@ -5,7 +5,12 @@ import frappe
 from frappe.model.document import Document
 
 class Projectteamasses(Document):
-	pass
+    def before_save(self):
+        max_periority = 0
+        for item in self.items:
+            max_periority += item.get('degree')
+        if max_periority > 100:
+            frappe.throw("Sum of supervisor must be less than 100%")
 
 
 @frappe.whitelist()

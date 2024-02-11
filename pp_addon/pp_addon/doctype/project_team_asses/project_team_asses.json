@@ -16,6 +16,7 @@
   "from",
   "to",
   "section_break_3",
+  "max_priority",
   "items"
  ],
  "fields": [
@@ -89,11 +90,18 @@
    "fieldtype": "Date",
    "label": "To",
    "read_only": 1
+  },
+  {
+   "default": "100",
+   "fieldname": "max_priority",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Max Priority"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-01-18 13:34:57.162682",
+ "modified": "2024-02-11 10:54:22.036818",
  "modified_by": "Administrator",
  "module": "Pp Addon",
  "name": "Project team asses",
