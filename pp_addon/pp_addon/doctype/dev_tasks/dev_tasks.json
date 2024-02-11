@@ -77,7 +77,8 @@
    "fieldname": "added_by",
    "fieldtype": "Link",
    "label": "Added By",
-   "options": "Employee"
+   "options": "Employee",
+   "reqd": 1
   },
   {
    "default": "Low",
@@ -91,13 +92,13 @@
   {
    "default": "Today",
    "fieldname": "expected_received_date",
-   "fieldtype": "Date",
+   "fieldtype": "Datetime",
    "label": "Expected Received Date"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-02-08 11:55:49.990343",
+ "modified": "2024-02-11 10:33:43.552476",
  "modified_by": "Administrator",
  "module": "Pp Addon",
  "name": "Dev Tasks",
