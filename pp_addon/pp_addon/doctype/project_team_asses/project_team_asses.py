@@ -24,7 +24,7 @@ def get_start_end_date(*args, **kwargs):
 
 @frappe.whitelist()
 def get_all_type_of_asses(*args, **kwargs):
-    data = frappe.get_all("Type of asses")
+    data = frappe.get_all("Type of asses",fields=["name","weight"])
     if len(data) > 0:
         return data
     else:

@@ -10,7 +10,7 @@ frappe.ui.form.on('Project team asses', {
 				callback: (r) => {
 					if (r.message) {
 						r.message.forEach((item) => {
-							frm.add_child("items", {"item": item.name});
+							frm.add_child("items", {"item": item.name,"weight": item.weight});
 						});
 						frm.refresh_field("items");
 					}

@@ -7,7 +7,8 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "typeofas"
+  "typeofas",
+  "weight"
  ],
  "fields": [
   {
@@ -15,11 +16,16 @@
    "fieldtype": "Data",
    "label": "Type off ass",
    "unique": 1
+  },
+  {
+   "fieldname": "weight",
+   "fieldtype": "Percent",
+   "label": "Weight"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-12-20 13:57:53.396663",
+ "modified": "2024-02-11 17:09:25.851344",
  "modified_by": "Administrator",
  "module": "Pp Addon",
  "name": "Type of asses",
