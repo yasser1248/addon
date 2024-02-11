@@ -12,9 +12,14 @@
   "project_name",
   "from",
   "to",
+  "section_break_sbhf",
+  "total_debit",
+  "column_break_mlko",
+  "total_credit",
+  "column_break_dqqw",
+  "totals",
   "details_section",
-  "expenses",
-  "totals"
+  "expenses"
  ],
  "fields": [
   {
@@ -52,7 +57,7 @@
    "default": "0",
    "fieldname": "totals",
    "fieldtype": "Float",
-   "label": "Totals",
+   "label": "Total Balance",
    "precision": "3",
    "read_only": 1
   },
@@ -73,11 +78,39 @@
    "fieldtype": "Date",
    "label": "To",
    "read_only": 1
+  },
+  {
+   "fieldname": "section_break_sbhf",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_debit",
+   "fieldtype": "Float",
+   "label": "Total Debit",
+   "precision": "3",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_mlko",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_credit",
+   "fieldtype": "Float",
+   "label": "Total Credit",
+   "precision": "3",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_dqqw",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-01-23 12:22:18.887944",
+ "modified": "2024-02-11 13:43:39.017197",
  "modified_by": "Administrator",
  "module": "Pp Addon",
  "name": "Project Expenses",

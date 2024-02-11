@@ -12,6 +12,9 @@
   "days",
   "weight",
   "done_by",
+  "from_to",
+  "from",
+  "to",
   "tasks_section",
   "tasks"
  ],
@@ -72,11 +75,28 @@
    "in_list_view": 1,
    "label": "Done By",
    "options": "Employee"
+  },
+  {
+   "fieldname": "from_to",
+   "fieldtype": "Select",
+   "label": "From - To"
+  },
+  {
+   "fieldname": "from",
+   "fieldtype": "Date",
+   "label": "From",
+   "read_only": 1
+  },
+  {
+   "fieldname": "to",
+   "fieldtype": "Date",
+   "label": "To",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-01-02 09:18:46.562742",
+ "modified": "2024-02-11 12:18:32.743835",
  "modified_by": "Administrator",
  "module": "Pp Addon",
  "name": "Daily Work",

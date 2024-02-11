@@ -20,6 +20,13 @@ frappe.ui.form.on("Project Expenses", {
 				frm.refresh_field("to");
 			}
 		}
+		frm.doc.expenses.forEach(function(e){
+            if ( e.date >= frm.doc.from  && e.date < frm.doc.to){
+                $("[data-idx='"+e.idx+"']").show()
+            }else{
+                $("[data-idx='"+e.idx+"']").hide()
+            }
+            })
 	},
 });
 
@@ -28,17 +35,34 @@ frappe.ui.form.on("Project Expenses Details", {
     expenses_remove(frm, cdt, cdn) {
         if (frm.doc.expenses.length > 0) {
             frm.doc.totals = 0;
+            frm.doc.total_debit = 0;
+            frm.doc.total_credit = 0;
             for (let i=0; i< frm.doc.expenses.length; i++) {
+				console.log(frm.doc.expenses[i].amount)
                 frm.set_value("totals", frm.doc.totals + frm.doc.expenses[i].amount);
+				if(frm.doc.expenses[i].amount > 0){
+					frm.set_value("total_debit",frm.doc.total_debit + frm.doc.expenses[i].amount)
+				}else{
+					frm.set_value("total_credit",frm.doc.total_credit + Math.abs(frm.doc.expenses[i].amount))
+				}
             }
             frm.refresh_field("totals");
+			frm.refresh_field("total_debit");
+        	frm.refresh_field("total_credit");
         }
-        else { frm.set_value("totals", 0); frm.refresh_field("totals"); }
+        else { frm.set_value("totals", 0); frm.refresh_field("totals"); frm.set_value("total_debit", 0); frm.refresh_field("total_debit"); frm.set_value("total_credit", 0); frm.refresh_field("total_credit"); }
     },
     amount(frm, cdt, cdn) {
         let row = locals[cdt][cdn];
         frm.set_value("totals", frm.doc.totals + row.amount);
+		if (row.amount > 0){
+			frm.set_value("total_debit",frm.doc.total_debit + row.amount)
+		}else{
+			frm.set_value("total_credit",frm.doc.total_credit + Math.abs(row.amount))
+		}
         frm.refresh_field("totals");
+        frm.refresh_field("total_debit");
+        frm.refresh_field("total_credit");
     },
 });
 
