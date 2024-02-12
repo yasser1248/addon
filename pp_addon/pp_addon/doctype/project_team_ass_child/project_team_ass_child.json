@@ -57,6 +57,7 @@
   {
    "fieldname": "assessment_date",
    "fieldtype": "Date",
+   "in_list_view": 1,
    "label": "Assessment Date",
    "read_only": 1
   }
@@ -64,7 +65,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-02-12 11:59:42.829986",
+ "modified": "2024-02-12 12:59:40.820536",
  "modified_by": "Administrator",
  "module": "Pp Addon",
  "name": "project team ass child",
