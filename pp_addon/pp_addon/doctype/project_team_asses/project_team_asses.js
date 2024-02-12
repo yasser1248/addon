@@ -1,21 +1,21 @@
 // Copyright (c) 2023, magdyabouelatta and contributors
 // For license information, please see license.txt
 
-$("button.first-page,button.last-page,button.next-page,button.prev-page").on(
-  "click",
-  function () {
-	console.log("clicked code")
-    cur_frm.doc.items.forEach(function (e) {
-      if (e.assessment_date == cur_frm.doc.from) {
-        console.log("show");
-        $("data-idx='e.assessment_date'").show();
-      } else {
-        console.log("hide");
-        $("data-idx='e.assessment_date'").hide();
-      }
-    });
-  }
-);
+// $("button.first-page,button.last-page,button.next-page,button.prev-page").on(
+//   "click",
+//   function () {
+// 	console.log("clicked code")
+//     cur_frm.doc.items.forEach(function (e) {
+//       if (e.assessment_date == cur_frm.doc.from) {
+//         console.log("show");
+//         $("data-idx='e.assessment_date'").show();
+//       } else {
+//         console.log("hide");
+//         $("data-idx='e.assessment_date'").hide();
+//       }
+//     });
+//   }
+// );
 	frappe.ui.form.on('Project team asses', {
 		setup: function(frm) {
 		if (frm.is_new()) {
@@ -74,15 +74,15 @@ $("button.first-page,button.last-page,button.next-page,button.prev-page").on(
 						});
 						frm.refresh_field("items");
 						if (frm.doc.items) {
-							frm.doc.items.forEach(function(e){
-								if ( e.assessment_date == frm.doc.from){
-									$("[data-idx='"+e.idx+"']").show()
-								}else{
-									$("[data-idx='"+e.idx+"']").hide()
-								}
-								})
-						// 	current_date = new Date(cur_frm.doc.from)
-						// 	$("[data-fieldtype=Date]").text(
+							// frm.doc.items.forEach(function(e){
+							// 	if ( e.assessment_date == frm.doc.from){
+							// 		$("[data-idx='"+e.idx+"']").show()
+							// 	}else{
+							// 		$("[data-idx='"+e.idx+"']").hide()
+							// 	}
+							// 	})
+							const parts = cur_frm.doc.from.split("-");
+							$("input[data-fieldtype=Date]").val(`${parts[2]}-${parts[1]}-${parts[0]}`).trigger('keyup');
                 
 						// 	current_date.toLocaleDateString("en-US", {
 						// 		day: "2-digit",
