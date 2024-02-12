@@ -1,21 +1,36 @@
 // Copyright (c) 2023, magdyabouelatta and contributors
 // For license information, please see license.txt
 
-frappe.ui.form.on('Project team asses', {
-	setup: function(frm) {
+$("button.first-page,button.last-page,button.next-page,button.prev-page").on(
+  "click",
+  function () {
+	console.log("clicked code")
+    cur_frm.doc.items.forEach(function (e) {
+      if (e.assessment_date == cur_frm.doc.from) {
+        console.log("show");
+        $("data-idx='e.assessment_date'").show();
+      } else {
+        console.log("hide");
+        $("data-idx='e.assessment_date'").hide();
+      }
+    });
+  }
+);
+	frappe.ui.form.on('Project team asses', {
+		setup: function(frm) {
 		if (frm.is_new()) {
-			frappe.call({
-				method: "pp_addon.pp_addon.doctype.project_team_asses.project_team_asses.get_all_type_of_asses",
-				args: {},
-				callback: (r) => {
-					if (r.message) {
-						r.message.forEach((item) => {
-							frm.add_child("items", {"item": item.name,"weight": item.weight});
-						});
-						frm.refresh_field("items");
-					}
-				},
-			});
+			// frappe.call({
+			// 	method: "pp_addon.pp_addon.doctype.project_team_asses.project_team_asses.get_all_type_of_asses",
+			// 	args: {},
+			// 	callback: (r) => {
+			// 		if (r.message) {
+			// 			r.message.forEach((item) => {
+			// 				frm.add_child("items", {"item": item.name,"weight": item.weight});
+			// 			});
+			// 			frm.refresh_field("items");
+			// 		}
+			// 	},
+			// });
 		}
 	},
 
@@ -44,6 +59,43 @@ frappe.ui.form.on('Project team asses', {
 				frm.refresh_field("from");
 				frm.refresh_field("to");
 			}
+			// frm.set_value("items", []);
+			// frm.refresh_field("items")
+			frappe.call({
+				method: "pp_addon.pp_addon.doctype.project_team_asses.project_team_asses.get_all_type_of_asses",
+				args: {},
+				callback: (r) => {
+					if (r.message) {
+						r.message.forEach((item) => {
+							if (frm.doc.items == undefined || frm.doc.items.find((i) => i.item == item.name && i.assessment_date == frm.doc.from) == undefined )
+							{
+								frm.add_child("items", {"item": item.name,"weight": item.weight,"assessment_date":frm.doc.from});
+							}
+						});
+						frm.refresh_field("items");
+						if (frm.doc.items) {
+							frm.doc.items.forEach(function(e){
+								if ( e.assessment_date == frm.doc.from){
+									$("[data-idx='"+e.idx+"']").show()
+								}else{
+									$("[data-idx='"+e.idx+"']").hide()
+								}
+								})
+						// 	current_date = new Date(cur_frm.doc.from)
+						// 	$("[data-fieldtype=Date]").text(
+                
+						// 	current_date.toLocaleDateString("en-US", {
+						// 		day: "2-digit",
+						// 		month: "2-digit",
+						// 	year: "numeric",
+						// })
+						// .replace(/\//g, '-')).click()
+
+						// frm.refresh_field("items");
+						}
+					}
+				},
+			});
 		}
 	},
 });
