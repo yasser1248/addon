@@ -190,64 +190,6 @@
   },
   {
    "hidden": 0,
-   "is_query_report": 0,
-   "label": "Transaction",
-   "link_count": 5,
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Project Meeting",
-   "link_count": 0,
-   "link_to": "Projects Meeting",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Project Achievement Report",
-   "link_count": 0,
-   "link_to": "Projects Achievement scene",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Project Change Request",
-   "link_count": 0,
-   "link_to": "Project change",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Project Team Assesment",
-   "link_count": 0,
-   "link_to": "Project team asses",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Project Learning Lesson",
-   "link_count": 0,
-   "link_to": "Project learning lesson",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
    "is_query_report": 1,
    "label": "Project Document",
    "link_count": 0,
@@ -521,9 +463,87 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Transaction",
+   "link_count": 7,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Project Meeting",
+   "link_count": 0,
+   "link_to": "Projects Meeting",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Project Achievement Report",
+   "link_count": 0,
+   "link_to": "Projects Achievement scene",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Project Change Request",
+   "link_count": 0,
+   "link_to": "Project change",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Project Team Assesment",
+   "link_count": 0,
+   "link_to": "Employee Assessment",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Project Learning Lesson",
+   "link_count": 0,
+   "link_to": "Project learning lesson",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Project Document",
+   "link_count": 0,
+   "link_to": "Project Document",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Project Bidding",
+   "link_count": 0,
+   "link_to": "Projects Bidding",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2024-02-07 12:23:53.019292",
+ "modified": "2024-02-13 13:48:54.608379",
  "modified_by": "Administrator",
  "module": "Pp Addon",
  "name": "Addon",
